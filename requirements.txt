@@ -1,0 +1,5 @@
+scipy==1.15.1
+dspy==2.6.15
+sentence-transformers==3.4.0
+trafilatura==2.0.0
+pip install stix2==3.0.1
