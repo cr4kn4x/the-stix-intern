@@ -1,0 +1,1185 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11"><script src="//archive.org/includes/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app219.us.archive.org';v.server_ms=702;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="/_static/js/bundle-playback.js?v=HxkREWBo" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://blog.trendmicro.com:80/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/","20150724212722","https://web.archive.org/","web","/_static/",
+	      "1437773242");
+</script>
+<link rel="stylesheet" type="text/css" href="/_static/css/banner-styles.css?v=S1zqJCYt">
+<link rel="stylesheet" type="text/css" href="/_static/css/iconochive.css?v=3PDvdIFv">
+<!-- End Wayback Rewrite JS Include -->
+
+
+<meta name="verify-v1" content="m7dwAV3mxlLFQVL7+P/2AAhKIr8fGr7XFrhN3oBDTlg=">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Hacking Team RCSAndroid Spying Tool Listens to Calls; Roots Devices to Get In</title>
+
+<!--<link rel="stylesheet" href="" type="text/css" media="screen" />-->
+<link rel="alternate" type="application/rss+xml" title="TrendLabs Security Intelligence Blog RSS Feed" href="https://web.archive.org/web/20150724212722/http://feeds.trendmicro.com/Anti-MalwareBlog/">
+<link rel="pingback" href="http://blog.trendmicro.com/trendlabs-security-intelligence/xmlrpc.php">
+<link rel="shortcut icon" href="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.co.jp/favicon.ico">
+
+	<style type="text/css">
+		#fancybox-close{right:-15px;top:-15px}
+		div#fancybox-content{border-color:#FFFFFF}
+		div#fancybox-title{background-color:#FFFFFF}
+		div#fancybox-outer{background-color:#FFFFFF}
+		div#fancybox-title-inside{color:#333333}
+	</style>
+
+	
+<!-- All in One SEO Pack 2.2.7.1 by Michael Torbert of Semper Fi Web Design[365,482] -->
+<meta name="description" content="The code for Hacking Team’s open-source malware suite RCSAndroid (Remote Control System Android) reveals intrusive spying and rooting routines.">
+
+<meta name="keywords" content="hacking team,mobile,rcsandroid">
+
+<meta name="ROBOTS" content="INDEX, FOLLOW">
+
+<link rel="canonical" href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/">
+<!-- /all in one seo pack -->
+<link rel="alternate" type="application/rss+xml" title="TrendLabs Security Intelligence Blog » Hacking Team RCSAndroid Spying Tool Listens to Calls; Roots Devices to Get In Comments Feed" href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/web.archive.org\/web\/20150724212722\/http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"wpemoji":"https:\/\/web.archive.org\/web\/20150724212722\/http:\/\/blog.trendmicro.com\/trendlabs-security-intelligence\/wp-includes\/js\/wp-emoji.js?ver=4.2.3","twemoji":"https:\/\/web.archive.org\/web\/20150724212722\/http:\/\/blog.trendmicro.com\/trendlabs-security-intelligence\/wp-includes\/js\/twemoji.js?ver=4.2.3"}};
+			( function( window, document, settings ) {
+	var src, ready;
+
+	/**
+	 * Detect if the browser supports rendering emoji or flag emoji. Flag emoji are a single glyph
+	 * made of two characters, so some browsers (notably, Firefox OS X) don't support them.
+	 *
+	 * @since 4.2.0
+	 *
+	 * @param type {String} Whether to test for support of "simple" or "flag" emoji.
+	 * @return {Boolean} True if the browser can render emoji, false if it cannot.
+	 */
+	function browserSupportsEmoji( type ) {
+		var canvas = document.createElement( 'canvas' ),
+			context = canvas.getContext && canvas.getContext( '2d' );
+
+		if ( ! context || ! context.fillText ) {
+			return false;
+		}
+
+		/*
+		 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+		 * it doesn't work when the font is bolder than 500 weight. So, we
+		 * check for bold rendering support to avoid invisible emoji in Chrome.
+		 */
+		context.textBaseline = 'top';
+		context.font = '600 32px Arial';
+
+		if ( type === 'flag' ) {
+			/*
+			 * This works because the image will be one of three things:
+			 * - Two empty squares, if the browser doesn't render emoji
+			 * - Two squares with 'G' and 'B' in them, if the browser doesn't render flag emoji
+			 * - The British flag
+			 *
+			 * The first two will encode to small images (1-2KB data URLs), the third will encode
+			 * to a larger image (4-5KB data URL).
+			 */
+			context.fillText( String.fromCharCode( 55356, 56812, 55356, 56807 ), 0, 0 );
+			return canvas.toDataURL().length > 3000;
+		} else {
+			/*
+			 * This creates a smiling emoji, and checks to see if there is any image data in the
+			 * center pixel. In browsers that don't support emoji, the character will be rendered
+			 * as an empty square, so the center pixel will be blank.
+			 */
+			context.fillText( String.fromCharCode( 55357, 56835 ), 0, 0 );
+			return context.getImageData( 16, 16, 1, 1 ).data[0] !== 0;
+		}
+	}
+
+	function addScript( src ) {
+		var script = document.createElement( 'script' );
+
+		script.src = src;
+		script.type = 'text/javascript';
+		document.getElementsByTagName( 'head' )[0].appendChild( script );
+	}
+
+	settings.supports = {
+		simple: browserSupportsEmoji( 'simple' ),
+		flag:   browserSupportsEmoji( 'flag' )
+	};
+
+	settings.DOMReady = false;
+	settings.readyCallback = function() {
+		settings.DOMReady = true;
+	};
+
+	if ( ! settings.supports.simple || ! settings.supports.flag ) {
+		ready = function() {
+			settings.readyCallback();
+		};
+
+		if ( document.addEventListener ) {
+			document.addEventListener( 'DOMContentLoaded', ready, false );
+			window.addEventListener( 'load', ready, false );
+		} else {
+			window.attachEvent( 'onload', ready );
+			document.attachEvent( 'onreadystatechange', function() {
+				if ( 'complete' === document.readyState ) {
+					settings.readyCallback();
+				}
+			} );
+		}
+
+		src = settings.source || {};
+
+		if ( src.concatemoji ) {
+			addScript( src.concatemoji );
+		} else if ( src.wpemoji && src.twemoji ) {
+			addScript( src.twemoji );
+			addScript( src.wpemoji );
+		}
+	}
+
+} )( window, document, window._wpemojiSettings );
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="fes-css" href="https://web.archive.org/web/20150724212722cs_/http://blog.trendmicro.com/trendlabs-security-intelligence/wp-content/plugins/feedburner-email-subscription/css/styles.css?ver=4.2.3" type="text/css" media="all">
+<link rel="stylesheet" id="category-posts-css" href="https://web.archive.org/web/20150724212722cs_/http://blog.trendmicro.com/trendlabs-security-intelligence/wp-content/plugins/category-posts/cat-posts.css?ver=4.2.3" type="text/css" media="all">
+<link rel="stylesheet" id="fancybox-css" href="https://web.archive.org/web/20150724212722cs_/http://blog.trendmicro.com/trendlabs-security-intelligence/wp-content/plugins/fancybox-for-wordpress/fancybox/fancybox.css?ver=4.2.3" type="text/css" media="all">
+<link rel="stylesheet" id="wpt-twitter-feed-css" href="https://web.archive.org/web/20150724212722cs_/http://blog.trendmicro.com/trendlabs-security-intelligence/wp-content/plugins/wp-to-twitter/css/twitter-feed.css?ver=4.2.3" type="text/css" media="all">
+<script type="text/javascript" src="https://web.archive.org/web/20150724212722js_/http://blog.trendmicro.com/trendlabs-security-intelligence/wp-includes/js/jquery/jquery.js?ver=1.11.2"></script>
+<script type="text/javascript" src="https://web.archive.org/web/20150724212722js_/http://blog.trendmicro.com/trendlabs-security-intelligence/wp-includes/js/jquery/jquery-migrate.js?ver=1.2.1"></script>
+<script type="text/javascript" src="https://web.archive.org/web/20150724212722js_/http://blog.trendmicro.com/trendlabs-security-intelligence/wp-content/plugins/fancybox-for-wordpress/fancybox/jquery.fancybox.js?ver=1.3.4"></script>
+<script type="text/javascript" src="https://web.archive.org/web/20150724212722js_/http://blog.trendmicro.com/trendlabs-security-intelligence/wp-content/plugins/fancybox-for-wordpress/js/jquery.easing.1.3.min.js?ver=1.3"></script>
+<script type="text/javascript" src="https://web.archive.org/web/20150724212722js_/http://blog.trendmicro.com/trendlabs-security-intelligence/wp-content/plugins/flash-gallery/js/addOnLoad.js?ver=1"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.trendmicro.com/trendlabs-security-intelligence/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blog.trendmicro.com/trendlabs-security-intelligence/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Hacking Team Leak Uncovers Another Windows Zero-Day, Fixed In Out-Of-Band Patch" href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-leak-uncovers-another-windows-zero-day-ms-releases-patch/">
+<link rel="next" title="Windows 10 Sharpens Browser Security With Microsoft Edge" href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/windows-10-sharpens-browser-security-with-microsoft-edge/">
+
+<link rel="shortlink" href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/?p=69109">
+<link rel="stylesheet" type="text/css" media="screen" href="https://web.archive.org/web/20150724212722cs_/http://blog.trendmicro.com/trendlabs-security-intelligence/wp-content/plugins/date-stamp/date-stamp.css">
+<!-- Fancybox for WordPress -->
+<script type="text/javascript">
+jQuery(function(){
+
+jQuery.fn.getTitle = function() { // Copy the title of every IMG tag and add it to its parent A so that fancybox can show titles
+	var arr = jQuery("a.fancybox");
+	jQuery.each(arr, function() {
+		var title = jQuery(this).children("img").attr("title");
+		jQuery(this).attr('title',title);
+	})
+}
+
+// Supported file extensions
+var thumbnails = jQuery("a:has(img)").not(".nolightbox").filter( function() { return /\.(jpe?g|png|gif|bmp)$/i.test(jQuery(this).attr('href')) });
+
+thumbnails.addClass("fancybox").attr("rel","fancybox").getTitle();
+jQuery("a.fancybox").fancybox({
+	'cyclic': false,
+	'autoScale': true,
+	'padding': 10,
+	'opacity': true,
+	'speedIn': 500,
+	'speedOut': 500,
+	'changeSpeed': 300,
+	'overlayShow': true,
+	'overlayOpacity': "0.3",
+	'overlayColor': "#666666",
+	'titleShow': false,
+	'titlePosition': 'inside',
+	'enableEscapeButton': true,
+	'showCloseButton': true,
+	'showNavArrows': true,
+	'hideOnOverlayClick': true,
+	'hideOnContentClick': false,
+	'width': 560,
+	'height': 340,
+	'transitionIn': "fade",
+	'transitionOut': "fade",
+	'centerOnScroll': true,
+	'easingIn': "easeOutBack",
+	'easingOut': "easeInBack",
+	'easingChange': "easeInOutQuart"
+});
+
+
+})
+</script>
+<!-- END Fancybox for WordPress -->
+<script src="//web.archive.org/web/20150724212722js_/http://nexus.ensighten.com/trendmicro/Bootstrap.js"></script>
+<script src="//web.archive.org/web/20150724212722js_/http://tags.tiqcdn.com/utag/trendmicro/nabu/prod/utag.sync.js"></script><link rel="shortlink" href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trend-labs-security-intelligence/69109">
+<link rel="canonical" href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/">
+<!--<link rel="stylesheet" type="text/css" media="screen" 
+href="<?php// bloginfo('template_directory'); ?>/ie6.css" /> -->   
+<!--<link rel="stylesheet" type="text/css" href="/ie7.css" />-->
+
+
+
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://web.archive.org/web/20150724212722cs_/http://blog.trendmicro.com/wp-content/themes/TM_2010theme/IE2010.css"> 
+<link rel="stylesheet" type="text/css" media="screen" href="https://web.archive.org/web/20150724212722cs_/http://blog.trendmicro.com/wp-content/themes/TM_2010theme/style_upgrade.css">
+<link href="https://web.archive.org/web/20150724212722cs_/http://blog.trendmicro.com/wp-content/themes/TM_2010theme/2010style.css" rel="stylesheet" type="text/css">
+
+<!--[if IE 6]>
+<style type="text/css"> 
+.twoColFixRtHdr #footer2010 { 
+	margin-left:5px; 
+}
+
+.categ li a{
+
+height: 2em;
+line-height: 2em;
+float: left;
+margin-right:7px;
+color:#000000;
+text-decoration: none;
+text-align: center;
+text-decoration:underline;
+padding-top:10px;
+	
+}
+
+.categ a:link{
+color:#000000;
+}
+.categ a:active{
+color:#000000;
+}
+
+</style>
+<![endif]-->
+<!--[if IE 5]>
+<style type="text/css"> 
+/* place css box model fixes for IE 5* in this conditional comment */
+.twoColFixRtHdr #sidebar1 { width: 220px; }
+</style>
+<![endif]-->
+<!--[if IE]>
+<link href="http://blog.trendmicro.com/wp-content/themes/TM_2010theme/IE2010.css" rel="stylesheet" type="text/css">
+<style type="text/css"> 
+/* place css fixes for all versions of IE in this conditional comment */
+.twoColFixRtHdr #sidebar1 { padding-top: 30px; }
+.twoColFixRtHdr #mainContent { zoom: 1; }
+/* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
+
+</style>
+<![endif]-->
+<!--[if IE 8]>
+<link href="http://blog.trendmicro.com/wp-content/themes/TM_2010theme/style_upgrade.css" rel="stylesheet" type="text/css">
+<link href="http://blog.trendmicro.com/wp-content/themes/TM_2010theme/2010style.css" rel="stylesheet" type="text/css">
+<link href="http://blog.trendmicro.com/wp-content/themes/TM_2010theme/IE2010.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.top_bg_single{
+	padding-left:0px;
+	}
+
+</style>
+<![endif]-->
+ 
+<style type="text/css">
+
+a:link {
+	color:#F00;
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+	color:#C00;
+}
+
+a:hover {
+	text-decoration: none;
+	color:#666;
+}
+
+.date-stamp span.ds-row1 {
+	padding-top:6px;
+	padding-bottom:4px;
+	
+}
+
+.date-stamp span.ds-row2 {
+	padding-top:6px;
+	padding-bottom:3px;
+	
+}
+
+.commentlist li{
+	margin-left:25px;
+	
+}
+
+.postcontent2010x ol {
+	padding: 0 0 0 35px;
+	margin: 0;
+	list-style-type: decimal;
+	}
+
+.postcontent2010x ol li {
+	margin: 0;
+	padding: 0;
+	list-style-type: decimal;
+	}
+
+ol.postcontent2010x {list-style-type:decimal;}
+
+</style>
+<script type="text/javascript" src="https://web.archive.org/web/20150724212722js_/http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js"></script>
+<script type="text/javascript" src="https://web.archive.org/web/20150724212722js_/http://corelib.trendmicro.com/common/blogs/js/popwinsocial.js"></script>
+
+
+
+
+
+
+</head>
+<body class="twoColFixRtHdr"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display:none;direction:ltr;">
+<div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="donato" style="position:relative;width:100%;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;platform=wb&amp;referer=https%3A//web.archive.org/web/20150724212722/http%3A//blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/" scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><div id="wm-ipp-inside">
+  <div id="wm-toolbar" style="position:relative;display:flex;flex-flow:row nowrap;justify-content:space-between;">
+    <div id="wm-logo" style="/*width:110px;*/padding-top:12px;">
+      <a href="/web/" title="Wayback Machine home page"><img src="/_static/images/toolbar/wayback-toolbar-logo-200.png" srcset="/_static/images/toolbar/wayback-toolbar-logo-100.png, /_static/images/toolbar/wayback-toolbar-logo-150.png 1.5x, /_static/images/toolbar/wayback-toolbar-logo-200.png 2x" alt="Wayback Machine" style="width:100px" border="0"></a>
+    </div>
+    <div class="c" style="display:flex;flex-flow:column nowrap;justify-content:space-between;flex:1;">
+      <form class="u" style="display:flex;flex-direction:row;flex-wrap:nowrap;" target="_top" method="get" action="/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/" onfocus="this.focus();this.select();" style="flex:1;"><input type="hidden" name="type" value="replay"><input type="hidden" name="date" value="20150724212722"><input type="submit" value="Go">
+      </form>
+      <div style="display:flex;flex-flow:row nowrap;align-items:flex-end;">
+                <div class="s" id="wm-nav-captures" style="flex:1;">
+                    <a class="t" href="/web/20150724212722*/http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/" title="See a list of every capture for this URL">105 captures</a>
+          <div class="r" title="Timespan for captures of this URL">22 Jul 2015 - 05 Apr 2024</div>
+          </div>
+        <div class="k">
+          <a href="" id="wm-graph-anchor">
+            <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+              <canvas id="wm-sparkline-canvas" width="725" height="27" border="0"></canvas>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="n">
+      <table>
+        <tbody>
+          <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+          <tr class="m">
+            <td class="b" nowrap="nowrap">Jun</td>
+            <td class="c" id="displayMonthEl" title="You are here: 21:27:22 Jul 24, 2015">JUL</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20150828160400/http://blog.trendmicro.com:80/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in" title="28 Aug 2015"><strong>Aug</strong></a></td>
+          </tr>
+          <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+          <tr class="d">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20150723011426/http://blog.trendmicro.com:80/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/" title="01:14:26 Jul 23, 2015"><img src="/_static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0"></a></td>
+            <td class="c" id="displayDayEl" style="width:34px;font-size:22px;white-space:nowrap;" title="You are here: 21:27:22 Jul 24, 2015">24</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20150802055005/http://blog.trendmicro.com:80/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/" title="05:50:05 Aug 02, 2015"><img src="/_static/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0"></a></td>
+          </tr>
+          <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+          <tr class="y">
+            <td class="b" nowrap="nowrap">2014</td>
+            <td class="c" id="displayYearEl" title="You are here: 21:27:22 Jul 24, 2015">2015</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20160805022251/http://blog.trendmicro.com:80/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in" title="05 Aug 2016"><strong>2016</strong></a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="r" style="display:flex;flex-flow:column nowrap;align-items:flex-end;justify-content:space-between;">
+      <div id="wm-btns" style="text-align:right;height:23px;">
+                <span class="xxs">
+          <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a id="wm-save-snapshot-open" href="#" title="Share via My Web Archive">
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php" title="Sign In" id="wm-sign-in">
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
+        </span>
+                <a class="xxs" href="http://faq.web.archive.org/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+        <a id="wm-tb-close" href="#close" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share" class="xxs">
+        <a href="/web/20150724212722/http://web.archive.org/screenshot/http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/" id="wm-screenshot" title="screenshot">
+          <span class="wm-icon-screen-shot"></span>
+        </a>
+        <a href="#" id="wm-video" title="video">
+          <span class="iconochive-movies"></span>
+        </a>
+        <a id="wm-share-facebook" href="#" data-url="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com:80/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+        <a id="wm-share-twitter" href="#" data-url="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com:80/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+      <div style="padding-right:2px;text-align:right;white-space:nowrap;">
+        <a id="wm-expand" class="wm-btn wm-closed" href="#expand"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span class="xxs" style="font-size:80%;">About this capture</span></a>
+      </div>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+        <div id="wm-capinfo-notice" source="api"></div>
+                <div id="wm-capinfo-collected-by">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+            <div style="display:inline-block;vertical-align:top;width:50%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls);"></span>
+		Organization: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+    </div>
+    </div>
+    <div id="wm-capinfo-timestamps">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="/_static/images/loading.gif" alt="loading"></div>
+    </div>
+    </div>
+  </div></div></div></div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20150724212722/http://blog.trendmicro.com:80/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(725,27,25,2,"web","http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/","20150724212722",1996,"/_static/",["/_static/css/banner-styles.css?v=S1zqJCYt","/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+
+<div id="container2010">
+  <div id="header2010">
+    <div>
+    <a class="toplogo" href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/"><span style="display:none;"><h1>TrendLabs Malware Blog</h1></span></a>
+    <a class="topTMlogo" href="https://web.archive.org/web/20150724212722/http://www.trendmicro.com/"><span style="display:none;">
+    <h1>Trend Micro</h1></span></a>
+    </div>
+    
+  <!-- end #header --></div>
+  
+  <!-- categories -->
+  <div class="categ" style="font-size:12px; " align="center">
+  <center><ul>
+    	<li class="cat-item cat-item-3"><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/category/bad-websites/">Bad Sites</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/category/botnets/">Botnets</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/category/cto-insights/" title="CTO Insights">CTO Insights</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/category/exploits/">Exploits</a>
+</li>
+	<li class="cat-item cat-item-1194"><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/category/internet-of-things/" title="Internet of Things">Internet of Things</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/category/mac/" title="Mac-related threats">Mac</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/category/malware/">Malware</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/category/mobile/">Mobile</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/category/social-media/">Social</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/category/spam/">Spam</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/category/targeted_attacks/">Targeted Attacks</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/category/vulnerabilities/">Vulnerabilities</a>
+</li>
+<br>
+    
+    
+    </ul>
+    </center>
+  </div>
+  
+  <div class="categdivider"> </div><!--<link rel="stylesheet" type="text/css" href="single.css" />-->
+
+	<div id="sidebar1">
+	 <img src="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/wp-content/themes/TM_2010theme/blogimages2010/Socialicons.gif" width="202" height="49" border="0" usemap="#Map">
+  <map name="Map">
+    <area shape="rect" coords="22,14,57,48" href="https://web.archive.org/web/20150724212722/http://www.facebook.com/Trendmicro" target="_blank" alt="Trend Micro Facebook">
+    <area shape="rect" coords="62,15,99,47" href="https://web.archive.org/web/20150724212722/http://www.twitter.com/TrendLabs " target="_blank" alt="TrendLabs Twitter">
+    <area shape="rect" coords="101,15,134,49" href="https://web.archive.org/web/20150724212722/http://feeds.trendmicro.com/Anti-MalwareBlog/" target="_blank" alt="Malware Blog RSS Feed">
+    <area shape="rect" coords="142,14,180,49" href="https://web.archive.org/web/20150724212722/http://www.youtube.com/trendmicroinc" target="_blank" alt="You Tube - Trend Micro">
+  </map>
+
+ 
+ 
+ <style type="text/css">
+.mobiletitle a {
+  display: block;
+  width: 226px;
+  height:45px;
+  margin-top:6px;
+  margin-left:-8px;
+}
+</style>
+ 
+  <div style="margin-bottom:1px; margin-top:5px;">
+<form method="get" id="searchform" action="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/" style="margin:0px 0px 0px 0px; ">
+ <span style="padding-top:10px; margin-bottom:7px; font-weight:600; font-family:Arial, Helvetica, sans-serif; float:left; font-size:13px;"> Search our blog:</span>
+<input type="text" value="" name="s" style="border:2px solid #999; width:156px; margin-top:5px; margin-left:5px;">
+<input name="Submit" type="submit" value=" Go " id="Submit" style="border:1px solid #999;">
+</form>
+
+<br>
+</div>
+
+
+
+
+
+
+
+
+
+<!--<li id="recent-posts-2" class="widget widget_recent_entries">-->
+
+
+				
+
+                	<br>	
+			
+			<li id="text-2" class="widget widget_text"><h2 class="widgettitle">Zero-Day Alerts</h2>			<div class="textwidget"><ul>
+<li><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-leak-uncovers-another-windows-zero-day-ms-releases-patch/"><b>CVE-2015-2426</b>:  Hacking Team Leak Uncovers Another Windows Zero-Day, Fixed In Out-Of-Band Patch</a></li>
+<li><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/gifts-from-hacking-team-continue-ie-zero-day-added-to-mix/"><b>CVE-2015-2425</b>:  "Gifts" From Hacking Team Continue, IE Zero-Day Added to Mix</a></li>
+<li><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/new-zero-day-vulnerability-cve-2015-5123-in-adobe-flash-emerges-from-hacking-team-leak/"><b>CVE-2015-5123</b>: New Zero-Day Vulnerability in Adobe Flash Emerges from Hacking Team Leak</a></li>
+<li><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/pawn-storm-update-trend-micro-discovers-new-java-zero-day-exploit/"><b>CVE-2015-2590</b>: Trend Micro Discovers New Java Zero-Day Exploit Linked to Pawn Storm</a></li>
+<li><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/another-zero-day-vulnerability-arises-from-hacking-team-data-leak/"><b>CVE-2015-5122</b>: Another Zero-Day Vulnerability Arises from Hacking Team Data Leak </a></li>
+<li><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/unpatched-flash-player-flaws-more-pocs-found-in-hacking-team-leak/"><b>CVE-2015-5119</b>: Unpatched Flash Player Flaw, More POCs Found in Hacking Team Leak</a></li>
+</ul>
+<br></div>
+		</li><li id="text-3" class="widget widget_text"><h2 class="widgettitle">Hacking Team Leak</h2>			<div class="textwidget"><ul>
+
+<li>
+<a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/">
+Hacking Team RCSAndroid Spying Tool Listens to Calls; Roots Devices to Get In</a>
+</li>
+<li>
+<a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-leak-uncovers-another-windows-zero-day-ms-releases-patch/">
+Hacking Team Leak Uncovers Another Windows Zero-Day, Fixed In Out-Of-Band Patch</a><a>
+</a></li><a>
+</a><li><a>
+</a><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/fake-news-app-in-hacking-team-dump-designed-to-bypass-google-play/">
+Fake News App in Hacking Team Dump Designed to Bypass Google Play</a>
+</li>
+<li>
+<a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/gifts-from-hacking-team-continue-ie-zero-day-added-to-mix/">
+"Gifts" From Hacking Team Continue, IE Zero-Day Added to Mix</a>
+</li>
+<li>
+<a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-uses-uefi-bios-rootkit-to-keep-rcs-9-agent-in-target-systems/">
+Hacking Team Uses UEFI BIOS Rootkit to Keep RCS 9 Agent in Target Systems</a>
+</li>
+<li>
+<a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/new-zero-day-vulnerability-cve-2015-5123-in-adobe-flash-emerges-from-hacking-team-leak/">
+New Zero-Day Vulnerability (CVE-2015-5123) in Adobe Flash Emerges from Hacking Team Leak</a>
+</li>
+<li>
+<a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/another-zero-day-vulnerability-arises-from-hacking-team-data-leak/">
+Another Zero-Day Vulnerability Arises from Hacking Team Data Leak (CVE-2015-5122)</a>
+</li>
+<li>
+<a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-flash-zero-day-tied-to-attacks-in-korea-and-japan-on-july-1/">
+Hacking Team Flash Zero-Day Tied To Attacks In Korea and Japan… on July 1</a>
+</li>
+<li>
+<a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-flash-zero-day-integrated-into-exploit-kits/">
+Hacking Team Flash Zero-Day Integrated Into Exploit Kits</a>
+</li>
+<li>
+<a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/a-look-at-the-open-type-font-manager-vulnerability-from-the-hacking-team-leak/">
+A Look at the Open Type Font Manager Vulnerability from the Hacking Team Leak</a>
+</li>
+<li>
+<a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/unpatched-flash-player-flaws-more-pocs-found-in-hacking-team-leak/">
+Unpatched Flash Player Flaw, More POCs Found in Hacking Team Leak</a>
+</li>
+</ul>
+<br>
+</div>
+		</li>		<li id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widgettitle">Recent Posts</h2>		<ul>
+					<li>
+				<a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/futurology-a-look-at-impending-threats-to-popular-technologies/">FuTuRology: A Look at Impending Threats to Popular Technologies</a>
+						</li>
+					<li>
+				<a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/windows-10-sharpens-browser-security-with-microsoft-edge/">Windows 10 Sharpens Browser Security With Microsoft Edge</a>
+						</li>
+					<li>
+				<a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/">Hacking Team RCSAndroid Spying Tool Listens to Calls; Roots Devices to Get In</a>
+						</li>
+				</ul>
+		</li><li id="calendar-2" class="widget widget_calendar"><h2 class="widgettitle">Calendar</h2><div id="calendar_wrap"><table id="wp-calendar">
+	<caption>July 2015</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Sunday">S</th>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/2015/06/">« Jun</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="3" class="pad">&nbsp;</td><td><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/2015/07/01/" title="TorrentLocker Surges in the UK, More Social Engineering Lures Seen">1</a></td><td>2</td><td><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/2015/07/03/" title="Defending Critical Systems: Does It Have To Be “Smart”?">3</a></td><td>4</td>
+	</tr>
+	<tr>
+		<td>5</td><td>6</td><td><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/2015/07/07/" title="Unpatched Flash Player Flaw, More POCs Found in Hacking Team Leak, A Look at the OpenType Font Manager Vulnerability from the Hacking Team Leak, Hacking Team Flash Zero-Day Integrated Into Exploit Kits">7</a></td><td><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/2015/07/08/" title="Hacking Team Flash Zero-Day Tied To Attacks In Korea and Japan… on July 1">8</a></td><td><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/2015/07/09/" title="Esthost/Rove Digital Mastermind Pleads Guilty, Faces Six-Year Sentence">9</a></td><td><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/2015/07/10/" title="Are Secure Communications Really Secure? Government Sites Affected by Weak DHE">10</a></td><td><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/2015/07/11/" title="Another Zero-Day Vulnerability Arises from Hacking Team Data Leak, Pawn Storm Update: Trend Micro Discovers New Java Zero-Day Exploit, New Zero-Day Vulnerability (CVE-2015-5123) in Adobe Flash Emerges from Hacking Team Leak">11</a></td>
+	</tr>
+	<tr>
+		<td>12</td><td><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/2015/07/13/" title="The Adobe Flash Conundrum: Old Habits Die Hard, Hacking Team Uses UEFI BIOS Rootkit to Keep RCS 9 Agent in Target Systems">13</a></td><td><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/2015/07/14/" title="Microsoft Ends Support for Windows Server 2003, Migration a Must, “Gifts” From Hacking Team Continue, IE Zero-Day Added to Mix, Oracle Patches Java Zero-Day Used in Operation Pawn Storm, An In-Depth Look at How Pawn Storm’s Java Zero-Day Was Used">14</a></td><td><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/2015/07/15/" title="Hideouts for Lease: The Silent Role of Bulletproof Hosting Services in Cybercriminal Operations, Pawn Storm C&amp;C Redirects to Trend Micro IP Address, July 2015 Patch Tuesday: Microsoft, Adobe, and Oracle Roll out Security Patches for Zero-Day Vulnerabilities">15</a></td><td><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/2015/07/16/" title="OpenSSL CVE-2015-1793: Separating Fact from Hype, New GamaPoS Malware Piggybacks on Andromeda Botnet; Spreads in 13 US States, Fake News App in Hacking Team Dump Designed to Bypass Google Play">16</a></td><td><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/2015/07/17/" title="Analyzing the Pawn Storm Java Zero-Day – Old Techniques Reused">17</a></td><td>18</td>
+	</tr>
+	<tr>
+		<td>19</td><td><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/2015/07/20/" title="Operation Shrouded Horizon: Darkode and its Ties to Bulletproof Hosting Services, Hacking Team Leak Uncovers Another Windows Zero-Day, Fixed In Out-Of-Band Patch">20</a></td><td><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/2015/07/21/" title="Hacking Team RCSAndroid Spying Tool Listens to Calls; Roots Devices to Get In, Windows 10 Sharpens Browser Security With Microsoft Edge">21</a></td><td><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/2015/07/22/" title="FuTuRology: A Look at Impending Threats to Popular Technologies">22</a></td><td>23</td><td id="today">24</td><td>25</td>
+	</tr>
+	<tr>
+		<td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td>
+		<td class="pad" colspan="1">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></li><li id="feedburner-email-subscription-2" class="widget feedburner-email-subscription"><h2 class="widgettitle">Email Subscription</h2><form class="fes fes-default" action="https://web.archive.org/web/20150724212722/http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open( 'http://feedburner.google.com/fb/a/mailverify?uri=Anti-MalwareBlog', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><div class="form-group"><label class="sr-only"><span class="screen-reader-text">Email Subscription</span></label><input class="form-control search-field" type="text" value="Your email here" onfocus="if(this.value=='Your email here')this.value='';" onblur="if(this.value=='')this.value='Your email here'" name="email"></div><button type="submit" class="btn btn-default btn-submit">Subscribe</button><input type="hidden" value="Anti-MalwareBlog" name="uri"><input type="hidden" name="loc" value="en_US"></form></li>		
+<div style="margin-left:-5px;"><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/about-us/"><img src="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/wp-content/themes/TM_2010theme/blogimages2010/about_us.jpg" alt="About Us" border="0"></a>
+</div>	
+	</div>
+    
+    
+<div id="mainContent2010">
+<!--<div id="content" class="content">-->
+<div class="postcontent2010x">
+
+<div class="breadcrumbs">
+    <!-- Breadcrumb NavXT 5.2.2 -->
+<span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" title="Go to blog.trendmicro.com Sites." href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/" class="main-home">blog.trendmicro.com Sites</a></span> &gt; <span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" title="Go to TrendLabs Security Intelligence Blog." href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence" class="home">TrendLabs Security Intelligence Blog</a></span> &gt; <span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" title="Go to the Mobile category archives." href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/category/mobile/" class="taxonomy category">Mobile</a></span> &gt; <span typeof="v:Breadcrumb"><span property="v:title">Hacking Team RCSAndroid Spying Tool Listens to Calls; Roots Devices to Get In</span></span></div>
+
+<strong><br>
+
+                    </strong>
+<style>img {max-width:650px;width: expression(this.width > 650 ? 650: true);border-style:none; behavior: url(/web/20150724212722im_/http://blog.trendmicro.com/trendlabs-security-intelligence/iepngfix.htc); padding-left:5px; padding-right:5px; }</style>	
+		<div class="post" id="post-69109">
+    
+       <span class="postcontent2010"><small>
+				   </small></span>
+            
+                 <div class="headtop">
+              <div class="socialtitlesingle" style="margin-top:-2px;">
+              
+
+
+</div>
+
+		<div> <div class="top_bg_single" style="width:637px">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td width="17" align="left" valign="top"><div class="date-stamp"><span class="ds-row1">Jul</span><span class="ds-row2">21</span></div></td>
+    <td width="521" align="left" valign="top"><div align="left" style="line-height:25px;">
+	  <a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/" rel="bookmark" title="Permanent Link: Hacking Team RCSAndroid Spying Tool Listens to Calls; Roots Devices to Get In"><span class="post_h2_a">Hacking Team RCSAndroid Spying Tool Listens to Calls; Roots Devices to Get In</span></a></div>
+		<div align="left" style="letter-spacing:0px; padding-top:5px;"><small>2:01 am&nbsp;(UTC-7)&nbsp;&nbsp; |  &nbsp;&nbsp;&nbsp;by
+<!--Veo Zhang (Mobile Threats Analyst)--> <a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/author/veozhang/" title="Posts by Veo Zhang (Mobile Threats Analyst)" rel="author">Veo Zhang (Mobile Threats Analyst)</a>        </small></div></td>
+  </tr>
+  </tbody></table>
+</div>
+     </div>    
+        
+        
+        </div>
+        
+   
+		
+
+<!--<br><table width="175" border="0" align="right">
+  <tr align="left" valign="top">
+    <td width="35"><a href="http://twitter.com/share" class="twitter-share-button" data-url="" data-text="" data-count="horizontal">Tweet</a>
+      <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+</td>
+    <td width="130"><iframe src="http://www.facebook.com/plugins/like.php?href=&amp;layout=button_count&amp;show-faces=false&amp;width=150&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:88px; height:21px;" allowTransparency="true"></iframe>
+</td>
+  </tr>
+</table>-->
+
+
+
+	    <div class="postcontent2010">
+		<div class="postcontent2010x">
+		
+		<div style="border-top: 2px solid #CCC; border-bottom: 1px solid #CCC; padding-bottom:2px; padding-top:2px;">
+		 
+          <table width="300" style="padding-top:0px;" border="0" cellspacing="0" cellpadding="0">
+		    <tbody><tr>
+		      <td><table width="100" border="0" cellpadding="2" cellspacing="1">
+		        <tbody><tr>
+		          <td width="17" align="left"><div id="medialink" style="margin-top:10px;">
+
+      <a href="https://web.archive.org/web/20150724212722/http://www.facebook.com/sharer.php?u=http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/" target="_blank" id="fblink" style="text-decoration:none;" rel="0">
+          <img src="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/wp-content/themes/TM_2010theme/blogimages2010/fb.png" style=" vertical-align:middle; margin-top:-10px; ">   
+      </a>
+  
+  </div></td>
+		          <td align="left"><div style="width:133px;padding-top:4px;"><iframe src="https://web.archive.org/web/20150724212722if_/http://www.facebook.com/plugins/like.php?locale=en_US&amp;href=http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/&amp;layout=button_count&amp;show-faces=false&amp;width=83&amp;action=recommend&amp;colorscheme=light" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:133px; height:21px;" allowtransparency="true"></iframe>
+                  
+                  </div></td>
+		          <td width="38" align="left">
+                  
+                  <div style="padding-top:3px; width:100px;"><a href="https://web.archive.org/web/20150724212722/http://twitter.com/share" class="twitter-share-button" data-url="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/" data-text="Hacking Team RCSAndroid Spying Tool Listens to Calls; Roots Devices to Get In" data-count="horizontal">Tweet</a>
+		            <script type="text/javascript" src="https://web.archive.org/web/20150724212722js_/http://platform.twitter.com/widgets.js"></script></div></td>
+		          <td width="112" align="left">
+                  <div style="padding-top:3px;">
+                
+                <!-- Place this tag where you want the +1 button to render -->
+<g:plusone size="medium" href="http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/"></g:plusone>
+
+<!-- Place this tag after the last plusone tag -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://web.archive.org/web/20150724212722/https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+                
+                
+                </div></td>
+                
+                
+                
+                
+                
+              
+                
+                
+		          </tr>
+		        </tbody></table></td>
+		      </tr>
+		    </tbody></table>
+            
+        </div>
+        
+		<p>Following news that <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.scmagazine.com/ios-devices-dont-have-to-be-jailbroken-for-spyware-sold-by-hacking-team-to-be-installed/article/426137/');" href="https://web.archive.org/web/20150724212722/http://www.scmagazine.com/ios-devices-dont-have-to-be-jailbroken-for-spyware-sold-by-hacking-team-to-be-installed/article/426137/">iOS devices are at risk of spyware</a> related to the Hacking Team, the saga continues into the Android sphere. We found that among the leaked files is the code for Hacking Team’s open-source malware suite RCSAndroid (Remote Control System Android), which was sold by the company as a tool for monitoring targets. (Researchers have been aware of this suite <a onclick="javascript:pageTracker._trackPageview('/outgoing/citizenlab.org/2014/06/backdoor-hacking-teams-tradecraft-android-implant/');" href="https://web.archive.org/web/20150724212722/https://citizenlab.org/2014/06/backdoor-hacking-teams-tradecraft-android-implant/">as early as 2014</a>.)</p>
+<p>The RCSAndroid code can be considered one of the most professionally developed and sophisticated Android malware ever exposed. The leak of its code provides cybercriminals with a new weaponized resource for enhancing their surveillance operations.</p>
+<p>Based on the leaked code, the RCSAndroid app can do the following intrusive routines to spy on targets:</p>
+<ul>
+<li>Capture screenshots using the “screencap” command and framebuffer direct reading</li>
+<li>Monitor clipboard content</li>
+<li>Collect passwords for Wi-Fi networks and online acco;.unts, including Skype, Facebook, Twitter, Google, WhatsApp, Mail, and LinkedIn</li>
+<li>Record using the microphone</li>
+<li>Collect SMS, MMS, and Gmail messages</li>
+<li>Record location</li>
+<li>Gather device information</li>
+<li>Capture photos using the front and back cameras</li>
+<li>Collect contacts and decode messages from IM accounts, including Facebook Messenger, WhatsApp, Skype, Viber, Line, WeChat, Hangouts, Telegram, and BlackBerry Messenger.</li>
+<li>Capture real-time voice calls in any network or app by hooking into the “mediaserver” system service</li>
+</ul>
+<p><em><strong>RCSAndroid in the Wild</strong></em></p>
+<p>Our analysis reveals that this RCSAndroid (AndroidOS_RCSAgent.HRX) has been in the wild since 2012. Traces of its previous uses in the wild were found inside the configuration file:</p>
+<ul>
+<li>It was configured to use a Command-and-control (C&amp;C) server in the United States; however, the server was bought from a host service provider and is now unavailable.</li>
+</ul>
+<p align="center"><img src="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/trendlabs-security-intelligence/files/2015/07/RCSAndroid_01.png" alt=""></p>
+<p align="center"><em>Figure 1. C&amp;C host in configuration file</em></p>
+<ul>
+<li>It was configured to activate via SMS sent from a Czech Republic number. Attackers can send SMS with certain messages to activate the agent and trigger corresponding action. This can also define what kind of evidences to collect.</li>
+</ul>
+<p><img class="aligncenter" src="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/trendlabs-security-intelligence/files/2015/07/RCSAndroid_02.png" alt=""></p>
+<p align="center"><em>Figure 2. Czech phone number in configuration file</em></p>
+<ul>
+<li style="text-align: left">Based on emails leaked in the dump, a number of Czech firms appear to be in business with the Hacking team, including a major IT partner in the Olympic Games.</li>
+</ul>
+<p><img class="aligncenter" src="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/trendlabs-security-intelligence/files/2015/07/RCSAndroid_03.png" alt=""></p>
+<p align="center"><em>Figure 3. Upgrading support for a Czech customer</em></p>
+<p><strong>Dropping Cluster Bombs</strong></p>
+<p>RCSAndroid is a threat that works like a cluster bomb in that it deploys multiple dangerous exploits and uses various techniques to easily infect Android devices. While analyzing the code, we found that the whole system consists of four critical components, as follows:</p>
+<ol>
+<li>penetration solutions, ways to get inside the device, either via SMS/email or a legitimate app</li>
+<li>low-level native code, advanced exploits and spy tools beyond Android’s security framework</li>
+<li>high-level Java agent – the app’s malicious APK</li>
+<li>command-and-control (C&amp;C) servers, used to remotely send/receive malicious commands</li>
+</ol>
+<p>Attackers use two methods to get targets to download RCSAndroid.</p>
+<p>The first method is to send a specially crafted URL to the target via SMS or email. The URL will trigger exploits for arbitrary memory read (<a onclick="javascript:pageTracker._trackPageview('/outgoing/cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2825');" href="https://web.archive.org/web/20150724212722/https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2825">CVE-2012-2825</a>) and heap buffer overflow (<a onclick="javascript:pageTracker._trackPageview('/outgoing/cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2871');" href="https://web.archive.org/web/20150724212722/http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2871">CVE-2012-2871</a>) vulnerabilities in the default browsers of Android versions 4.0 Ice Cream Sandwich to 4.3 Jelly Bean, allowing another local privilege escalation exploit to execute. When root privilege is gained, a shell backdoor and malicious RCSAndroid agent APK file will be installed</p>
+<p align="center"><img class="" src="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/trendlabs-security-intelligence/files/2015/07/RCSAndroid_04.png" alt=""></p>
+<p align="center"><em>Figure 4. Remote exploits demonstrated for customers in leaked mails</em></p>
+<p>The second method is to use a stealthy backdoor app such as <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/ANDROIDOS_HTBENEWS.A');" href="https://web.archive.org/web/20150724212722/http://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/ANDROIDOS_HTBENEWS.A">ANDROIDOS_HTBENEWS.A</a>, which was designed to bypass Google Play.</p>
+<p style="text-align: left" align="center">The role of ANDROIDOS_HTBENEWS.A and the malicious APK mentioned in the first method is to exploit a local privilege escalation vulnerability in Android devices. Hacking Team has been known to use both CVE-2014-3153 and CVE-2013-6282 in their attacks. The said exploits will root the device and install a shell backdoor.</p>
+<p align="center"><img class="" src="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/trendlabs-security-intelligence/files/2015/07/RCSAndroid_05.png" alt=""></p>
+<p align="center"><em>Figure 5. Commands list of shell backdoor</em></p>
+<p>The shell backdoor then installs the RCSAndroid agent. This agent has two core modules, the Evidence Collector and the Event Action Trigger.</p>
+<ul>
+<li>The Evidence Collector module is responsible for the spying routines outlined above. One of its most notable routines is capturing voice calls in real time by hooking into the “mediaserver” system service. The basic idea is to hook the voice call process in mediaserver.
+<ul>
+<li>Take voice call playback process for example. The mediaserver will first builds a new unique track, start to play the track, loop play all audio buffer, then finally stop the playback. The raw wave audio buffer frame can be dumped in the getNextBuffer() function. With the help of the open-source <a onclick="javascript:pageTracker._trackPageview('/outgoing/github.com/crmulliner/adbi');" href="https://web.archive.org/web/20150724212722/https://github.com/crmulliner/adbi">Android Dynamic Binary Instrumentation Toolkit</a> and root privilege, it is possible to intercept any function execution.</li>
+</ul>
+</li>
+</ul>
+<p align="center"><img class="" src="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/trendlabs-security-intelligence/files/2015/07/RCSAndroid_06.png" alt=""></p>
+<p align="center"><em>Figure 6. Timing in voice call playback to hook</em></p>
+<ul>
+<li>The Event Action Trigger module triggers malicious actions based on certain events. These events can be based on time, charging or battery status, location, connectivity, running apps, focused app, SIM card status, SMS received with keywords, and screen turning on.
+<ul>
+<li>According to the configuration pattern, these actions are registered to certain events:
+<ol>
+<li>Sync configuration data, upgrade modules, and download new payload (This uses transport protocol ZProtocol encrypted by AES/CBC/PKCS5Padding algorithm to communicate with the C&amp;C server.)</li>
+<li>Upload and purge collected evidence</li>
+<li>Destroy device by resetting locking password</li>
+<li>Execute shell commands</li>
+<li>Send SMS with defined content or location</li>
+<li>Disable network</li>
+<li>Disable root</li>
+<li>Uninstall bot</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: left" align="center">To avoid detection and removal of the agent app in the device memory, the RCSAndroid suite also detects emulators or sandboxes, obfuscates code using DexGuard, uses ELF string obfuscator, and adjusts the OOM (out-of-memory) value. Interestingly, one unused feature of the app is its ability to manipulate data in the Android package manager to add and remove permissions and components as well as hide the app icon.</p>
+<p><em><strong>Recommendations</strong></em></p>
+<p>Popular mobile platforms like Android are common targets for organized or commercialized monitoring operations. Attackers know that rooting devices via malware exploits is an effective means to control devices and gather information from them. In a root broken device, security is a fairy tale.</p>
+<p>Take note of the following best practices to prevent this threat from getting in your device:</p>
+<ul>
+<li>Disable app installations from unknown, third-party sources.</li>
+<li>Constantly update your Android devices to the latest version to help prevent exploits, especially in the case of RCSAndroid which can affect only up to version 4.4.4 KitKat.&nbsp;Note, however, that based on the leak mail from a customer inquiry, Hacking Team was in the process of developing exploits for Android 5.0 Lollipop.</li>
+<li>Install a mobile security solution to secure your device from threats.</li>
+</ul>
+<p>The leaked RCSAndroid code is a commercial weapon now in the wild. Mobile users are called on to be on top of this news and be on guard for signs of monitoring. Some indicators may come in the form of peculiar behavior such as unexpected rebooting, finding unfamiliar apps installed, or instant messaging apps suddenly freezing.</p>
+<p>Should a device become infected, this backdoor cannot be removed without root privilege. Users may be required the help of their device manufacturer to get support for firmware flashing.</p>
+<p>Trend Micro offers security for Android mobile devices through <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.trendmicro.com/us/home/products/mobile-solutions/android-security/');" href="https://web.archive.org/web/20150724212722/http://www.trendmicro.com/us/home/products/mobile-solutions/android-security/">Mobile Security for Android™</a> to protect against these types of attacks. Find out more about the <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.trendmicro.com/vinfo/us/security/news/mobile-safety/7-android-security-hacks-you-need-to-do-right-now');" href="https://web.archive.org/web/20150724212722/http://www.trendmicro.com/vinfo/us/security/news/mobile-safety/7-android-security-hacks-you-need-to-do-right-now">7 Android Security Hacks You Need to Do Right Now</a> to keep your mobile data safe.</p>
+<p><strong><em>Update as of July 23, 2015 1:00 AM PDT (UTC-7)</em></strong></p>
+<p>We have added a link to a previous report discussing this threat.</p>
+<br><br>
+
+
+</div>
+                            <br>
+           <!--   <div class="postnavbottom">
+			  </div>-->
+<br>
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+             <tbody><tr>
+               <td align="left" valign="middle"><div style="color:#F60; font-weight:bold;">Share this article</div></td>
+               <td width="232" rowspan="2" align="right" valign="middle"><a href="https://web.archive.org/web/20150724212722/http://feeds.trendmicro.com/Anti-MalwareBlog/" target="_blank"><img src="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/wp-content/themes/TM_2010theme/blogimages2010/rssindividualpage.jpg" alt="Get the latest on malware protection from TrendLabs" width="229" height="45" border="0"></a></td>
+             </tr>
+             <tr>
+               <td width="369" align="left" valign="middle"><a title="Email this story to a friend" rel="nofollow" href="https://web.archive.org/web/20150724212722/mailto:/?subject=Android Malware Targets China Mobile Subscribers&amp;body=http://blog.trendmicro.com/android-malware-targets-china-mobile-subscribers/" target="_blank"><img title="Email this story to a friend" src="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/wp-content/themes/TM_2010theme/images/icons/email_link.png" alt="Email this story to a friend" border="0"></a>&nbsp;&nbsp; <a title="Technorati" rel="nofollow" href="https://web.archive.org/web/20150724212722/http://technorati.com/faves?add=http://blog.trendmicro.com/android-malware-targets-china-mobile-subscribers/" target="_blank"><img title="Technorati" src="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/wp-content/themes/TM_2010theme/images/icons/technorati.png" alt="Technorati" border="0"></a>&nbsp;&nbsp; <a title="NewsVine" rel="nofollow" target="_blank" href="https://web.archive.org/web/20150724212722/http://www.newsvine.com/_tools/seed&amp;save?u=http://blog.trendmicro.com/android-malware-targets-china-mobile-subscribers/"><img src="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/wp-content/themes/TM_2010theme/images/icons/newsvine.png" title="NewsVine" alt="NewsVine" border="0"></a>&nbsp;&nbsp; <a title="MySpace" rel="nofollow" href="https://web.archive.org/web/20150724212722/http://www.myspace.com/Modules/PostTo/Pages/?u=http://blog.trendmicro.com/android-malware-targets-china-mobile-subscribers/" target="_blank"><img title="MySpace" src="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/wp-content/themes/TM_2010theme/images/icons/myspace.png" alt="MySpace" border="0"></a>&nbsp;&nbsp; <a title="Google" rel="nofollow" href="https://web.archive.org/web/20150724212722/http://www.google.com/bookmarks/mark?op=edit&amp;bkmk=http://blog.trendmicro.com/android-malware-targets-china-mobile-subscribers/" target="_blank"><img title="Google" src="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/wp-content/themes/TM_2010theme/images/icons/googlebookmark.png" alt="Google" border="0"></a>&nbsp;&nbsp; <a title="Live" rel="nofollow" href="https://web.archive.org/web/20150724212722/https:/favorites.live.com/quickadd.aspx?marklet=1&amp;url=http://blog.trendmicro.com/android-malware-targets-china-mobile-subscribers/" target="_blank"><img title="Live" src="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/wp-content/themes/TM_2010theme/images/icons/live.png" alt="Live" border="0"></a>&nbsp;&nbsp; <a title="del.icio.us" rel="nofollow" href="https://web.archive.org/web/20150724212722/http://del.icio.us/post?url=http://blog.trendmicro.com/android-malware-targets-china-mobile-subscribers/" target="_blank"><img title="del.icio.us" src="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/wp-content/themes/TM_2010theme/images/icons/delicious.png" alt="del.icio.us" border="0"></a>&nbsp;&nbsp; <a title="StumbleUpon" rel="nofollow" href="https://web.archive.org/web/20150724212722/http://www.stumbleupon.com/submit?url=http://blog.trendmicro.com/android-malware-targets-china-mobile-subscribers/" target="_blank"><img title="StumbleUpon" src="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/wp-content/themes/TM_2010theme/images/icons/stumbleupon.png" alt="StumbleUpon" border="0"></a></td>
+            </tr>
+          </tbody></table>
+ 
+ <br><br>
+
+
+              <p class="postmetadata alt"><small><br>
+              This entry was posted
+			    			    on 
+			    Tuesday, July 21st, 2015 
+			    at 
+			    2:01 am			    and is filed under 
+			    <a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/category/mobile/" rel="category tag">Mobile</a>			    .
+			    
+			    
+			    			    You can <a href="#respond">leave a response</a>, or <a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/trackback/" rel="trackback">trackback</a> from your own site.
+			    
+			    			    
+		      </small>		      </p>
+	  </div></div>	<br>
+	<br>
+	
+<div id="disqus_thread">
+    </div>
+
+<script type="text/javascript">
+var disqus_url = 'https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-rcsandroid-spying-tool-listens-to-calls-roots-devices-to-get-in/';
+var disqus_identifier = '69109 http://blog.trendmicro.com/trendlabs-security-intelligence/?p=69109';
+var disqus_container_id = 'disqus_thread';
+var disqus_shortname = 'trendlabs';
+var disqus_title = "Hacking Team RCSAndroid Spying Tool Listens to Calls; Roots Devices to Get In";
+var disqus_config_custom = window.disqus_config;
+var disqus_config = function () {
+    /*
+    All currently supported events:
+    onReady: fires when everything is ready,
+    onNewComment: fires when a new comment is posted,
+    onIdentify: fires when user is authenticated
+    */
+    
+    
+    this.language = '';
+        this.callbacks.onReady.push(function () {
+
+        // sync comments in the background so we don't block the page
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = '?cf_action=sync_comments&post_id=69109';
+
+        var firstScript = document.getElementsByTagName('script')[0];
+        firstScript.parentNode.insertBefore(script, firstScript);
+    });
+    
+    if (disqus_config_custom) {
+        disqus_config_custom.call(this);
+    }
+};
+
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+
+
+	
+	</div>
+<br>
+<div class="postnavtop">
+ <div class="alignleftarrow"></div> <div class="alignleft"><span class="stylenav" style="color:#F00"> <a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/windows-10-sharpens-browser-security-with-microsoft-edge/" rel="next">Windows 10 Sharpens Browser Security With Microsoft Edge</a> </span>
+            
+                   
+                </div>
+               <div class="alignrightarrow"></div>   <div class="alignright" align="right"><span class="stylenav" style="color:#F00"> <a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-team-leak-uncovers-another-windows-zero-day-ms-releases-patch/" rel="prev">Hacking Team Leak Uncovers Another Windows Zero-Day, Fixed In Out-Of-Band Patch</a> </span></div>
+			   
+</div>
+</div>
+	<!--<div class="separator">
+	</div>-->
+<!--	<div id="sidebar">
+		
+	</div>-->
+
+  <!-- links footer -->
+<br class="clearfloat">
+  <div id="footer2010">
+    <p>&nbsp;</p>
+  <!-- end #footer --></div></div>	
+<div class="bottomtopsection">
+<div id="bottomtopinsidesection"> </div>
+</div>
+
+
+<div class="bottomlinksection" style="height:365px;">
+
+<div id="bottomlinkinsidesection" align="left" style="height:365px;"> 
+<!-- inside links footer -->
+
+<!-- inside tweets -->
+<div class="latesttweets">
+<!--<div class="linktitle" align="left" >Latest Tweets</div>-->
+<!--<div class="latestTweetscontent" align="left" >
+   <ul>
+     <li><a href="#">Protecting Your Router Against Possible DNS Rebinding Attacks</a></li>
+     <li>       <a href="#">LNK Vulnerability Fixed in Out-of-Cycle Patch</a></li>
+     <li>       <a href="#">KOOBFACE Gang Now Tracking Visitors</a></li>
+     <li><a href="#">       QuickTime Player Allows Movie Files to Trigger Malware Download</a></li>
+     <li><a href="#">       A Look at ZBOT 2.0 Information Theft</a></li>
+   </ul>
+ </div>-->
+<script src="https://web.archive.org/web/20150724212722js_/http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 2,
+  interval: 6000,
+  width: 210,
+  height: 30,
+  theme: {
+    shell: {
+      background: '#333333',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#000000',
+      color: '#ffffff',
+      links: '#4aed05'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: false,
+    live: false,
+    hashtags: true,
+    timestamp: true,
+    avatars: false,
+    behavior: 'all'
+  }
+}).render().setUser('trendlabs').start();
+</script>
+</div>
+<!--end inside tweets -->
+<div class="dividerbottom" style="height:360px;"></div>
+<!-- inside other blogs -->
+<div class="otherblogs" style="margin-left:260px;">
+<div class="linktitle" align="left">Other Trend Micro blogs</div>
+<div align="center" style="padding-top:3px; padding-left:6px;">
+<div class="blogs" align="left"><a href="https://web.archive.org/web/20150724212722/http://ctoinsights.trendmicro.com/" target="_blank">CTO Insights</a></div>
+
+<div class="blogs" align="left"><a href="https://web.archive.org/web/20150724212722/http://countermeasures.trendmicro.eu/" target="_blank">CounterMeasures Blog  </a></div>
+
+<div class="blogs" align="left"><a href="https://web.archive.org/web/20150724212722/http://cloudsecurity.trendmicro.com/" target="_blank">Cloud Security Blog </a></div>
+
+<div class="blogs" align="left"><a href="https://web.archive.org/web/20150724212722/http://consumerization.trendmicro.com/" target="_blank">Consumerization Blog  </a></div>
+
+
+<div class="blogs" align="left"><a href="https://web.archive.org/web/20150724212722/http://fearlessweb.trendmicro.com/" target="_blank">Fearless Web</a></div>
+
+<div class="blogs" align="left"><a href="https://web.archive.org/web/20150724212722/http://internetsafety.trendmicro.com/" target="_blank">Internet Safety for Kids &amp; Families</a></div>
+
+<div class="blogs" align="left"><a href="https://web.archive.org/web/20150724212722/http://www.simplysecurity.com/" target="_blank">Simply Security News</a></div>
+
+
+<div class="blogs" align="left"><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.de/" target="_blank">Trend Micro Blog [German]</a></div>
+
+<div class="blogs" align="left"><a href="https://web.archive.org/web/20150724212722/http://blog.trendmicro.co.jp/" target="_blank">TrendLabs Security Blog [Japan]</a></div>
+
+<div class="blogs" align="left"><a href="https://web.archive.org/web/20150724212722/http://cloudsecurity-apac.trendmicro.com/" target="_blank">Cloud Security APAC</a></div>
+
+</div>
+</div>
+<!-- end inside other blogs -->
+
+<div class="dividerbottom2" style="height:360px;"></div>
+
+<!-- links -->
+
+<div style="width:465px; height:289px; background-repeat:repeat-y;0; position:absolute; margin-left:480px;">
+
+<div style="height:200px;" class="linksfooter">
+<table width="448" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td width="148" height="195" align="right" valign="bottom"><a href="https://web.archive.org/web/20150724212722/http://free.antivirus.com/" target="_blank"><img src="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/wp-content/themes/TM_2010theme/blogimages2010/freetools.jpg" alt="Trend Micro Free Tools" width="140" height="192" border="0"></a></td>
+    <td width="149" align="right" valign="bottom"><a href="https://web.archive.org/web/20150724212722/http://about-threats.trendmicro.com/" target="_blank"><img src="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/wp-content/themes/TM_2010theme/blogimages2010/TE.jpg" alt="Threat Encyclopedia" width="140" height="192" border="0"></a></td>
+    <td width="151" align="right" valign="bottom"><a href="https://web.archive.org/web/20150724212722/http://us.trendmicro.com/us/trendwatch/research-and-analysis/white-papers-and-articles/index.html" target="_blank"><img src="https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/wp-content/themes/TM_2010theme/blogimages2010/Whitepapers.jpg" alt="Trend Micro Videos" width="140" height="192" border="0"></a></td>
+  </tr>
+</tbody></table>
+</div>
+<div style="height:2px; background-image:url(https://web.archive.org/web/20150724212722im_/http://blog.trendmicro.com/wp-content/themes/TM_2010theme/blogimages2010/hor_divider.jpg); background-repeat:repeat-x; margin-left:5px; margin-bottom:15px;"></div>
+<div style="height:90px; margin-left:5px;" class="linksfooter" align="left">
+  <table width="430" border="0" align="center">
+    <tbody><tr>
+      <td width="216" height="58" valign="top">Do you have a product-related question? <a href="https://web.archive.org/web/20150724212722/http://esupport.trendmicro.com/default.aspx" title="eSupport" target="_blank">Visit our eSupport website. </a></td>
+      <td width="204" valign="top"><!--&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Submit suspicious files here</a>--><br>
+        <br>
+       
+    </td></tr>
+  </tbody></table>
+</div>
+
+ 
+
+</div>
+
+<!-- end links-->
+
+
+
+<!-- end inside links footer -->
+
+</div>
+</div>
+
+  <!-- end links footer -->
+
+
+  <!-- copyright footer -->
+<div id="bottomfooter">
+<div class="bottomcopyright" align="center"> 
+  <p>© Copyright 2013 Trend Micro Inc. All rights reserved. <a href="https://web.archive.org/web/20150724212722/http://www.trendmicro.com/us/about-us/legal-policies/legal-notice/index.html">Legal Notice</a></p>    </div>
+</div>
+<!-- end copyright footer -->
+   
+
+<!-- Start Quantcast tag -->
+<script type="text/javascript">
+_qoptions={
+qacct:"p-88yo-3lmt3UHI"
+};
+</script>
+<script type="text/javascript" src="https://web.archive.org/web/20150724212722js_/http://edge.quantserve.com/quant.js"></script>
+<noscript>
+<img src="https://web.archive.org/web/20150724212722im_/http://pixel.quantserve.com/pixel/p-88yo-3lmt3UHI.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast">
+</noscript>
+<!-- End Quantcast tag --> 
+        <script type="text/javascript">
+        // <![CDATA[
+        var disqus_shortname = 'trendlabs';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1) {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('data-dsqidentifier'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script'); 
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        // ]]>
+        </script>
+        <script type="text/javascript">
+    (function(a,b,c,d){
+    a='//web.archive.org/web/20150724212722/http://tags.tiqcdn.com/utag/trendmicro/nabu/prod/utag.js';
+    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+    })();
+</script>
+<!-- tracker added by Ultimate Google Analytics plugin v1.6.0: http://www.oratransplant.nl/uga -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://web.archive.org/web/20150724212722/https://ssl." : "https://web.archive.org/web/20150724212722/http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-137644-6");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<script src="//web.archive.org/web/20150724212722js_/http://libs.coremetrics.com/eluminate.js"></script><script>cmSetClientID('90369712',false,'analytics.trendmicro.com','blog.trendmicro.com');</script>
+                    <script type="text/javascript">
+                       cmCreatePageviewTag("  Hacking Team RCSAndroid Spying Tool Listens to Calls; Roots Devices to Get In - MalwareBlog","MalwareBlog-Post",null,null,'');
+                    </script>
+                    
+
+
+ 
+</body></html>

@@ -1,0 +1,523 @@
+{
+    "type": "bundle",
+    "id": "bundle--5adf9033-96d8-43f9-b083-fa57a32d9eda",
+    "objects": [
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--c9c6a85e-583d-48d1-86cf-72b83db6841a",
+            "created": "2025-01-14T14:37:30.352892Z",
+            "modified": "2025-01-14T14:37:30.352892Z",
+            "relationship_type": "has",
+            "source_ref": "identity--fe4b9ab7-1e01-4ae2-a28c-e0b44822ef37",
+            "target_ref": "software--4988f559-481c-5c02-ab03-db9717a5c05f"
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--fe4b9ab7-1e01-4ae2-a28c-e0b44822ef37",
+            "created": "2025-01-14T14:37:30.347892Z",
+            "modified": "2025-01-14T14:37:30.347892Z",
+            "name": "Google"
+        },
+        {
+            "type": "software",
+            "spec_version": "2.1",
+            "id": "software--4988f559-481c-5c02-ab03-db9717a5c05f",
+            "name": "Android"
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--fe4b9ab7-1e01-4ae2-a28c-e0b44822ef37",
+            "created": "2025-01-14T14:37:30.347892Z",
+            "modified": "2025-01-14T14:37:30.347892Z",
+            "name": "Google"
+        },
+        {
+            "type": "software",
+            "spec_version": "2.1",
+            "id": "software--4988f559-481c-5c02-ab03-db9717a5c05f",
+            "name": "Android"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--f9605f5e-4bb5-443c-b069-db98de4dcee9",
+            "created": "2025-01-14T14:37:30.352892Z",
+            "modified": "2025-01-14T14:37:30.352892Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "target_ref": "attack-pattern--d49184d0-ce41-4892-bee2-9db284985931"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "created": "2025-01-14T14:37:30.348892Z",
+            "modified": "2025-01-14T14:37:30.348892Z",
+            "name": "Anubis",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--d49184d0-ce41-4892-bee2-9db284985931",
+            "created": "2025-01-14T14:37:30.349892Z",
+            "modified": "2025-01-14T14:37:30.349892Z",
+            "name": "Logs When Victims Look at Their Screens"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--f6fe1134-15df-46ec-b7c2-93feb7207bed",
+            "created": "2025-01-14T14:37:30.353893Z",
+            "modified": "2025-01-14T14:37:30.353893Z",
+            "relationship_type": "targets",
+            "source_ref": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "target_ref": "software--4988f559-481c-5c02-ab03-db9717a5c05f"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "created": "2025-01-14T14:37:30.348892Z",
+            "modified": "2025-01-14T14:37:30.348892Z",
+            "name": "Anubis",
+            "is_family": false
+        },
+        {
+            "type": "software",
+            "spec_version": "2.1",
+            "id": "software--4988f559-481c-5c02-ab03-db9717a5c05f",
+            "name": "Android"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "created": "2025-01-14T14:37:30.348892Z",
+            "modified": "2025-01-14T14:37:30.348892Z",
+            "name": "Anubis",
+            "is_family": false
+        },
+        {
+            "type": "software",
+            "spec_version": "2.1",
+            "id": "software--4988f559-481c-5c02-ab03-db9717a5c05f",
+            "name": "Android"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--256b42bf-8c80-4ae1-aa3e-c6936a797c2b",
+            "created": "2025-01-14T14:37:30.353893Z",
+            "modified": "2025-01-14T14:37:30.353893Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "target_ref": "attack-pattern--1b4e2a77-2201-44f6-96fb-aac4582ab9fb"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "created": "2025-01-14T14:37:30.348892Z",
+            "modified": "2025-01-14T14:37:30.348892Z",
+            "name": "Anubis",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--1b4e2a77-2201-44f6-96fb-aac4582ab9fb",
+            "created": "2025-01-14T14:37:30.350892Z",
+            "modified": "2025-01-14T14:37:30.350892Z",
+            "name": "identify if a victim is looking at his or her screen"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--0a3939d7-9d2c-4b10-a908-650190028aae",
+            "created": "2025-01-14T14:37:30.353893Z",
+            "modified": "2025-01-14T14:37:30.353893Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "target_ref": "attack-pattern--54e2590c-69b7-42e2-8a02-8f135aebee5a"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "created": "2025-01-14T14:37:30.348892Z",
+            "modified": "2025-01-14T14:37:30.348892Z",
+            "name": "Anubis",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--54e2590c-69b7-42e2-8a02-8f135aebee5a",
+            "created": "2025-01-14T14:37:30.351893Z",
+            "modified": "2025-01-14T14:37:30.351893Z",
+            "name": "show the location of infected devices"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--2bc27f17-c4cb-4fa5-bc12-2dce205549bf",
+            "created": "2025-01-14T14:37:30.353893Z",
+            "modified": "2025-01-14T14:37:30.353893Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "target_ref": "software--75a291b9-2434-5773-956e-2ace4f162322"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "created": "2025-01-14T14:37:30.348892Z",
+            "modified": "2025-01-14T14:37:30.348892Z",
+            "name": "Anubis",
+            "is_family": false
+        },
+        {
+            "type": "software",
+            "spec_version": "2.1",
+            "id": "software--75a291b9-2434-5773-956e-2ace4f162322",
+            "name": "Yandex maps"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--c5783d00-b8eb-4273-ad79-041b3bf2ee24",
+            "created": "2025-01-14T14:37:30.353893Z",
+            "modified": "2025-01-14T14:37:30.353893Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "target_ref": "attack-pattern--e3cf8c7e-9b07-4c72-a49f-6844ed775e23"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "created": "2025-01-14T14:37:30.348892Z",
+            "modified": "2025-01-14T14:37:30.348892Z",
+            "name": "Anubis",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--e3cf8c7e-9b07-4c72-a49f-6844ed775e23",
+            "created": "2025-01-14T14:37:30.351893Z",
+            "modified": "2025-01-14T14:37:30.351893Z",
+            "name": "steal user credentials"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "created": "2025-01-14T14:37:30.348892Z",
+            "modified": "2025-01-14T14:37:30.348892Z",
+            "name": "Anubis",
+            "is_family": false
+        },
+        {
+            "type": "software",
+            "spec_version": "2.1",
+            "id": "software--4988f559-481c-5c02-ab03-db9717a5c05f",
+            "name": "Android"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--71955811-6b21-49df-a8b9-bbf425f3b7bd",
+            "created": "2025-01-14T14:37:30.353893Z",
+            "modified": "2025-01-14T14:37:30.353893Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "target_ref": "attack-pattern--05b7b81a-3d31-47cd-9fa8-816c0e5a1910"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "created": "2025-01-14T14:37:30.348892Z",
+            "modified": "2025-01-14T14:37:30.348892Z",
+            "name": "Anubis",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--05b7b81a-3d31-47cd-9fa8-816c0e5a1910",
+            "created": "2025-01-14T14:37:30.351893Z",
+            "modified": "2025-01-14T14:37:30.351893Z",
+            "name": "install a keylogger"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--765cd038-be15-46b1-8a3d-569cd51ec508",
+            "created": "2025-01-14T14:37:30.354894Z",
+            "modified": "2025-01-14T14:37:30.354894Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "target_ref": "attack-pattern--b28fb4e7-143d-4bf3-80d5-735f7ceac4e3"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "created": "2025-01-14T14:37:30.348892Z",
+            "modified": "2025-01-14T14:37:30.348892Z",
+            "name": "Anubis",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--b28fb4e7-143d-4bf3-80d5-735f7ceac4e3",
+            "created": "2025-01-14T14:37:30.351893Z",
+            "modified": "2025-01-14T14:37:30.351893Z",
+            "name": "hold a device\u2019s data for ransom"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--6f51979b-c8e8-4aec-8158-647469171a40",
+            "created": "2025-01-14T14:37:30.354894Z",
+            "modified": "2025-01-14T14:37:30.354894Z",
+            "relationship_type": "targets",
+            "source_ref": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "target_ref": "software--9068e220-47a3-519d-8cf5-704ea145a01b"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "created": "2025-01-14T14:37:30.348892Z",
+            "modified": "2025-01-14T14:37:30.348892Z",
+            "name": "Anubis",
+            "is_family": false
+        },
+        {
+            "type": "software",
+            "spec_version": "2.1",
+            "id": "software--9068e220-47a3-519d-8cf5-704ea145a01b",
+            "name": "financial and banking apps"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--b016bb79-6c0a-4f7f-bb15-edcc02ac5f6e",
+            "created": "2025-01-14T14:37:30.354894Z",
+            "modified": "2025-01-14T14:37:30.354894Z",
+            "relationship_type": "targets",
+            "source_ref": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "target_ref": "software--3b7760bc-d70e-541d-ab83-18e79497932d"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "created": "2025-01-14T14:37:30.348892Z",
+            "modified": "2025-01-14T14:37:30.348892Z",
+            "name": "Anubis",
+            "is_family": false
+        },
+        {
+            "type": "software",
+            "spec_version": "2.1",
+            "id": "software--3b7760bc-d70e-541d-ab83-18e79497932d",
+            "name": "financial apps"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "created": "2025-01-14T14:37:30.348892Z",
+            "modified": "2025-01-14T14:37:30.348892Z",
+            "name": "Anubis",
+            "is_family": false
+        },
+        {
+            "type": "software",
+            "spec_version": "2.1",
+            "id": "software--4988f559-481c-5c02-ab03-db9717a5c05f",
+            "name": "Android"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--a98b0551-83e1-4011-9639-6c3d65074ee2",
+            "created": "2025-01-14T14:37:30.354894Z",
+            "modified": "2025-01-14T14:37:30.354894Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--2c3c5723-93ef-4077-a211-90d2a7f233bd",
+            "target_ref": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--2c3c5723-93ef-4077-a211-90d2a7f233bd",
+            "created": "2025-01-14T14:37:30.349892Z",
+            "modified": "2025-01-14T14:37:30.349892Z",
+            "name": "Currency Converter",
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "created": "2025-01-14T14:37:30.348892Z",
+            "modified": "2025-01-14T14:37:30.348892Z",
+            "name": "Anubis",
+            "is_family": false
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--fe4b9ab7-1e01-4ae2-a28c-e0b44822ef37",
+            "created": "2025-01-14T14:37:30.347892Z",
+            "modified": "2025-01-14T14:37:30.347892Z",
+            "name": "Google"
+        },
+        {
+            "type": "software",
+            "spec_version": "2.1",
+            "id": "software--4988f559-481c-5c02-ab03-db9717a5c05f",
+            "name": "Android"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--fd5e9353-01cf-466c-a65f-683b7df08bd6",
+            "created": "2025-01-14T14:37:30.354894Z",
+            "modified": "2025-01-14T14:37:30.354894Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "target_ref": "attack-pattern--b3e0726b-fb0f-4db3-9963-c8ddcf22068a"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "created": "2025-01-14T14:37:30.348892Z",
+            "modified": "2025-01-14T14:37:30.348892Z",
+            "name": "Anubis",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--b3e0726b-fb0f-4db3-9963-c8ddcf22068a",
+            "created": "2025-01-14T14:37:30.350892Z",
+            "modified": "2025-01-14T14:37:30.350892Z",
+            "name": "small eyeball icon included in the control panel that can be used to recognize whether a user of a device with Anubis installed is looking at the device or not"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--f8f733dc-db14-40d0-9213-30df969685fc",
+            "created": "2025-01-14T14:37:30.354894Z",
+            "modified": "2025-01-14T14:37:30.354894Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "target_ref": "attack-pattern--60f2b2d7-ee14-415a-a00e-b9eab370bba2"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "created": "2025-01-14T14:37:30.348892Z",
+            "modified": "2025-01-14T14:37:30.348892Z",
+            "name": "Anubis",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--60f2b2d7-ee14-415a-a00e-b9eab370bba2",
+            "created": "2025-01-14T14:37:30.350892Z",
+            "modified": "2025-01-14T14:37:30.350892Z",
+            "name": "attacker won\u2019t perform any nefarious activity on the device while the person is looking at it"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--fd6966f7-c688-414a-8bb4-1409461e8575",
+            "created": "2025-01-14T14:37:30.354894Z",
+            "modified": "2025-01-14T14:37:30.354894Z",
+            "relationship_type": "has",
+            "source_ref": "software--ad80682f-34cd-5c17-a50e-5ade47cc2f3c",
+            "target_ref": "software--4988f559-481c-5c02-ab03-db9717a5c05f"
+        },
+        {
+            "type": "software",
+            "spec_version": "2.1",
+            "id": "software--ad80682f-34cd-5c17-a50e-5ade47cc2f3c",
+            "name": "Google Play Stor"
+        },
+        {
+            "type": "software",
+            "spec_version": "2.1",
+            "id": "software--4988f559-481c-5c02-ab03-db9717a5c05f",
+            "name": "Android"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--791633bc-a2de-47d0-a249-70550e38067a",
+            "created": "2025-01-14T14:37:30.355893Z",
+            "modified": "2025-01-14T14:37:30.355893Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--8d93a1a3-6dc0-46f9-9d9b-403f67b999e5",
+            "target_ref": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--8d93a1a3-6dc0-46f9-9d9b-403f67b999e5",
+            "created": "2025-01-14T14:37:30.352892Z",
+            "modified": "2025-01-14T14:37:30.352892Z",
+            "name": "BatterySaverMobo",
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--4fb808a5-8e0f-490f-a2d2-dc7184105e39",
+            "created": "2025-01-14T14:37:30.348892Z",
+            "modified": "2025-01-14T14:37:30.348892Z",
+            "name": "Anubis",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--14839d24-8551-4325-82f5-5201dd50a2d4",
+            "created": "2025-01-14T14:37:30.355893Z",
+            "modified": "2025-01-14T14:37:30.355893Z",
+            "relationship_type": "has",
+            "source_ref": "identity--60016339-45e3-43ac-9bb9-01f782543a0e",
+            "target_ref": "identity--a1c3d679-b021-47c0-bcff-92b588c9e29d"
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--60016339-45e3-43ac-9bb9-01f782543a0e",
+            "created": "2025-01-14T14:37:30.352892Z",
+            "modified": "2025-01-14T14:37:30.352892Z",
+            "name": "IBM"
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--a1c3d679-b021-47c0-bcff-92b588c9e29d",
+            "created": "2025-01-14T14:37:30.349892Z",
+            "modified": "2025-01-14T14:37:30.349892Z",
+            "name": "X-Force"
+        }
+    ]
+}

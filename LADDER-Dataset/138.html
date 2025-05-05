@@ -1,0 +1,877 @@
+<html lang="en-US"><head>
+	<meta charset="utf-8">
+	<title>Meet Monokle, an Android Malware Family Capable of Stealing and Changing Passwords</title>
+	<meta name="description" content="Special Technology Center (STC) is a software development company based in Saint Petersburg, Russia, and the American Government hasn't been...">
+	<meta name="keywords" content="meet monokle, an android malware family capable of stealing and changing passwords, cyclonis">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+							<link rel="alternate" type="application/rss+xml" title="Cyclonis RSS Feed" href="/feed/">
+		<link rel="icon" sizes="192x192" href="/wp-content/themes/default/images/main/favicon.png?v=2">
+
+	<!-- web fonts -->
+	<script>
+		if(/^$|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Android.*Lighthouse/i.test(navigator.userAgent)==false){
+			var link = document.createElement("link");
+			link.href = "https://use.typekit.net/ddt6yri.css";
+			link.rel = "stylesheet";
+			document.getElementsByTagName( "head" )[0].appendChild( link );
+		}
+	</script>
+
+		<meta name="robots" content="max-image-preview:large">
+
+	<!-- This site is optimized with the Yoast SEO plugin v15.8 - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Meet Monokle, an Android Malware Family Capable of Stealing and Changing Passwords - Cyclonis">
+	<meta property="og:description" content="Special Technology Center (STC) is a software development company based in Saint Petersburg, Russia, and the American Government hasn't been particularly happy with it. In 2016, Barack Obama imposed sanctions on STC...">
+	<meta property="og:url" content="https://cyclonis.com/meet-monokle-android-malware-capable-stealing-changing-passwords/">
+	<meta property="og:site_name" content="Cyclonis">
+	<meta property="article:published_time" content="2019-07-29T13:26:34+00:00">
+	<meta property="article:modified_time" content="2020-07-01T15:48:07+00:00">
+	<meta property="og:image" content="https://www.cyclonis.com/images/2019/07/monokle-android-malware.jpg">
+	<meta property="og:image:width" content="800">
+	<meta property="og:image:height" content="400">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:label1" content="Written by">
+	<meta name="twitter:data1" content="Duran">
+	<meta name="twitter:label2" content="Est. reading time">
+	<meta name="twitter:data2" content="4 minutes">
+	<!-- / Yoast SEO plugin. -->
+
+
+<style id="classic-theme-styles-inline-css" type="text/css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<style id="ez-toc-exclude-toggle-css-inline-css" type="text/css">
+#ez-toc-container input[type="checkbox"]:checked + nav, #ez-toc-widget-container input[type="checkbox"]:checked + nav {opacity: 0;max-height: 0;border: none;display: none;}
+</style>
+<style id="kadence-blocks-global-variables-inline-css" type="text/css">
+:root {--global-kb-font-size-sm:clamp(0.8rem, 0.73rem + 0.217vw, 0.9rem);--global-kb-font-size-md:clamp(1.1rem, 0.995rem + 0.326vw, 1.25rem);--global-kb-font-size-lg:clamp(1.75rem, 1.576rem + 0.543vw, 2rem);--global-kb-font-size-xl:clamp(2.25rem, 1.728rem + 1.63vw, 3rem);--global-kb-font-size-xxl:clamp(2.5rem, 1.456rem + 3.26vw, 4rem);--global-kb-font-size-xxxl:clamp(2.75rem, 0.489rem + 7.065vw, 6rem);}:root {--global-palette1: #3182CE;--global-palette2: #2B6CB0;--global-palette3: #1A202C;--global-palette4: #2D3748;--global-palette5: #4A5568;--global-palette6: #718096;--global-palette7: #EDF2F7;--global-palette8: #F7FAFC;--global-palette9: #ffffff;}
+</style>
+<link rel="shortlink" href="/?p=23128">
+<script>var eproducts_config = '{\"sbs_id\":\"\",\"sbs_alias_id\":\"\",\"sbs_alias_name\":\"\",\"app_name\":\"Meet Monokle, an Android Malware Family Capable of Stealing and Changing Passwords\"}';</script>
+<script>var exit_popup_config = '{\"categories\":[29,25],\"category_name\":\"Android Malware\",\"title\":\"Meet Monokle, an Android Malware Family Capable of Stealing and Changing Passwords\"}';</script>
+<script>var adrotate_config = '{\"type\":\"single\",\"categories\":[29,25],\"category_name\":\"Android Malware\",\"term_ids\":[],\"term_name\":\"\",\"tags\":[],\"page_id\":23128,\"custom_ads\":[],\"app_name\":\"\",\"show_ads\":true}';</script>
+<link rel="alternate" hreflang="en" href="/meet-monokle-android-malware-capable-stealing-changing-passwords/">
+<link rel="alternate" hreflang="de" href="/de/lernen-sie-monokle-kennen-eine-android-malware-familie-die-kennworter-stehlen-und-andern-kann/">
+<link rel="alternate" hreflang="fr" href="/fr/decouvrez-monokle-famille-logiciels-malveillants-android-capable-voler-modifier-les-mots-passe/">
+<link rel="alternate" hreflang="it" href="/it/scopri-monokle-una-famiglia-di-malware-android-in-grado-di-rubare-e-modificare-le-password/">
+<link rel="alternate" hreflang="pt" href="/pt/conheca-monokle-uma-familia-de-malware-android-capaz-de-roubar-e-alterar-senhas/">
+<link rel="alternate" hreflang="es" href="/es/conoce-a-monokle-una-familia-de-malware-de-android-capaz-de-robar-y-cambiar-contrasenas/">
+<link rel="alternate" hreflang="zh-hans" href="/zh-hans/meet-monokle-android-malware-capable-stealing-changing-passwords/">
+<link rel="alternate" hreflang="zh-hant" href="/zh-hant/meet-monokle-android-malware-capable-stealing-changing-passwords/">
+		<link rel="dns-prefetch" href="https://www.google-analytics.com">
+	<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+	<link href="https://www.google-analytics.com" rel="preconnect" crossorigin="">
+	<link href="https://www.googletagmanager.com" rel="preconnect" crossorigin="">
+	<script>
+	if(/^$|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Android.*Lighthouse/i.test(navigator.userAgent)==false){
+		//GTM
+		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-NBRCHSV');
+	}
+	else{
+		let trackingID = 'G-GGXRJ88RM6';
+		let gaScript = document.createElement('script');
+		gaScript.setAttribute('async', 'true');
+		gaScript.setAttribute('src', `https://www.googletagmanager.com/gtag/js?id=${ trackingID }`);
+		let gaScript2 = document.createElement('script');
+		gaScript2.innerText = `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag(\'js\', new Date());gtag(\'config\', \'${ trackingID }\');`;
+		document.documentElement.firstChild.appendChild(gaScript);
+		document.documentElement.firstChild.appendChild(gaScript2);
+	}
+	</script>
+	<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/default/css/bundle.css?1708346373">
+<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/default/css/pages/blog.css?1708346362" data-nobundle="1">
+</head>
+<body class="post-template-default single single-post postid-23128 single-format-standard en category-android-malware category-threats">
+
+	<div class="section shadow grey">
+		<div class="content leaderboard">
+			<div class="rotatead-container" data-group="Post header" data-title=""></div>		</div>
+	</div>
+
+<div class="section section-single-post">
+	<div class="wrapper">
+		<div class="content narrow entry-content">
+							<h1>
+					Meet Monokle, an Android Malware Family Capable of Stealing and Changing Passwords				</h1>
+				<div class="text-extra-container">
+					<div class="text">
+						<img width="765" height="383" src="https://www.cyclonis.com/images/2019/07/monokle-android-malware-765x383.jpg" class="featured wp-post-image" alt="Monokle Android malware" decoding="async" fetchpriority="high" srcset="https://www.cyclonis.com/images/2019/07/monokle-android-malware-765x383.jpg 765w, https://www.cyclonis.com/images/2019/07/monokle-android-malware-360x180.jpg 360w, https://www.cyclonis.com/images/2019/07/monokle-android-malware-768x384.jpg 768w, https://www.cyclonis.com/images/2019/07/monokle-android-malware.jpg 800w" sizes="(max-width: 765px) 100vw, 765px">
+						<div class="rotatead-container" data-group="location:before_content" data-title=""></div><p>Special Technology Center (STC) is a software development company based in Saint Petersburg, Russia, and the American Government hasn't been particularly happy with it. In 2016, Barack Obama imposed sanctions on STC because his administration believed that it was one of the three companies that helped the Russian government interfere with the USA's 2016 presidential elections. It is believed that quite a few talented, sophisticated experts work for STC, and researchers from security company Lookout seem convinced that the same experts are responsible for the creation of a previously undocumented strain of Android malware called Monokle.</p><div class="rotatead-container" data-group="location:p1" data-title="Malware"></div>
+<div id="ez-toc-container" class="ez-toc-v2_0_47_1 counter-hierarchy ez-toc-counter ez-toc-grey ez-toc-container-direction">
+<p class="ez-toc-title">Table of Contents</p>
+<label for="ez-toc-cssicon-toggle-item-65d35a4f3cff4" class="cssicon"><span style="display: flex;align-items: center;width: 35px;height: 30px;justify-content: center;direction:ltr;"><svg style="fill: #999;color:#999" xmlns="http://www.w3.org/2000/svg" class="list-377408" width="20px" height="20px" viewBox="0 0 24 24" fill="none"><path d="M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z" fill="currentColor"></path></svg><svg style="fill: #999;color:#999" class="arrow-unsorted-368013" xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 24 24" version="1.2" baseProfile="tiny"><path d="M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z"></path></svg></span></label><label for="ez-toc-cssicon-toggle-item-65d35a4f3cff4" style="display:none" class="cssiconcheckbox">1</label><input type="checkbox" style="display:none" id="ez-toc-cssicon-toggle-item-65d35a4f3cff4"><nav><ul class="ez-toc-list ez-toc-list-level-1 "><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-1" href="#Monokle-and-the-STC-connection" title="Monokle and the STC connection">Monokle and the STC connection</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-2" href="#Monokle%E2%80%99s-versatility-is-its-defining-characteristic" title="Monokle’s versatility is its defining characteristic">Monokle’s versatility is its defining characteristic</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-3" href="#Monokle-is-aimed-at-specific-targets" title="Monokle is aimed at specific targets">Monokle is aimed at specific targets</a></li></ul></nav></div>
+<h3><span class="ez-toc-section" id="Monokle-and-the-STC-connection"></span>Monokle and the STC connection<span class="ez-toc-section-end"></span></h3>
+<p>As we'll find out in a minute, Monokle is an extremely sophisticated and versatile piece of mobile surveillanceware, and because such malicious apps are usually developed by people who know what they're doing, often, attributing them to a specific group of hackers is next to impossible. Lookout's experts think, however, that there is plenty of evidence linking Monokle to STC.</p><div class="rotatead-container" data-group="location:p2" data-title="Malware"></div>
+<p>According to <a title="Monokle - The Mobile Surveillance Tooling of the Special Technology Center" href="https://www.lookout.com/documents/threat-reports/lookout-discovers-monokle-threat-report.pdf" rel="external">Lookout's technical report</a>, STC is in the business of developing, among other things, a suite of defensive products for Android devices which is allegedly sold exclusively to Russian government agencies. The company also has a control panel application called App Control through which the rest of STC's services are managed. When Lookout's experts poked through it, they saw that App Control is trying to figure out if Monokle is installed on the device.</p><div class="rotatead-container" data-group="location:p3" data-title="Malware"></div>
+<p>In addition to this, one of STC's better-known products is an Android antivirus app called Defender. After closely examining Monokle's Command and Control (C&amp;C) infrastructure, Lookout's team realized that some of it overlaps with the backend servers Defender uses. To top it all off, there were certificates that were also shared between STC's security products and Monokle.</p><div class="rotatead-container" data-group="location:p4" data-title="Malware"></div>
+<p>If Lookout's researchers are right, and Monokle was indeed created by STC, the developers didn't put too much effort into concealing their traces, which is odd considering the level of sophistication the malware demonstrates.</p><div class="rotatead-container" data-group="location:p5" data-title="Malware"></div>
+<h3><span class="ez-toc-section" id="Monokle%E2%80%99s-versatility-is-its-defining-characteristic"></span>Monokle’s versatility is its defining characteristic<span class="ez-toc-section-end"></span></h3>
+<p>Monokle can, among other things, log keystrokes, delete and download files, send messages, exfiltrate contacts, device information, emails, login data, lists of installed apps, and call and browsing histories. It can also take photos, videos, and screenshots, and if it has root access, it can execute commands.</p><div class="rotatead-container" data-group="location:p6" data-title="Malware"></div>
+<p>All this is pretty standard for this type of malware. Monokle does have a few other tricks up its sleeve that make it stand out from the crowd, though. It uses Android's accessibility services to capture and exfiltrate information from Microsoft Office and Google Docs files as well as instant messaging applications like Whatsapp, Viber, Snapchat, etc. It can make screen recordings even when the device is still locked, which means that it can capture the password, PIN code, or pattern used to unlock the device. Once it has captured the secret, it can change it and lock people out of their phones or tablets.</p><div class="rotatead-container" data-group="location:p_middle" data-title="Malware"></div><div class="rotatead-container" data-group="location:p7" data-title="Malware"></div>
+<p>Perhaps the most advanced feature, however, is the ability to install trusted certificates on compromised devices. Thanks to it, a Man-in-The-Middle attack against <a title="What's the Difference Between HTTP and HTTPS? Things You Need to Know to Stay Secure Online" href="/difference-between-http-https-things-need-know-stay-secure-online/" target="_blank" rel="noopener noreferrer">TLS traffic</a> is possible.</p><div class="rotatead-container" data-group="location:p8" data-title="Malware"></div>
+<p>All in all, Monokle isn't something you want to have on your Android device. The good news is, most of you are unlikely to encounter it.</p>
+<h3><span class="ez-toc-section" id="Monokle-is-aimed-at-specific-targets"></span>Monokle is aimed at specific targets<span class="ez-toc-section-end"></span></h3>
+<p>The earliest sample Lookout examined dates back to 2015, but Monokle is still being used in attacks to this day. As with most Android malware families, the primary infection vector comes in the form of trojanized apps distributed on third-party app stores. Most of them impersonate real applications, and some even come with legitimate functionality, which can make detection more difficult.</p>
+<p>Based on the titles and the icons of the malicious apps, the experts concluded that Monokle is used in highly targeted attacks against specific sets of users. Some of the applications were clearly designed to catch the attention of people associated with the Ahrar al-Sham militant group in Syria. Others were aimed at users situated in the former Soviet republic of Uzbekistan, and a third group targeted people situated in the Caucasus region of Eastern Europe.</p>
+<p>If what Lookout's experts say is true, Monokle is most likely used by Russian government agencies which are trying to spy on particular individuals. If your name is not present on some very specific lists, you probably won't be affected by Monokle. Obviously, this doesn't mean that the malware should be underestimated.</p><div class="rotatead-container" data-group="location:after_content" data-title="Malware"></div>					</div>
+					<div class="extra top">
+						<div class="author">
+							By Duran						</div>
+						<div class="date">
+							July 29, 2019						</div>
+						<div class="path">
+							<a href="/threats/android-malware/" rel="category tag">Android Malware</a>						</div>
+						<div class="social">
+							<div class="sb-content">
+<a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.cyclonis.com%2Fmeet-monokle-android-malware-capable-stealing-changing-passwords%2F&amp;t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&amp;t=' + encodeURIComponent(document.URL), 'popUpWindow', 'height=500,width=500,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'); return false;"></a>
+<a class="twitter" href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fwww.cyclonis.com%2Fmeet-monokle-android-malware-capable-stealing-changing-passwords%2F&amp;text=:%20http%3A%2F%2Fwww.cyclonis.com%2Fmeet-monokle-android-malware-capable-stealing-changing-passwords%2F&amp;via=cyclonislimited" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL), 'popUpWindow', 'height=500,width=500,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'); return false;"></a>
+</div>
+						</div>
+						<div class="langs">
+									<div class="etranslate-container">
+						<div class="etranslate-hover-container">
+				<a class="etranslate-mainlink js-etranslate-hover" href="#" onclick="return false;" data-target="menu-hover-langs-1">
+										<span class="flag lang-en flag-us"></span>
+					English				</a>
+				<div class="etranslate-hover" id="menu-hover-langs-1">
+					<div class="etranslate-hover-content">
+													<a title="English" href="/meet-monokle-android-malware-capable-stealing-changing-passwords/">
+								<span class="flag lang-en flag-us"></span>
+								English							</a>
+													<a title="German" href="/de/lernen-sie-monokle-kennen-eine-android-malware-familie-die-kennworter-stehlen-und-andern-kann/">
+								<span class="flag lang-de flag-de"></span>
+								Deutsch							</a>
+													<a title="French" href="/fr/decouvrez-monokle-famille-logiciels-malveillants-android-capable-voler-modifier-les-mots-passe/">
+								<span class="flag lang-fr flag-fr"></span>
+								Français							</a>
+													<a title="Italian" href="/it/scopri-monokle-una-famiglia-di-malware-android-in-grado-di-rubare-e-modificare-le-password/">
+								<span class="flag lang-it flag-it"></span>
+								Italiano							</a>
+													<a title="Portuguese" href="/pt/conheca-monokle-uma-familia-de-malware-android-capaz-de-roubar-e-alterar-senhas/">
+								<span class="flag lang-pt flag-pt"></span>
+								Portuguese							</a>
+													<a title="Spanish" href="/es/conoce-a-monokle-una-familia-de-malware-de-android-capaz-de-robar-y-cambiar-contrasenas/">
+								<span class="flag lang-es flag-es"></span>
+								Spanish							</a>
+													<a title="Chinese (Simplified)" href="/zh-hans/meet-monokle-android-malware-capable-stealing-changing-passwords/">
+								<span class="flag lang-zh flag-cn"></span>
+								汉语							</a>
+													<a title="Chinese (Traditional)" href="/zh-hant/meet-monokle-android-malware-capable-stealing-changing-passwords/">
+								<span class="flag lang-zh flag-tw"></span>
+								漢語							</a>
+											</div>
+				</div>
+			</div>
+		</div>
+								</div>
+					</div>
+					
+					<div class="extra bottom">
+						<div class="date">
+							July 29, 2019						</div>
+						<div class="path">
+							<a href="/threats/android-malware/" rel="category tag">Android Malware</a>						</div>
+					</div>
+				</div>
+				
+		</div>
+		
+<div class="sidebar sticky">
+	
+				<div class="banner-block ">
+				<div class="rotatead-container" data-group="Post sidebar" data-title=""></div>			</div>
+			
+		
+	<div class="block">
+		<h2 class="small">
+			Popular Posts		</h2>
+		
+<div class="posts-lost-narrow">
+			<div class="item">
+			<a class="media" href="/fears-of-coronavirus-pandemic-spread-covid-19-themed-malware/"><img style="height:90px;width:150px;" class="" alt="" title="As Fears of the Coronavirus Pandemic Spread, So Does COVID-19-Themed Malware" loading="lazy" src="https://www.cyclonis.com/images/2020/03/covid-19-coronavirus-outbreak-map.jpg"></a>
+			<h3>
+				<a title="As Fears of the Coronavirus Pandemic Spread, So Does COVID-19-Themed Malware" href="/fears-of-coronavirus-pandemic-spread-covid-19-themed-malware/">
+					As Fears of the Coronavirus Pandemic Spread, So Does...				</a>
+			</h3>
+			<div class="date">
+				4 years ago			</div>
+		</div>
+				<div class="item">
+			<a class="media" href="/microsoft-warns-state-backed-threat-actors-are-using-ai-in-attacks/"><img style="height:70px;width:70px;" class="" alt="" title="Microsoft Warns State-Backed Threat Actors Are Using AI in Attacks" loading="lazy" src="https://www.cyclonis.com/images/2021/09/creamfinancehack-70x70.jpg"></a>
+			<h3>
+				<a title="Microsoft Warns State-Backed Threat Actors Are Using AI in Attacks" href="/microsoft-warns-state-backed-threat-actors-are-using-ai-in-attacks/">
+					Microsoft Warns State-Backed Threat Actors Are Using AI in...				</a>
+			</h3>
+			<div class="date">
+				4 days ago			</div>
+		</div>
+				<div class="item">
+			<a class="media" href="/trojan-al11-malware-detection-removal-an-essential-step-for-victimized-computer-users/"><img style="height:70px;width:70px;" class="" alt="" title="Trojan Al11 Malware Detection &amp;#038; Removal - An Essential Step for Victimized Computer Users" loading="lazy" src="https://www.cyclonis.com/images/2021/08/trojan-horse-70x70.jpg"></a>
+			<h3>
+				<a title="Trojan Al11 Malware Detection &amp; Removal - An Essential Step for Victimized Computer Users" href="/trojan-al11-malware-detection-removal-an-essential-step-for-victimized-computer-users/">
+					Trojan Al11 Malware Detection &amp; Removal - An Essential...				</a>
+			</h3>
+			<div class="date">
+				11 months ago			</div>
+		</div>
+				<div class="item">
+			<a class="media" href="/remove-pinaview-adware/"><img style="height:70px;width:70px;" class="" alt="" title="Pinaview is a Fully-Featured Adware App" loading="lazy" src="https://www.cyclonis.com/images/2021/05/ytsmxads-70x70.png"></a>
+			<h3>
+				<a title="Pinaview is a Fully-Featured Adware App" href="/remove-pinaview-adware/">
+					Pinaview is a Fully-Featured Adware App				</a>
+			</h3>
+			<div class="date">
+				10 months ago			</div>
+		</div>
+				<div class="item">
+			<a class="media" href="/remove-your-icloud-is-being-hacked-and-your-iphone-has-been-hacked-pop-ups/"><img style="height:70px;width:70px;" class="" alt="" title="&quot;Your iCloud is Being Hacked&quot; and &quot;Your iPhone has Been Hacked&quot; Pop-Ups" loading="lazy" src="https://www.cyclonis.com/images/2022/01/iphonebootattack-70x70.jpg"></a>
+			<h3>
+				<a title="" your="" icloud="" is="" being="" hacked"="" and="" "your="" iphone="" has="" been="" pop-ups"="" href="/remove-your-icloud-is-being-hacked-and-your-iphone-has-been-hacked-pop-ups/">
+					"Your iCloud is Being Hacked" and "Your iPhone has Been...				</a>
+			</h3>
+			<div class="date">
+				7 months ago			</div>
+		</div>
+				<div class="item">
+			<a class="media" href="/remove-lucky-ransomware/"><img style="height:150px;width:150px;" class="" alt="" title="What is Lucky Ransomware?" loading="lazy" src="https://www.cyclonis.com/images/2023/07/ransomware-lock-381-150x150.jpg"></a>
+			<h3>
+				<a title="What is Lucky Ransomware?" href="/remove-lucky-ransomware/">
+					What is Lucky Ransomware?				</a>
+			</h3>
+			<div class="date">
+				7 months ago			</div>
+		</div>
+		</div>	</div>
+
+			<div class="banner-block">
+			<div class="rotatead-container" data-group="Post sidebar - bottom" data-title=""></div>		</div>
+	</div>
+<div class="clear"></div>	</div>
+</div>
+
+		<div class="section grey">
+			<div style="padding: 10px 10px 20px 10px;" class="content center">
+				<div class="rotatead-container" data-group="Post footer" data-title=""></div>			</div>
+		</div>
+	
+	<div class="section section-single-related grey noprint">
+		<div class="wrapper">
+			<h2>
+				Related Posts			</h2>
+
+			
+<div class="flex-container blogsection ">
+			<div class="item flex">
+			<a class="media" href="/how-to-delete-google-accounts-from-android-smartphones/"><img style="height:180px;width:360px;" class="" alt="" title="How to Delete Google Accounts from Android Smartphones" loading="lazy" src="https://www.cyclonis.com/images/2019/02/android-1-360x180.jpg"></a>
+			<div class="path">
+				<div class="post_meta">
+					<a href="/how-to/" rel="category tag">How To</a>				</div>
+			</div>
+			<h3>
+				<a href="/how-to-delete-google-accounts-from-android-smartphones/">How to Delete Google Accounts from Android Smartphones</a>
+			</h3>
+			<p>
+				Did you know that can add and remove accounts to your Android devices (like your smartphone or your tablet? Well, it's true. Whenever decide to add a new account or remove an existing one, the information related to...				<a href="/how-to-delete-google-accounts-from-android-smartphones/">
+					Read more				</a>
+			</p>
+			<div class="extra">
+				<span>
+					February 1, 2019				</span>
+			</div>
+		</div>
+				<div class="item flex">
+			<a class="media" href="/how-to-backup-google-authenticator-from-android-phone-to-another/"><img style="height:143px;width:360px;" class="" alt="" title="How to Backup Google Authenticator from One Android Phone to Another" loading="lazy" src="https://www.cyclonis.com/images/2018/11/android-backup-google-authenticator--360x143.jpg"></a>
+			<div class="path">
+				<div class="post_meta">
+					<a href="/how-to/" rel="category tag">How To</a>				</div>
+			</div>
+			<h3>
+				<a href="/how-to-backup-google-authenticator-from-android-phone-to-another/">How to Backup Google Authenticator from One Android Phone to Another</a>
+			</h3>
+			<p>
+				As we've mentioned before, Two-Factor Authentication (2FA) is a must-have for all Google users. If you've not used 2FA, be aware that you're putting your Google account is at risk of being breached by hackers. In case...				<a href="/how-to-backup-google-authenticator-from-android-phone-to-another/">
+					Read more				</a>
+			</p>
+			<div class="extra">
+				<span>
+					November 9, 2018				</span>
+			</div>
+		</div>
+				<div class="item flex">
+			<a class="media" href="/new-iphones-could-delayed-apple-chip-maker-malware-outbreak/"><img style="height:180px;width:360px;" class="" alt="" title="New iPhones Could Be Delayed After Apple Chip Maker Suffers Malware Outbreak" loading="lazy" src="https://www.cyclonis.com/images/2018/08/tsmc-malware-outbreak-360x180.jpg"></a>
+			<div class="path">
+				<div class="post_meta">
+					<a href="/threats/mac-malware/" rel="category tag">Mac Malware</a>				</div>
+			</div>
+			<h3>
+				<a href="/new-iphones-could-delayed-apple-chip-maker-malware-outbreak/">New iPhones Could Be Delayed After Apple Chip Maker Suffers Malware Outbreak</a>
+			</h3>
+			<p>
+				Taiwan Semiconductor Manufacturing Company (TSMC), one of the biggest semiconductor manufacturers in the world, got hit by what has been described as a malware outbreak on August 3 which forced it to temporarily halt...				<a href="/new-iphones-could-delayed-apple-chip-maker-malware-outbreak/">
+					Read more				</a>
+			</p>
+			<div class="extra">
+				<span>
+					August 13, 2018				</span>
+			</div>
+		</div>
+			<div class="item flex"></div>
+	<div class="item flex"></div>
+</div>		</div>
+	</div>
+
+	<div class="section section-comments-list grey">
+		<div class="wrapper">
+			<div class="content narrow">
+				
+	
+	<div class="success hidden" id="success">
+		Your comment is awaiting moderation.	</div>
+	<div class="error hidden" id="error">
+		Please verify that you are not a robot.	</div>
+
+		<button class="button show-comments no-print" onclick="show_comments_form(this, '#comment_form', '1',
+			'en');">
+					Show comments form (0)			</button>
+
+	<div style="display:none;" class="comment_form" id="comment_form">
+
+		<h2 id="respond">
+			Leave a Reply		</h2>
+
+		
+			<script>window.addEventListener("load", function() {
+		if(window.location.hash == "#success") { 
+			let el = document.getElementById("success");
+			el.style.setProperty("display", "block", "important");
+			window.scroll(0, el.offsetTop - 50);
+		}
+		if(window.location.hash == "#error") {
+			let el = document.getElementById("error");
+			el.style.setProperty("display", "block", "important");
+			window.scroll(0, el.offsetTop - 50);
+		}
+	}, false);</script>
+			<form id="commentform" action="https://ywknx855c6.execute-api.eu-west-1.amazonaws.com/stage/comment" method="post" onsubmit="check_form_errors(event, true);" novalidate="">
+									<noscript>
+						<div class="error">
+							Warning! You must enable JavaScript in your browser to add a comment.						</div>
+					</noscript>
+					<p>
+						<input style="width:250px;" type="text" name="author" id="author" value="" required="">
+						<label for="author">Name (required)</label>
+					</p>
+					<p>
+						<input style="width:250px;" type="text" name="email" id="email" value="" required="">
+						<label for="email">Mail (will not be published)
+							(required)</label>
+					</p>
+					<p>
+						<input style="width:250px;" type="text" name="url" id="url" value="">
+						<label for="url">Website</label>
+					</p>
+								<div style="display:none;margin-top:5px;" id="comment_reply_info">
+					<b>Reply to "<span id="comment_reply_name"></span>" comment: </b>
+					<a onclick="reset_comment_reply();" href="#respond">Cancel</a>
+				</div>
+				<p>
+					<textarea name="comment" id="comment" rows="6" required=""></textarea>
+				</p>
+				
+									<div style="min-height:80px;">
+						<div class="g-recaptcha" data-sitekey="6Ld_7DEUAAAAADVrNJxRIJdQbOinubia2i42Mbyh" data-callback="recaptchaCallback" lang="en"></div>
+<script>
+					window.addEventListener("load", function(){
+						document.querySelector("#submit").classList.add('captcha-error');
+					}, false);
+					function recaptchaCallback(){
+						document.querySelector("#submit").classList.remove('captcha-error');
+					}
+				</script>					</div>
+				
+				<p>
+					<button class="button blue small" name="submit" type="submit" id="submit">
+						Submit Comment					</button>
+					<input type="hidden" name="comment_post_ID" value="23128">
+					<input type="hidden" name="comment_parent" id="replytocom" value="0">
+					<input type="hidden" name="redirect_to" value="/meet-monokle-android-malware-capable-stealing-changing-passwords/">
+				</p>
+				<input type="hidden" name="current_lang" value="en"><input type="hidden" name="et_REQUEST_URI" value="/meet-monokle-android-malware-capable-stealing-changing-passwords/"><input type="hidden" name="_referer" value="https%3A%2F%2Fcyclonis.com%2Fmeet-monokle-android-malware-capable-stealing-changing-passwords%2F"><input type="hidden" name="type" value="">
+<input type="hidden" name="mode" id="sb_mode" value="">
+<script type="text/javascript">document.getElementById("sb_mode").value="1";</script>
+			</form>
+			</div>
+
+
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+
+<div class="header">
+	<div class="main-header">
+		<div class="top">
+			<div class="container">
+				<div class="block languages">		<div class="etranslate-container">
+						<div class="etranslate-hover-container">
+				<a class="etranslate-mainlink js-etranslate-hover" href="#" onclick="return false;" data-target="menu-hover-langs-2">
+										<span class="flag lang-en flag-us"></span>
+					English				</a>
+				<div class="etranslate-hover" id="menu-hover-langs-2">
+					<div class="etranslate-hover-content">
+													<a title="English" href="/meet-monokle-android-malware-capable-stealing-changing-passwords/">
+								<span class="flag lang-en flag-us"></span>
+								English							</a>
+													<a title="German" href="/de/lernen-sie-monokle-kennen-eine-android-malware-familie-die-kennworter-stehlen-und-andern-kann/">
+								<span class="flag lang-de flag-de"></span>
+								Deutsch							</a>
+													<a title="French" href="/fr/decouvrez-monokle-famille-logiciels-malveillants-android-capable-voler-modifier-les-mots-passe/">
+								<span class="flag lang-fr flag-fr"></span>
+								Français							</a>
+													<a title="Italian" href="/it/scopri-monokle-una-famiglia-di-malware-android-in-grado-di-rubare-e-modificare-le-password/">
+								<span class="flag lang-it flag-it"></span>
+								Italiano							</a>
+													<a title="Portuguese" href="/pt/conheca-monokle-uma-familia-de-malware-android-capaz-de-roubar-e-alterar-senhas/">
+								<span class="flag lang-pt flag-pt"></span>
+								Portuguese							</a>
+													<a title="Spanish" href="/es/conoce-a-monokle-una-familia-de-malware-de-android-capaz-de-robar-y-cambiar-contrasenas/">
+								<span class="flag lang-es flag-es"></span>
+								Spanish							</a>
+													<a title="Chinese (Simplified)" href="/zh-hans/meet-monokle-android-malware-capable-stealing-changing-passwords/">
+								<span class="flag lang-zh flag-cn"></span>
+								汉语							</a>
+													<a title="Chinese (Traditional)" href="/zh-hant/meet-monokle-android-malware-capable-stealing-changing-passwords/">
+								<span class="flag lang-zh flag-tw"></span>
+								漢語							</a>
+											</div>
+				</div>
+			</div>
+		</div>
+		</div>
+				
+				
+									<div class="block social">
+						<div class="social-content">
+	<a class="facebook" href="https://www.facebook.com/cyclonislimited/" target="_blank"></a>
+	<a class="twitter" href="https://twitter.com/cyclonislimited" target="_blank"></a>
+	<a class="youtube longer" href="https://www.youtube.com/channel/UCPzL-IZoI25JVAKfq-5jfPg" target="_blank"></a>
+	<a class="linkedin" href="https://www.linkedin.com/company/11312804/" target="_blank"></a>
+	<a class="instagram" href="https://www.instagram.com/cyclonislimited/" target="_blank" title="Instagram"></a>
+</div>
+					</div>
+				
+			</div>
+		</div>
+		<div class="container">
+			<div class="flex-container no-flex-wrap">
+				<div class="item left">
+											<a class="logo" href="/"></a>
+									</div>
+				<div class="item middle">
+					
+<div class="menu" id="global-menu">
+			<a class="mobile-link" href="/">Home</a>
+
+		<div class="menuItem">
+						<a class="more focusable " href="/products/" id="menu-products" data-target="menu-hover-products">
+				Products			</a>
+			<div class="menu-hover require-600px" id="menu-hover-products">
+				<div class="container">
+					<div class="left">
+						<h3>
+							Products						</h3>
+						<p>
+							We develop data management software solutions designed to make encryption accessible and 
+					bring simplicity and organization to your everyday online life.						</p>
+					</div>
+					<div class="right">
+													<a href="/products/cyclonis-backup/">
+																	<img loading="lazy" class="media" alt="" width="28" height="28" src="/wp-content/themes/default/images/main/cyclonis-backup/backup.svg">
+																<span class="main">
+							Cyclonis Backup						</span>
+								<span class="description">
+							A secure cloud storage backup solution to help you reliably backup your files and 
+			protect you against ransomware attacks.						</span>
+							</a>
+													<a href="/products/password-manager/">
+																	<img loading="lazy" class="media" alt="" width="28" height="28" src="/wp-content/themes/default/images/main/password-manager/CPM-blue.svg?v=2">
+																<span class="main">
+							Cyclonis Password Manager						</span>
+								<span class="description">
+							Store your passwords and other personal information in your encrypted vault.						</span>
+							</a>
+													<a href="/products/world-time/">
+																	<img loading="lazy" class="media" alt="" width="28" height="28" src="/wp-content/themes/default/images/main/world-time/cwt.svg">
+																<span class="main">
+							Cyclonis World Time						</span>
+								<span class="description">
+							Easily track time and manage your schedule across multiple time zones.						</span>
+							</a>
+											</div>
+				</div>
+			</div>
+		</div>
+
+					<div class="mobile-items subitems">
+				<a class="manager" href="/products/cyclonis-backup/">
+					Cyclonis Backup				</a>
+			</div>
+					<div class="mobile-items subitems">
+				<a class="manager" href="/products/password-manager/">
+					Cyclonis Password Manager				</a>
+			</div>
+					<div class="mobile-items subitems">
+				<a class="manager" href="/products/world-time/">
+					Cyclonis World Time				</a>
+			</div>
+		
+				<a class="" href="/blog/">
+			Blog		</a>
+
+				<a class="" href="/support/">
+			Support		</a>
+
+		<div class="menuItem">
+						<a class="more focusable " href="/company/about-us/" id="menu-company" data-target="menu-hover-company">
+				Company			</a>
+			<div class="menu-hover require-600px" id="menu-hover-company">
+				<div class="container">
+					<div class="left">
+						<h3>
+							Company						</h3>
+						<p>
+							Data management software solutions developed and designed for a simpler online 
+					experience.						</p>
+					</div>
+					<div class="right">
+												<a href="/company/about-us/">
+							<img loading="lazy" class="media" alt="" width="28" height="28" src="/wp-content/themes/default/images/pages/company/icons/company-blue.svg">
+							<span class="main">
+						About Us					</span>
+							<span class="description">
+						Cyclonis Limited is dedicated to developing software applications to bring simplicity
+						to complex data storage and management - and improving your accessibility to your online 
+						data.					</span>
+						</a>
+
+												<a href="/company/contact-us/">
+							<img loading="lazy" class="media" alt="" width="28" height="28" src="/wp-content/themes/default/images/pages/contact/icons/contact-blue.svg">
+							<span class="main">
+						Contact Us					</span>
+							<span class="description">
+						Interested in Cyclonis? Feel free to send us feedback &amp; business inquiries.					</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="mobile-items subitems">
+						<a class="aboutUs" href="/company/about-us/">
+				About Us			</a>
+
+						<a class="aboutUs" href="/company/contact-us/">
+				Contact Us			</a>
+		</div>
+
+				<a class="mobile-link" href="/search/">
+			Search		</a>
+	</div>				</div>
+				<div class="item right">
+																	<form class="search" action="/search/" method="get">
+							<input type="hidden" name="cx" value="008854012106027809667:lupuc_kapfi">
+							<input type="hidden" name="ie" value="UTF-8">
+							<input class="text" type="text" name="q" id="s-top" placeholder="Search">
+							<button class="submit">Search</button>
+						</form>
+														</div>
+			</div>
+
+							<button class="hamburger hamburger-cancel" id="hamburger" onclick="toggleMenu(['hamburger', 'global-menu']);return false;">
+					<span class="icon"></span>
+				</button>
+					</div>
+	</div>
+	</div>
+
+	<div class="disclaimer-placeholder" id="disclaimer"></div>
+	<div class="disclaimer">
+		<div class="container">
+
+							<div class="disclaimer-item sh">
+					<div id="disclaimer-sh" data-url="https://www.enigmasoftware.com/spyhunter-remover-details/" data-language="en">
+						<span class="loading">Loading...</span>
+					</div>
+				</div>
+			
+							<div class="disclaimer-item">
+					<h3 id="disclaimer-cb">
+						Cyclonis Backup Details &amp; Terms					</h3>
+					<p>
+						The Free Basic Cyclonis Backup plan gives you 2 GB of cloud storage space with full 
+						functionality! No credit card required. Need more storage space? Purchase a larger Cyclonis 
+						Backup plan	today! To learn more about our policies and pricing, see 
+						<a href="/tos-cyclonis-backup/">Terms of Service</a>, 
+						<a href="/privacy-policy/">Privacy Policy</a>, <a href="/discount-terms/">Discount Terms</a> and
+						<a href="https://purchase.cyclonis.com/">Purchase Page</a>. If you wish to uninstall the app, please visit the 
+						<a href="/products/cyclonis-backup/uninstall-instructions/">Uninstallation Instructions</a> page.					</p>
+				</div>
+			
+							<div class="disclaimer-item">
+					<h3 id="disclaimer-cpm">
+						Cyclonis Password Manager Details &amp; Terms					</h3>
+					<p>
+						FREE Trial: 30-Day One-Time Offer! No credit card required for Free Trial. Full 
+						functionality for the length of the Free Trial. (Full functionality after Free Trial requires 
+						subscription purchase.) To learn more about our policies and pricing, see 
+						<a href="/eula-password-manager/">EULA</a>, <a href="/privacy-policy/">Privacy Policy</a>, <a href="/discount-terms/">Discount Terms</a> 
+						and <a href="https://purchase.cyclonis.com/">Purchase Page</a>. If you wish to uninstall the app, please visit 
+						the <a href="/products/password-manager/uninstall-instructions/">Uninstallation Instructions</a> page.					</p>
+				</div>
+			
+		</div>
+	</div>
+
+<div class="footer " id="footer">
+	<div class="sub-footer">
+		<div class="container">
+			<table class="footer-table">
+			<tbody><tr>
+				<td style="width: 120px;">
+					<h3>
+						<a href="/">
+							Home						</a>
+					</h3>
+				</td>
+				<td>
+					<h3>
+												<a href="/products/">
+							Products						</a>
+					</h3>
+					
+											<a href="/products/cyclonis-backup/">
+							Cyclonis Backup						</a>
+											<a href="/products/password-manager/">
+							Cyclonis Password Manager						</a>
+											<a href="/products/world-time/">
+							Cyclonis World Time						</a>
+									</td>
+				<td>
+					<h3>
+												<a href="/support/">
+							Support						</a>
+					</h3>
+
+										<a href="/help/">
+						Help Files					</a>
+					
+										<a href="/faq/">
+						FAQs					</a>
+					
+										<a href="/downloads/">
+						Downloads					</a>
+					
+										<a href="/inquiries-support/">
+						Inquiries &amp; Support					</a>
+				</td>
+				<td>
+					<h3>
+						Company					</h3>
+					
+										<a href="/company/about-us/">
+						About Us					</a>
+					
+										<a href="/company/contact-us/">
+						Contact Us					</a>
+					
+										<a href="/company/report-abuse/">
+						Report Abuse					</a>
+				</td>
+				<td>
+					<h3>
+						Legal (Post Merger)					</h3>
+
+					<p>
+						EnigmaSoft Limited (fka Cyclonis Limited)					</p>
+					
+												<a href="/tos-cyclonis-backup/">
+								Cyclonis Backup's Terms of Service							</a>
+																		<a href="/eula-password-manager/">
+								Cyclonis Password Manager's EULA							</a>
+																		<a href="/tos-world-time/">
+								Cyclonis World Time's Terms of Service							</a>
+											
+										<a href="/privacy-policy/">
+						Privacy Policy					</a>
+
+										<a href="/cookie-policy/">
+						Cookie Policy					</a>
+
+										<a href="/discount-terms/">
+						Special Discount Offer Terms					</a>
+
+										<a href="/additional-terms-conditions/">
+						Additional Terms &amp; Conditions					</a>
+
+					<!-- Other legal links -->
+
+										<a href="/spyhunter-eula/">
+						SpyHunter EULA					</a>
+
+										<a href="/reghunter-eula/">
+						RegHunter EULA					</a>
+
+										<a href="/enigmasoft-privacy-policy/">
+						EnigmaSoft Privacy Policy &amp; Cookie Policy					</a>
+
+										<a href="/esg-privacy-policy/">
+						ESG Privacy Policy &amp; Cookie Policy					</a>
+
+										<a href="/enigmasoft-discount-terms/">
+						EnigmaSoft Discount Offer Terms					</a>
+
+										<a href="/esg-discount-terms/">
+						ESG Discount Offer Terms					</a>
+				</td>
+			</tr>
+			</tbody></table>
+		</div>
+	</div>
+	<div class="sub-footer-mini hidden js-modal">
+		<div class="container">
+						<a href="/company/about-us/">
+				About Us			</a>
+
+						<a href="/company/contact-us/">
+				Contact Us			</a>
+
+								<a href="/tos-cyclonis-backup/">
+						Cyclonis Backup's Terms of Service					</a>
+												<a href="/eula-password-manager/">
+						Cyclonis Password Manager's EULA					</a>
+												<a href="/tos-world-time/">
+						Cyclonis World Time's Terms of Service					</a>
+							
+						<a href="/privacy-policy/">
+				EnigmaSoft Limited (fka Cyclonis Limited) Privacy Policy			</a>
+
+						<a href="/cookie-policy/">
+				Cookie Policy			</a>
+
+						<a href="/discount-terms/">
+				Special Discount Offer Terms			</a>
+
+						<a href="/additional-terms-conditions/">
+				Additional Terms &amp; Conditions			</a>
+
+			<!-- Other legal links -->
+
+						<a href="/spyhunter-eula/">
+				SpyHunter EULA			</a>
+
+						<a href="/reghunter-eula/">
+				RegHunter EULA			</a>
+
+						<a href="/enigmasoft-privacy-policy/">
+				EnigmaSoft Privacy Policy &amp; Cookie Policy			</a>
+
+						<a href="/esg-privacy-policy/">
+				ESG Privacy Policy &amp; Cookie Policy			</a>
+
+						<a href="/enigmasoft-discount-terms/">
+				EnigmaSoft Discount Offer Terms			</a>
+
+						<a href="/esg-discount-terms/">
+				ESG Discount Offer Terms			</a>
+		</div>
+	</div>
+	<div class="copyright-footer">
+		<div class="container">
+
+			<div class="right">
+				<div class="social-icons">
+					<p class="title">
+						Follow Us					</p>
+					<div class="social-content">
+	<a class="facebook" href="https://www.facebook.com/cyclonislimited/" target="_blank"></a>
+	<a class="twitter" href="https://twitter.com/cyclonislimited" target="_blank"></a>
+	<a class="youtube longer" href="https://www.youtube.com/channel/UCPzL-IZoI25JVAKfq-5jfPg" target="_blank"></a>
+	<a class="linkedin" href="https://www.linkedin.com/company/11312804/" target="_blank"></a>
+	<a class="instagram" href="https://www.instagram.com/cyclonislimited/" target="_blank" title="Instagram"></a>
+</div>
+				</div>
+			</div>
+
+			<img width="150" height="30" loading="lazy" class="logo" alt="" src="/wp-content/themes/default/images/main/logo.svg">
+			
+			<div class="copyright">
+				<p>
+					© 2017-2024 Cyclonis Ltd. CYCLONIS is a trademark of EnigmaSoft Limited (Cyclonis 
+					was merged into EnigmaSoft Limited effective November 25, 2023.) All rights reserved.				</p>
+				<p>
+					Registered Office EnigmaSoft Limited: 1 Castle Street, 3rd Floor, Dublin 2 D02 XD82, 
+					Ireland.<br>
+					EnigmaSoft Limited, Private Company Limited by shares, Company Registration Number 597114.				</p>
+				<p>
+					Windows is a trademark of Microsoft, registered in the U.S. and other countries.<br>
+					Mac, iPhone, iPad and App Store are trademarks of Apple Inc., registered in the U.S. and other 
+					countries.<br>
+					iOS is a registered trademark of Cisco Systems, Inc. and/or its affiliates in the United States and
+					certain other countries.<br>Android and Google Play are trademarks of Google LLC.				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<button class="ScrollToTop hidden noprint" id="ScrollToTop" title="Go to top">
+	Top</button>
+<div class="rotatead-container" data-group="Sticky footer" data-title=""></div>
+
+		<div style="display:none;" class="cookieMsg theme- noprint" id="cookieMsgId">
+			<div class="cookieContainer">
+				Cyclonis.com uses cookies to provide you with a better browsing experience and analyze how users navigate and utilize the Site. By using this Site or clicking on "OK", you consent to the use of cookies. <a title="Privacy Policy" href="/privacy-policy/">Learn more</a>.				<input class="ok" type="button" value="OK" onclick="AcceptCookieMessage();">
+				<input class="close" type="button" value="×" onclick="CloseCookieMessage();" aria-label="Close">
+			</div>
+		</div>
+		<script>
+			if(document.cookie.match(/^(.*;)?\s*jsCookieCheck\s*=\s*[^;]+(.*)?$/) == null){
+				document.getElementById('cookieMsgId').style.display = 'block';
+				document.body.classList.add('cookieWarning-active');
+			}
+		</script>
+		
+			<script>
+								var redirect_config = '{"domain_match":"https:\/\/cyclonis.com","redirects":{"EN_US":"\/meet-monokle-android-malware-capable-stealing-changing-passwords\/","DE":"\/de\/lernen-sie-monokle-kennen-eine-android-malware-familie-die-kennworter-stehlen-und-andern-kann\/","FR":"\/fr\/decouvrez-monokle-famille-logiciels-malveillants-android-capable-voler-modifier-les-mots-passe\/","IT":"\/it\/scopri-monokle-una-famiglia-di-malware-android-in-grado-di-rubare-e-modificare-le-password\/","PT":"\/pt\/conheca-monokle-uma-familia-de-malware-android-capaz-de-roubar-e-alterar-senhas\/","ES":"\/es\/conoce-a-monokle-una-familia-de-malware-de-android-capaz-de-robar-y-cambiar-contrasenas\/","ZH-CN":"\/zh-hans\/meet-monokle-android-malware-capable-stealing-changing-passwords\/","ZH-TW":"\/zh-hant\/meet-monokle-android-malware-capable-stealing-changing-passwords\/"},"domains":[]}';
+			</script>
+			<script>
+var price_config = '{"currency":{"USD":"$","EUR":"&#8364;","AUD":"A$","CAD":"CA$","CHF":"SFr. ","GBP":"&#163;","BRL":"R$","JPY":"&#165;","MXN":"Mex$","ARS":"Ar$","CLP":"Clp$$","COP":"Col$"},"billed_period":{"sh_mac":6,"sh_pro":3,"sh_basic":3,"cpm":6,"cb_500GB":6,"cb_1TB":6,"cb_1_5TB":6,"cb_2TB":6},"values_for_1_month":true,"values":{"sh_pro":{"USD":24,"EUR":28,"AUD":36,"CAD":34,"CHF":28,"GBP":24,"BRL":68.33333333333333,"JPY":2800,"MXN":250,"ARS":1266.6666666666667,"CLP":9500,"COP":45000},"sh_basic":{"USD":14,"EUR":16,"AUD":22,"CAD":20,"CHF":16,"GBP":14,"BRL":40,"JPY":1600,"MXN":150,"ARS":766.6666666666666,"CLP":5666.666666666667,"COP":26666.666666666668},"sh_mac":{"USD":7,"EUR":8,"AUD":11,"CAD":10,"CHF":8,"GBP":7,"BRL":20,"JPY":800,"MXN":75,"ARS":383.3333333333333,"CLP":2833.3333333333335,"COP":13333.333333333334},"cpm":{"USD":"3","EUR":"3.5","AUD":"4.5","CAD":"4","CHF":"3.5","GBP":"3","BRL":"8","JPY":"325"},"cb_500GB":{"USD":"7","EUR":"8","AUD":"11","CAD":"10","CHF":"8","GBP":"7","BRL":"15","JPY":"800"},"cb_1TB":{"USD":"14","EUR":"16","AUD":"22","CAD":"20","CHF":"16","GBP":"14","BRL":"30","JPY":"1600"},"cb_1_5TB":{"USD":"21","EUR":"24","AUD":"33","CAD":"30","CHF":"24","GBP":"21","BRL":"45","JPY":"2400"},"cb_2TB":{"USD":"28","EUR":"32","AUD":"44","CAD":"40","CHF":"32","GBP":"28","BRL":"60","JPY":"3200"}}}';
+</script>
+<script data-nobundle="" src="/wp-content/plugins/exit-popup/js/exit-popup.js.php?v1=1708346355&amp;v2=1707994700"></script>
+<script data-nobundle="" src="/wp-content/plugins/rotatead/default--en/script.js.php?v1=1708346355&amp;v2=1679479249"></script>
+
+
+<!-- animations -->
+
+
+<!-- Trackers -->
+
+
+<script src="/wp-content/themes/default/js/bundle.js?1708346373"></script>
+
+
+</body></html>

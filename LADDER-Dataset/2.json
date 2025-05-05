@@ -1,0 +1,1220 @@
+{
+    "type": "bundle",
+    "id": "bundle--fe228c34-da6d-42ca-b44b-fac6933a6477",
+    "objects": [
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--a9eccf05-5036-4d57-bc07-395d9dd92f87",
+            "created": "2025-01-14T14:37:30.522925Z",
+            "modified": "2025-01-14T14:37:30.522925Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "target_ref": "attack-pattern--799647db-b300-42da-aefa-6b4da0316384"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--799647db-b300-42da-aefa-6b4da0316384",
+            "created": "2025-01-14T14:37:30.516924Z",
+            "modified": "2025-01-14T14:37:30.516924Z",
+            "name": "obtain the lock-screen code"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--9cd2c8be-5648-4d35-b5aa-9054194781e1",
+            "created": "2025-01-14T14:37:30.522925Z",
+            "modified": "2025-01-14T14:37:30.522925Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "target_ref": "attack-pattern--163c7f3b-e113-41c2-8f7b-53f7e8b5adcc"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--163c7f3b-e113-41c2-8f7b-53f7e8b5adcc",
+            "created": "2025-01-14T14:37:30.519925Z",
+            "modified": "2025-01-14T14:37:30.519925Z",
+            "name": "remotely control the device"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--87762129-5238-4a51-acf7-da3b91f9d3a0",
+            "created": "2025-01-14T14:37:30.522925Z",
+            "modified": "2025-01-14T14:37:30.522925Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "target_ref": "attack-pattern--a04ec3e4-0161-485d-8e9f-c9b627dc21db"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--a04ec3e4-0161-485d-8e9f-c9b627dc21db",
+            "created": "2025-01-14T14:37:30.516924Z",
+            "modified": "2025-01-14T14:37:30.516924Z",
+            "name": "hijack SMS content"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--29d18175-49f0-4974-b42d-7cbaa5a2f491",
+            "created": "2025-01-14T14:37:30.522925Z",
+            "modified": "2025-01-14T14:37:30.522925Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "target_ref": "attack-pattern--4425a994-56ba-48a2-895c-3fd647b5c8f2"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--4425a994-56ba-48a2-895c-3fd647b5c8f2",
+            "created": "2025-01-14T14:37:30.519925Z",
+            "modified": "2025-01-14T14:37:30.519925Z",
+            "name": "control devices remotely,"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--30da996d-6d4f-4b3f-826e-d7a05c5d7f99",
+            "created": "2025-01-14T14:37:30.523926Z",
+            "modified": "2025-01-14T14:37:30.523926Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "target_ref": "attack-pattern--fa45067b-4e45-4b2c-9c0f-bf49d0886101"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--fa45067b-4e45-4b2c-9c0f-bf49d0886101",
+            "created": "2025-01-14T14:37:30.519925Z",
+            "modified": "2025-01-14T14:37:30.519925Z",
+            "name": "data theft features"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--2f47f823-431a-4948-92a1-20be4967b728",
+            "created": "2025-01-14T14:37:30.523926Z",
+            "modified": "2025-01-14T14:37:30.523926Z",
+            "relationship_type": "targets",
+            "source_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "target_ref": "software--c2f44a3e-11cf-596c-b1bf-2893777e38ae"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "software",
+            "spec_version": "2.1",
+            "id": "software--c2f44a3e-11cf-596c-b1bf-2893777e38ae",
+            "name": "Google Play store"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--d502aca2-621f-4fb2-ab1b-6a7138f8079d",
+            "created": "2025-01-14T14:37:30.523926Z",
+            "modified": "2025-01-14T14:37:30.523926Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "target_ref": "attack-pattern--cc4ec1f4-a682-4504-843f-e2c8d30d27bd"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--cc4ec1f4-a682-4504-843f-e2c8d30d27bd",
+            "created": "2025-01-14T14:37:30.517924Z",
+            "modified": "2025-01-14T14:37:30.517924Z",
+            "name": "allows the attackers to bypass the bank\u2019s SMS-code verification challenge"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--64bed246-2314-423e-873d-35fe510e7c6d",
+            "created": "2025-01-14T14:37:30.523926Z",
+            "modified": "2025-01-14T14:37:30.523926Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--b938176d-adf7-47b7-bdbe-6f91ebf7440e",
+            "target_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--b938176d-adf7-47b7-bdbe-6f91ebf7440e",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "pattern": "[file:hashes.'SHA-256' = '40b8a8fd2f4743534ad184be95299a8e17d029a7ce5bc9eaeb28c5401152460d']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2025-01-14T14:37:30.500919Z"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--5a4bfd44-33df-4e23-8dca-3e4890a9e4f0",
+            "created": "2025-01-14T14:37:30.523926Z",
+            "modified": "2025-01-14T14:37:30.523926Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "target_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--8b7dff1f-1c28-4d68-9536-72381e83027c",
+            "created": "2025-01-14T14:37:30.523926Z",
+            "modified": "2025-01-14T14:37:30.523926Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "target_ref": "attack-pattern--756a9925-14cd-4c4a-9c85-a9e3edc89c27"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--756a9925-14cd-4c4a-9c85-a9e3edc89c27",
+            "created": "2025-01-14T14:37:30.515924Z",
+            "modified": "2025-01-14T14:37:30.515924Z",
+            "name": "Automate Fraudulent Bank Transfers"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--92719697-6995-4278-80c1-8fafb8047503",
+            "created": "2025-01-14T14:37:30.524926Z",
+            "modified": "2025-01-14T14:37:30.524926Z",
+            "relationship_type": "targets",
+            "source_ref": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "target_ref": "location--120db000-184f-4666-ba0e-2af21d075373"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "location",
+            "spec_version": "2.1",
+            "id": "location--120db000-184f-4666-ba0e-2af21d075373",
+            "created": "2025-01-14T14:37:30.504921Z",
+            "modified": "2025-01-14T14:37:30.504921Z",
+            "region": "Italy"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "location",
+            "spec_version": "2.1",
+            "id": "location--120db000-184f-4666-ba0e-2af21d075373",
+            "created": "2025-01-14T14:37:30.504921Z",
+            "modified": "2025-01-14T14:37:30.504921Z",
+            "region": "Italy"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--f0e7fdc9-6125-45c0-87bd-de3cd264c858",
+            "created": "2025-01-14T14:37:30.524926Z",
+            "modified": "2025-01-14T14:37:30.524926Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "target_ref": "attack-pattern--36e30fa6-c7c9-41fb-a3a5-173626f9d4d0"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--36e30fa6-c7c9-41fb-a3a5-173626f9d4d0",
+            "created": "2025-01-14T14:37:30.515924Z",
+            "modified": "2025-01-14T14:37:30.515924Z",
+            "name": "tricks victims into fetching a mobile app from a fake Google Play page"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "location",
+            "spec_version": "2.1",
+            "id": "location--120db000-184f-4666-ba0e-2af21d075373",
+            "created": "2025-01-14T14:37:30.504921Z",
+            "modified": "2025-01-14T14:37:30.504921Z",
+            "region": "Italy"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--3356426e-a4b7-4802-a4b2-21b1f5766703",
+            "created": "2025-01-14T14:37:30.524926Z",
+            "modified": "2025-01-14T14:37:30.524926Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "target_ref": "attack-pattern--dbbf1d75-9aa7-4928-997f-1cb1474bbda4"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--dbbf1d75-9aa7-4928-997f-1cb1474bbda4",
+            "created": "2025-01-14T14:37:30.516924Z",
+            "modified": "2025-01-14T14:37:30.516924Z",
+            "name": "sent to a fake Google Play page featuring a corresponding banking app logo of the banking brand the victim originally attempted to access"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--7e758344-a65e-4ff6-8895-cc62b4aae8b3",
+            "created": "2025-01-14T14:37:30.524926Z",
+            "modified": "2025-01-14T14:37:30.524926Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "target_ref": "attack-pattern--0b42a68e-79d2-430d-b776-f2cfd2a24433"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--0b42a68e-79d2-430d-b776-f2cfd2a24433",
+            "created": "2025-01-14T14:37:30.517924Z",
+            "modified": "2025-01-14T14:37:30.517924Z",
+            "name": "Check account balance on the victim\u2019s bank account"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--c385954f-e064-4bf5-a967-6044e6cbde3f",
+            "created": "2025-01-14T14:37:30.524926Z",
+            "modified": "2025-01-14T14:37:30.524926Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "target_ref": "attack-pattern--14a5add9-0973-460f-a6c8-4d711a197628"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--14a5add9-0973-460f-a6c8-4d711a197628",
+            "created": "2025-01-14T14:37:30.518924Z",
+            "modified": "2025-01-14T14:37:30.518924Z",
+            "name": "Attempt to initiate a money transfer transaction"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--d81c7d37-6caa-4e3a-8771-326181042502",
+            "created": "2025-01-14T14:37:30.524926Z",
+            "modified": "2025-01-14T14:37:30.524926Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "target_ref": "attack-pattern--83311c25-9fc1-4804-9609-15f09035dc87"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--83311c25-9fc1-4804-9609-15f09035dc87",
+            "created": "2025-01-14T14:37:30.518924Z",
+            "modified": "2025-01-14T14:37:30.518924Z",
+            "name": "Send victim\u2019s login information to attacker\u2019s C2 server"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--eb3eaadc-942e-40d8-8bb0-95c007ee5239",
+            "created": "2025-01-14T14:37:30.524926Z",
+            "modified": "2025-01-14T14:37:30.524926Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "target_ref": "attack-pattern--849e0db7-cc38-42fb-9507-489a873d6286"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--849e0db7-cc38-42fb-9507-489a873d6286",
+            "created": "2025-01-14T14:37:30.518924Z",
+            "modified": "2025-01-14T14:37:30.518924Z",
+            "name": "Check if the infected machine is currently online"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--f4821aac-f8c8-4b13-a9a2-577f90a459d3",
+            "created": "2025-01-14T14:37:30.525926Z",
+            "modified": "2025-01-14T14:37:30.525926Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "target_ref": "attack-pattern--3f9be0ab-a003-4b9b-9273-931e4d431731"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--3f9be0ab-a003-4b9b-9273-931e4d431731",
+            "created": "2025-01-14T14:37:30.518924Z",
+            "modified": "2025-01-14T14:37:30.518924Z",
+            "name": "manipulate what victims see on their screens and have them click on elements"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--2bb867ac-7c21-4ba1-af43-9feabfc81726",
+            "created": "2025-01-14T14:37:30.525926Z",
+            "modified": "2025-01-14T14:37:30.525926Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "target_ref": "attack-pattern--c5dfee11-b878-4e01-a2e3-8b57d2c0d12e"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--c5dfee11-b878-4e01-a2e3-8b57d2c0d12e",
+            "created": "2025-01-14T14:37:30.518924Z",
+            "modified": "2025-01-14T14:37:30.518924Z",
+            "name": "replace a login button from the original bank\u2019s webpage and plant its own button that the victim will click"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "location",
+            "spec_version": "2.1",
+            "id": "location--120db000-184f-4666-ba0e-2af21d075373",
+            "created": "2025-01-14T14:37:30.504921Z",
+            "modified": "2025-01-14T14:37:30.504921Z",
+            "region": "Italy"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--9b47e3e7-cd0a-4498-a3d3-1e7a30901366",
+            "created": "2025-01-14T14:37:30.525926Z",
+            "modified": "2025-01-14T14:37:30.525926Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "target_ref": "attack-pattern--037db253-e680-49d8-804e-1c35103878f5"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--037db253-e680-49d8-804e-1c35103878f5",
+            "created": "2025-01-14T14:37:30.518924Z",
+            "modified": "2025-01-14T14:37:30.518924Z",
+            "name": "sends data to the C2 server, including authorization token, SMS content, telephone number and account login information"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--4ab6bb89-9962-4bdb-8341-43d26bbdeb0f",
+            "created": "2025-01-14T14:37:30.525926Z",
+            "modified": "2025-01-14T14:37:30.525926Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "target_ref": "attack-pattern--5d40ee21-ca8b-4e0a-98c6-c653d41a66fb"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--5d40ee21-ca8b-4e0a-98c6-c653d41a66fb",
+            "created": "2025-01-14T14:37:30.519925Z",
+            "modified": "2025-01-14T14:37:30.519925Z",
+            "name": "presents a maintenance notice on the account"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--896c09f5-1355-46f7-88eb-6ecfdb3a3921",
+            "created": "2025-01-14T14:37:30.525926Z",
+            "modified": "2025-01-14T14:37:30.525926Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--fe0b32e5-423a-4fdd-857c-5e506c9f8dbc",
+            "target_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--fe0b32e5-423a-4fdd-857c-5e506c9f8dbc",
+            "created": "2025-01-14T14:37:30.504921Z",
+            "modified": "2025-01-14T14:37:30.504921Z",
+            "pattern": "[url:value = 'hxxps://play.gooogle.services/store/apps/details.php?id=com.paypal.android.p2pmobile']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2025-01-14T14:37:30.504921Z"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--8b78856e-0ae2-4eed-92ec-7d30fa9c1289",
+            "created": "2025-01-14T14:37:30.526926Z",
+            "modified": "2025-01-14T14:37:30.526926Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--46ced502-4a77-4536-8597-8267c0fa58f9",
+            "target_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--46ced502-4a77-4536-8597-8267c0fa58f9",
+            "created": "2025-01-14T14:37:30.505922Z",
+            "modified": "2025-01-14T14:37:30.505922Z",
+            "pattern": "[url:value = 'hxxps://play.goooogle.services']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2025-01-14T14:37:30.505922Z"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--c9af983a-ac43-43cb-b8c8-3da5ee1261e4",
+            "created": "2025-01-14T14:37:30.526926Z",
+            "modified": "2025-01-14T14:37:30.526926Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--7d0c5994-d360-483d-9b85-b17c8715ad63",
+            "target_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--7d0c5994-d360-483d-9b85-b17c8715ad63",
+            "created": "2025-01-14T14:37:30.506922Z",
+            "modified": "2025-01-14T14:37:30.506922Z",
+            "pattern": "[url:value = 'hxxps://gooogle.services']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2025-01-14T14:37:30.506922Z"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--61919324-c7bb-4786-b80b-fd0eff0aaaf7",
+            "created": "2025-01-14T14:37:30.526926Z",
+            "modified": "2025-01-14T14:37:30.526926Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--bb1ff6ab-16f6-44f3-bb82-e9930a6e2fd6",
+            "target_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--bb1ff6ab-16f6-44f3-bb82-e9930a6e2fd6",
+            "created": "2025-01-14T14:37:30.506922Z",
+            "modified": "2025-01-14T14:37:30.506922Z",
+            "pattern": "[ipv4-addr:value = '37.120.222.138:9955']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2025-01-14T14:37:30.506922Z"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--ed481b01-2bae-43c1-8dde-53ffb2301d11",
+            "created": "2025-01-14T14:37:30.526926Z",
+            "modified": "2025-01-14T14:37:30.526926Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--a8e509d0-9f75-4b61-8a47-904c17279e92",
+            "target_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--a8e509d0-9f75-4b61-8a47-904c17279e92",
+            "created": "2025-01-14T14:37:30.508922Z",
+            "modified": "2025-01-14T14:37:30.508922Z",
+            "pattern": "[url:value = 'hxxps://google.servlce.store']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2025-01-14T14:37:30.508922Z"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--3a6811a9-6cf6-42a8-8df4-86d839a191a1",
+            "created": "2025-01-14T14:37:30.526926Z",
+            "modified": "2025-01-14T14:37:30.526926Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--2e9924a6-7d5e-4d1f-a59a-b7532de5d015",
+            "target_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--2e9924a6-7d5e-4d1f-a59a-b7532de5d015",
+            "created": "2025-01-14T14:37:30.508922Z",
+            "modified": "2025-01-14T14:37:30.508922Z",
+            "pattern": "[url:value = 'hxxps://play.google.servlce.store/store/apps/details.php?id=it.phoenixspa.inbank']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2025-01-14T14:37:30.508922Z"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--16dcbbea-33d0-4bbf-98bc-190c9c6bb0e6",
+            "created": "2025-01-14T14:37:30.526926Z",
+            "modified": "2025-01-14T14:37:30.526926Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--2b0902a9-81bc-4bf5-9c1e-bbd4a98d2886",
+            "target_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--2b0902a9-81bc-4bf5-9c1e-bbd4a98d2886",
+            "created": "2025-01-14T14:37:30.509922Z",
+            "modified": "2025-01-14T14:37:30.509922Z",
+            "pattern": "[url:value = 'hxxp://sanpoloanalytics.org/lancher/']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2025-01-14T14:37:30.509922Z"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--40e88ab4-b0af-4aa3-b7c1-76ba4c8f35ae",
+            "created": "2025-01-14T14:37:30.526926Z",
+            "modified": "2025-01-14T14:37:30.526926Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--10275a0b-e2b0-423c-8c9c-60d2914b5108",
+            "target_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--10275a0b-e2b0-423c-8c9c-60d2914b5108",
+            "created": "2025-01-14T14:37:30.509922Z",
+            "modified": "2025-01-14T14:37:30.509922Z",
+            "pattern": "[url:value = 'hxxp://sanpoloanalytics[.]org/pp_am/']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2025-01-14T14:37:30.509922Z"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--9b0911dd-b1fb-49a5-8550-87b782c736ad",
+            "created": "2025-01-14T14:37:30.527927Z",
+            "modified": "2025-01-14T14:37:30.527927Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--4ae8e8e5-8619-4936-b06e-ea9fd1a8fbdd",
+            "target_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--4ae8e8e5-8619-4936-b06e-ea9fd1a8fbdd",
+            "created": "2025-01-14T14:37:30.510922Z",
+            "modified": "2025-01-14T14:37:30.510922Z",
+            "pattern": "[url:value = 'hxxps://play.gooogle.services']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2025-01-14T14:37:30.510922Z"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--b3748973-8aff-4c54-a8ce-a164010c46fa",
+            "created": "2025-01-14T14:37:30.527927Z",
+            "modified": "2025-01-14T14:37:30.527927Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--27850011-1373-4ea3-a7d3-f8f69d7a3341",
+            "target_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--27850011-1373-4ea3-a7d3-f8f69d7a3341",
+            "created": "2025-01-14T14:37:30.512086Z",
+            "modified": "2025-01-14T14:37:30.512086Z",
+            "pattern": "[url:value = 'hxxps://goooogle.services']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2025-01-14T14:37:30.512086Z"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--0e3a8e34-96dd-4c34-ab0f-6c887cbcee7d",
+            "created": "2025-01-14T14:37:30.527927Z",
+            "modified": "2025-01-14T14:37:30.527927Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--24b88879-d4ca-4d13-ac9f-d9f63e8050f0",
+            "target_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--24b88879-d4ca-4d13-ac9f-d9f63e8050f0",
+            "created": "2025-01-14T14:37:30.512086Z",
+            "modified": "2025-01-14T14:37:30.512086Z",
+            "pattern": "[url:value = 'hxxp://sanpoloanalytics[.]org/lancher/']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2025-01-14T14:37:30.512086Z"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--fd7ce9a2-ec4c-47d0-b60a-6c78e2073d1c",
+            "created": "2025-01-14T14:37:30.527927Z",
+            "modified": "2025-01-14T14:37:30.527927Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--c3a35a5e-09c3-42a8-b2d2-ba921e2548e0",
+            "target_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--c3a35a5e-09c3-42a8-b2d2-ba921e2548e0",
+            "created": "2025-01-14T14:37:30.512923Z",
+            "modified": "2025-01-14T14:37:30.512923Z",
+            "pattern": "[url:value = 'hxxps://play.google.servlce.store/store/apps/details.php?id=it.[BANK']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2025-01-14T14:37:30.512923Z"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--16eb590b-b322-461c-8a94-711c948cc5ab",
+            "created": "2025-01-14T14:37:30.527927Z",
+            "modified": "2025-01-14T14:37:30.527927Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--c00c3c2d-778f-43e4-8fbb-f8e43640225a",
+            "target_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--c00c3c2d-778f-43e4-8fbb-f8e43640225a",
+            "created": "2025-01-14T14:37:30.513923Z",
+            "modified": "2025-01-14T14:37:30.513923Z",
+            "pattern": "[ipv4-addr:value = '194.76.225.91']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2025-01-14T14:37:30.513923Z"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--56096879-dde6-4003-8e72-ad096860d38d",
+            "created": "2025-01-14T14:37:30.528927Z",
+            "modified": "2025-01-14T14:37:30.528927Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--0c312b92-2e2c-493d-9f32-d6dbf70d010e",
+            "target_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--0c312b92-2e2c-493d-9f32-d6dbf70d010e",
+            "created": "2025-01-14T14:37:30.514923Z",
+            "modified": "2025-01-14T14:37:30.514923Z",
+            "pattern": "[url:value = 'hxxps://play.google.servlce.store']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2025-01-14T14:37:30.514923Z"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--3992fe51-7814-4d73-a03d-de5d966acaed",
+            "created": "2025-01-14T14:37:30.528927Z",
+            "modified": "2025-01-14T14:37:30.528927Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--d531abb1-2add-4dc7-8d4d-6e90dcc06e0b",
+            "target_ref": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--d531abb1-2add-4dc7-8d4d-6e90dcc06e0b",
+            "created": "2025-01-14T14:37:30.514923Z",
+            "modified": "2025-01-14T14:37:30.514923Z",
+            "pattern": "[url:value = 'hxxps://ecertificateboly.us/lancher/']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2025-01-14T14:37:30.514923Z"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--25dc30ad-0a1b-4603-949f-517d47184cdf",
+            "created": "2025-01-14T14:37:30.497919Z",
+            "modified": "2025-01-14T14:37:30.497919Z",
+            "name": "Cerberus",
+            "is_family": false
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--28ffdbfb-4f51-4bdd-b4b3-2ee05e75166a",
+            "created": "2025-01-14T14:37:30.528927Z",
+            "modified": "2025-01-14T14:37:30.528927Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "target_ref": "attack-pattern--eacc6e7c-8a88-4aba-bb4a-16e951d88d98"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--eacc6e7c-8a88-4aba-bb4a-16e951d88d98",
+            "created": "2025-01-14T14:37:30.515924Z",
+            "modified": "2025-01-14T14:37:30.515924Z",
+            "name": "receive two-factor authentication codes sent by banks"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--ef8e3f08-8fa5-43b2-8114-1ba9c68c5220",
+            "created": "2025-01-14T14:37:30.528927Z",
+            "modified": "2025-01-14T14:37:30.528927Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "target_ref": "attack-pattern--aa211e9d-ea32-4c2c-904b-827e858ba018"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--aa211e9d-ea32-4c2c-904b-827e858ba018",
+            "created": "2025-01-14T14:37:30.517924Z",
+            "modified": "2025-01-14T14:37:30.517924Z",
+            "name": "If the victims submit their phone number on the web injection, the remote server will send back a download URL for them to unknowingly download the Cerberus malware"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--ec4b20da-b034-4df7-bb1c-796c66227ac6",
+            "created": "2025-01-14T14:37:30.528927Z",
+            "modified": "2025-01-14T14:37:30.528927Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "target_ref": "attack-pattern--dd5403a8-479f-4479-b667-c3e879f09b6b"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--dd5403a8-479f-4479-b667-c3e879f09b6b",
+            "created": "2025-01-14T14:37:30.517924Z",
+            "modified": "2025-01-14T14:37:30.517924Z",
+            "name": "Send data to C2: token, SMS content, telephone, download an application"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--cc10d504-8b6c-49e5-a5d9-c5fac35e4986",
+            "created": "2025-01-14T14:37:30.528927Z",
+            "modified": "2025-01-14T14:37:30.528927Z",
+            "relationship_type": "uses",
+            "source_ref": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "target_ref": "attack-pattern--e1695b41-4f8e-4ca8-98e3-cdb6debe248c"
+        },
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--a71ed61c-96f1-4ead-9da9-ed53456330a3",
+            "created": "2025-01-14T14:37:30.500919Z",
+            "modified": "2025-01-14T14:37:30.500919Z",
+            "name": "Ursnif",
+            "is_family": false
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--e1695b41-4f8e-4ca8-98e3-cdb6debe248c",
+            "created": "2025-01-14T14:37:30.517924Z",
+            "modified": "2025-01-14T14:37:30.517924Z",
+            "name": "Send communication to the C2"
+        }
+    ]
+}

@@ -1,0 +1,973 @@
+<html data-wf-domain="en.preyproject.com" data-wf-page="664e6cee05979386894a9890" data-wf-site="639353f38b4804371dca1f6f" data-wf-intellimize-customer-id="117586492" lang="en" data-wf-collection="664e6ced05979386894a985a" data-wf-item-slug="cerberus-and-alien-the-malware-that-has-put-android-in-a-tight-spot"><head><meta charset="utf-8"><title>Alert: rise of cerberus and alien android malware</title><link rel="alternate" hreflang="x-default" href="https://preyproject.com/blog/cerberus-and-alien-the-malware-that-has-put-android-in-a-tight-spot"><link rel="alternate" hreflang="en" href="https://preyproject.com/blog/cerberus-and-alien-the-malware-that-has-put-android-in-a-tight-spot"><meta content="The release of complex Android malware source code has led to customized malicious versions. Could 2020 be the year of smartphone malware?" name="description"><meta content="width=device-width, initial-scale=1" name="viewport"><link href="https://cdn.prod.website-files.com/639353f38b4804371dca1f6f/css/gamera-prey.61c8141a1.min.css" rel="stylesheet" type="text/css"><script type="f3e3023867fbb66addfe96cc-text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="https://cdn.prod.website-files.com/639353f38b4804371dca1f6f/63c1ae3ff744963230767e8e_favicon.png" rel="shortcut icon" type="image/x-icon"><link href="https://cdn.prod.website-files.com/639353f38b4804371dca1f6f/63b47dad9c3e3f24d4d28485_prey_webclip.png" rel="apple-touch-icon"><link href="https://preyproject.com/blog/cerberus-and-alien-the-malware-that-has-put-android-in-a-tight-spot" rel="canonical"><style>.anti-flicker, .anti-flicker * {visibility: hidden !important; opacity: 0 !important;}</style><style>[data-wf-hidden-variation], [data-wf-hidden-variation] * {
+        display: none !important;
+      }</style><script type="f3e3023867fbb66addfe96cc-text/javascript">localStorage.removeItem('intellimize_opt_out_117586492'); if (localStorage.getItem('intellimize_data_tracking_type') !== 'always') { localStorage.setItem('intellimize_data_tracking_type', 'always'); }</script><script type="f3e3023867fbb66addfe96cc-text/javascript">(function(e,t,p){var n=document.documentElement,s={p:[],r:[]},u={p:s.p,r:s.r,push:function(e){s.p.push(e)},ready:function(e){s.r.push(e)}};e.intellimize=u,n.className+=" "+p,setTimeout(function(){n.className=n.className.replace(RegExp(" ?"+p),"")},t)})(window, 4000, 'anti-flicker')</script><link href="https://cdn.intellimize.co/snippet/117586492.js" rel="preload" as="script"><script type="f3e3023867fbb66addfe96cc-text/javascript">var wfClientScript=document.createElement("script");wfClientScript.src="https://cdn.intellimize.co/snippet/117586492.js",wfClientScript.async=!0,wfClientScript.onerror=function(){document.documentElement.className=document.documentElement.className.replace(RegExp(" ?anti-flicker"),"")},document.head.appendChild(wfClientScript);</script><link href="https://api.intellimize.co" rel="preconnect" crossorigin="true"><link href="https://log.intellimize.co" rel="preconnect" crossorigin="true"><link href="https://117586492.intellimizeio.com" rel="preconnect"><script src="https://www.google.com/recaptcha/api.js" type="f3e3023867fbb66addfe96cc-text/javascript"></script><!-- [Attributes by Finsweet] Accessibility -->
+<script defer="" src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-a11y@1/a11y.js" type="f3e3023867fbb66addfe96cc-text/javascript"></script>
+<!-- Fathom - beautiful, simple website analytics --> <script src="https://cdn.usefathom.com/script.js" data-site="KGMONFII" defer="" type="f3e3023867fbb66addfe96cc-text/javascript"></script> <!-- / Fathom -->
+<!-- Google Tag Manager -->
+<script type="f3e3023867fbb66addfe96cc-text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WVQMRJ');</script>
+<!-- End Google Tag Manager -->
+<!-- [Attributes by Finsweet] Disable scrolling -->
+<script defer="" src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-scrolldisable@1/scrolldisable.js" type="f3e3023867fbb66addfe96cc-text/javascript"></script><!-- [Attributes by Finsweet] Table of Contents -->
+<script defer="" src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-toc@1/toc.js" type="f3e3023867fbb66addfe96cc-text/javascript"></script></head><body><div class="page-wrapper"><div class="global-styles w-embed"><style>
+/* hack to enable touch after focus on the iframe*/
+html,
+body {
+  touch-action: auto;
+}
+  /* Make text look crisper and more legible in all browsers */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Focus state style for keyboard navigation for the focusable elements */
+  *[tabindex]:focus-visible,
+  input[type="file"]:focus-visible {
+    outline: 0.125rem solid #4d65ff;
+    outline-offset: 0.125rem;
+  }
+
+  /* Get rid of top margin on first element in any rich text element */
+  .w-richtext > :not(div):first-child, .w-richtext > div:first-child > :first-child {
+    margin-top: 0 !important;
+  }
+
+  /* Get rid of bottom margin on last element in any rich text element */
+  .w-richtext>:last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* Prevent all click and hover interaction with an element */
+  .pointer-events-off {
+    pointer-events: none;
+  }
+
+  /* Enables all click and hover interaction with an element */
+  .pointer-events-on {
+    pointer-events: auto;
+  }
+
+  /* Create a class of .div-square which maintains a 1:1 dimension of a div */
+  .div-square::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  /* Make sure containers never lose their center alignment */
+  .container-medium,.container-small, .container-large {
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  /* 
+  Make the following elements inherit typography styles from the parent and not have hardcoded values. 
+  Important: You will not be able to style for example "All Links" in Designer with this CSS applied.
+  Uncomment this CSS to use it in the project. Leave this message for future hand-off.
+  */
+  /*
+  a,
+  .w-input,
+  .w-select,
+  .w-tab-link,
+  .w-nav-link,
+  .w-dropdown-btn,
+  .w-dropdown-toggle,
+  .w-dropdown-link {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+  }
+  */
+
+  /* Apply "..." after 3 lines of text */
+  .text-style-3lines {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  /* Apply "..." after 2 lines of text */
+  .text-style-2lines {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+	/* Makes Text Vertical */
+  .vertical-text {
+		writing-mode: vertical-rl;
+  }
+  /* Adds inline flex display */
+  .display-inlineflex {
+    display: inline-flex;
+  }
+
+  /* These classes are never overwritten */
+  .hide, .ninja {
+    display: none !important;
+  }
+
+  @media screen and (max-width: 991px) {
+    .hide, .hide-tablet {
+      display: none !important;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .hide-mobile-landscape{
+      display: none !important;
+    }
+  }
+  @media screen and (max-width: 479px) {
+    .hide-mobile{
+      display: none !important;
+    }
+  }
+
+  .margin-0 {
+    margin: 0rem !important;
+  }
+
+  .padding-0 {
+    padding: 0rem !important;
+  }
+
+  .spacing-clean {
+    padding: 0rem !important;
+    margin: 0rem !important;
+  }
+
+  .margin-top {
+    margin-right: 0rem !important;
+    margin-bottom: 0rem !important;
+    margin-left: 0rem !important;
+  }
+
+  .padding-top {
+    padding-right: 0rem !important;
+    padding-bottom: 0rem !important;
+    padding-left: 0rem !important;
+  }
+
+  .margin-right {
+    margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
+    margin-left: 0rem !important;
+  }
+
+  .padding-right {
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+    padding-left: 0rem !important;
+  }
+
+  .margin-bottom {
+    margin-top: 0rem !important;
+    margin-right: 0rem !important;
+    margin-left: 0rem !important;
+  }
+
+  .padding-bottom {
+    padding-top: 0rem !important;
+    padding-right: 0rem !important;
+    padding-left: 0rem !important;
+  }
+
+  .margin-left {
+    margin-top: 0rem !important;
+    margin-right: 0rem !important;
+    margin-bottom: 0rem !important;
+  }
+
+  .padding-left {
+    padding-top: 0rem !important;
+    padding-right: 0rem !important;
+    padding-bottom: 0rem !important;
+  }
+
+  .margin-horizontal {
+    margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
+  }
+
+  .padding-horizontal {
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+  }
+
+  .margin-vertical {
+    margin-right: 0rem !important;
+    margin-left: 0rem !important;
+  }
+
+  .padding-vertical {
+    padding-right: 0rem !important;
+    padding-left: 0rem !important;
+  }
+  /*Responsive typography*/
+  html { font-size: calc(0.625rem + 0.41666666666666663vw); }
+  @media screen and (max-width:1920px) { html { font-size: calc(0.625rem + 0.41666666666666674vw); } }
+  @media screen and (max-width:1440px) { html { font-size: 1rem; } }
+  @media screen and (max-width:479px) { html { font-size: calc(0.8747384937238494rem + 0.41841004184100417vw); } }
+
+  /*Custom color for List items*/
+  li::marker {
+    color: var(--color-primary);
+  }
+  /*Navbar states customized colors*/  
+  .navbar.scrolled .navbar_brand-svg { 
+    color: var(--color-text-main) !important;
+  }
+  .navbar.scrolled .navbar-menu_button { 
+    color: var(--color-primary) !important;
+  	border-color: var(--color-primary) !important;
+  }
+  .navbar.is-dark-bg .navbar_brand-svg { 
+    color: var(--color-white);
+  }
+  @media screen and (min-width:991px) {
+    .navbar.is-dark-bg .navbar-menu_link-title,
+    .navbar.is-dark-bg .navbar-menu_dropdown-icon { 
+      color: var(--color-white);
+    }
+    .navbar.scrolled .navbar-menu_link-title { 
+      color: var(--color-text-main) !important;
+    }
+    .navbar.scrolled .navbar-menu_button.button.is-icon.w--open { 
+      color: var(--color-white) !important;
+    }
+    .navbar.scrolled .navbar-menu_dropdown-icon {
+      color: var(--color-primary) !important;
+    }
+  }
+  /*Styles for customized emphasis in title headings*/
+  [class*="graphic-"] > *{
+    position: relative;
+    z-index: 1;
+    white-space: pre;
+  }
+  [class*="graphic-"]:after {
+    content:"";
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    z-index: -1;
+  }
+  .graphic-underline-curved:after {
+    bottom: -0.75rem;
+    left: -8.5%;
+    width: 115%;
+    min-width: 123px;
+    height: 1rem;
+    background-image:url("https://cdn.prod.website-files.com/639353f38b4804371dca1f6f/665f80bec4f182ec68a901b4_graphic-underline-curved-light.png");
+  }
+  .graphic-underline-curved.is-dark:after {
+    background-image:url("https://cdn.prod.website-files.com/639353f38b4804371dca1f6f/665f7c6afeb474bddd657fa4_graphic-underline-curved-dark.png");
+  }
+  .graphic-highlight-circle:after {
+    height: 1.125em;
+    top: 0.25em;
+    left: -5%;
+    width: 112.5%;
+    background-image:url("https://cdn.prod.website-files.com/639353f38b4804371dca1f6f/665f8632effea3314c87b9c5_graphic-circle-highlight-light.png");
+  }
+  .graphic-highlight-circle.is-dark:after {
+    background-image:url("https://cdn.prod.website-files.com/639353f38b4804371dca1f6f/665f8254c28d521586d45db1_graphic-circle-highlight-dark.png");
+  }
+  .graphic-highlight-circle-2:after {
+    top: -20%;
+    left: -17%;
+    width: 140%;
+    height: 2em;
+    background-image:url("https://cdn.prod.website-files.com/639353f38b4804371dca1f6f/66610be8906c25eecdb12b1c_circle-2.png");
+  }
+  .graphic-highlight-circle-2.is-dark:after {
+    background-image:url("https://cdn.prod.website-files.com/639353f38b4804371dca1f6f/66610be8906c25eecdb12b1f_circle-2-dark.png");
+  }
+  .graphic-highlight-circle-3:after {
+    top: 0;
+    left: -10%;
+    width: 125%;
+    height: 1.55em;
+    background-image:url("https://cdn.prod.website-files.com/639353f38b4804371dca1f6f/6664e2cfb8ecb40656a32fa7_circle-3.png");
+  }
+  .graphic-highlight-circle-3.is-dark:after {
+    background-image:url("https://cdn.prod.website-files.com/639353f38b4804371dca1f6f/6664e2cf0225af30b138c123_circle-3-dark.png");
+  }
+  
+/*Pause on hover Slider styles*/
+[class*="track-horizontal"] {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+}
+.track-horizontal-cards {
+  animation: slider-horizontal-cards 40s linear infinite;
+  /* manipulate the speed of the slider by changing the number before the "s" in the line above*/
+}
+
+@keyframes slider-horizontal-cards {
+  from { transform: translateX(0); }
+  to { transform: translateX(-83.5%); }
+}
+
+.track-horizontal-cards-alt {
+  animation: slider-horizontal-cards-alt 40s linear infinite;
+  /* manipulate the speed of the slider by changing the number before the "s" in the line above*/
+}
+
+@keyframes slider-horizontal-cards-alt {
+  from { transform: translateX(-83.5%); }
+  to { transform: translateX(0%); }
+}
+.track-horizontal-logos {
+  animation: slider-horizontal-logos 40s linear infinite;
+  /* manipulate the speed of the slider by changing the number before the "s" in the line above*/
+}
+
+@keyframes slider-horizontal-logos {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.track-horizontal-logos-alt {
+  animation: slider-horizontal-logos-alt 40s linear infinite;
+  /* manipulate the speed of the slider by changing the number before the "s" in the line above*/
+}
+
+@keyframes slider-horizontal-logos-alt {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0%); }
+}
+
+[class*="track-horizontal"]:hover {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+</style></div><div class="navbar-menu_secondary padding-global"><div class="navbar-menu_secondary_container"><div class="locales-wrapper w-locales-list"><div role="list" class="w-locales-items"><div role="listitem" class="w-locales-item"><a hreflang="en" data-wf-native-id-path="fcdf792b-0a54-19f7-0ff7-2e97262d896c:45c8f133-5f7a-b027-956a-b38cf4040ae1_instance-0" href="/blog/cerberus-and-alien-the-malware-that-has-put-android-in-a-tight-spot" aria-current="page" class="navbar-menu_locale-switcher w--current">Ver sitio en Español</a></div><div role="listitem" class="w-locales-item"><a hreflang="es" data-wf-native-id-path="fcdf792b-0a54-19f7-0ff7-2e97262d896c:45c8f133-5f7a-b027-956a-b38cf4040ae1_instance-1" href="/es" class="navbar-menu_locale-switcher">Ver sitio en Español</a></div></div></div><div><a data-wf-native-id-path="fcdf792b-0a54-19f7-0ff7-2e97262d896c:3270d4a7-b63d-8c72-f311-520e447c86b4" href="https://panel.preyproject.com/login" class="button is-secondary is-small w-button">Login</a></div></div></div><div class="w-embed w-iframe"><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WVQMRJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --></div><main class="main-wrapper"><div data-collapse="medium" data-animation="default" data-duration="300" fs-scrolldisable-element="smart-nav" data-easing="ease-in-out" data-easing2="ease-in-out" role="banner" class="navbar w-nav"><div class="padding-global"><div class="container-large navbar_container"><a href="/blog" id="w-node-ee58b28b-f5a8-3022-3508-b46e2573a854-6453589e" data-wf-native-id-path="e5ab90d4-436f-2dca-f1aa-ad8f7c5576ca:ee58b28b-f5a8-3022-3508-b46e2573a854" class="navbar_brand-link w-nav-brand"><div class="brand-height-small w-embed"><svg width="100%" height="100%" aria-hidden="true" role="img" viewBox="0 0 40 38" fill="none" xmlns="http://www.w3.org/2000/svg"><title>Prey Icon</title>
+<path d="M20.0019 0L13.6854 3.6468L17.8957 6.07742L19.9962 4.86211L22.107 6.0768L26.3164 3.64563L20.0019 0Z" fill="#3C77B9"></path>
+<path d="M20.0028 37.6769L35.7902 28.5612L35.7898 18.8382L31.5779 21.2691L31.5794 26.1303L20.0009 32.8154L8.42117 26.129L8.42078 21.268L4.21211 18.8381V28.5602L20.0028 37.6769Z" fill="#3C77B9"></path>
+<path d="M16.8443 21.2695L12.6326 23.7005L20.0012 27.9531L27.3674 23.6998L23.1581 21.2687L37.897 12.7588L37.8938 7.90062L40 6.68469L39.9984 0.609766L22.1042 10.9405L20.0004 9.72531L17.895 10.9405L0 0.610625V6.68789L2.10781 7.90461L2.10703 12.7603L16.8443 21.2695Z" fill="#122F48"></path>
+</svg></div><div class="blog_logo-text">Blog</div></a><nav role="navigation" id="w-node-ee58b28b-f5a8-3022-3508-b46e2573a858-6453589e" class="navbar-menu_container w-nav-menu"><nav class="navbar-menu_navigation is-aligned-left"><div data-delay="0" data-hover="true" data-w-id="64cd4725-c357-b6c4-eb94-8ce05e08a54f" class="navbar-menu_dropdown w-dropdown"><div class="navbar-menu_dropdown-toggle w-dropdown-toggle"><div class="w-dyn-list"><div role="list" class="w-dyn-items"><div role="listitem" class="w-dyn-item"><div class="navbar-menu_link-title">IT Department</div></div></div></div><div class="navbar-menu_dropdown-icon"><div class="icon-1x1-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 16 16"><title>Down icon</title><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg></div></div></div><nav class="navbar-menu_dropdown-list w-dropdown-list"><div class="w-dyn-list"><div role="list" class="w-dyn-items"><div role="listitem" class="w-dyn-item"><a href="/category/data-security" class="navbar-menu_dropdown-link w-dropdown-link">Data Security</a></div><div role="listitem" class="w-dyn-item"><a href="/category/network-security" class="navbar-menu_dropdown-link w-dropdown-link">Network Security</a></div><div role="listitem" class="w-dyn-item"><a href="/category/it-operations" class="navbar-menu_dropdown-link w-dropdown-link">IT Operations</a></div><div role="listitem" class="w-dyn-item"><a href="/category/compliance" class="navbar-menu_dropdown-link w-dropdown-link">Compliance</a></div></div></div></nav></div><div data-delay="0" data-hover="true" class="navbar-menu_dropdown w-dropdown"><div class="navbar-menu_dropdown-toggle w-dropdown-toggle"><div class="w-dyn-list"><div role="list" class="w-dyn-items"><div role="listitem" class="w-dyn-item"><div class="navbar-menu_link-title">Cybersecurity</div></div></div></div><div class="navbar-menu_dropdown-icon"><div class="icon-1x1-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 16 16"><title>Down icon</title><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg></div></div></div><nav class="navbar-menu_dropdown-list w-dropdown-list"><div class="w-dyn-list"><div role="list" class="w-dyn-items"><div role="listitem" class="w-dyn-item"><a href="/category/incident-response" class="navbar-menu_dropdown-link w-dropdown-link">Incident response</a></div><div role="listitem" class="w-dyn-item"><a href="/category/threat-detection" class="navbar-menu_dropdown-link w-dropdown-link">Threat Detection</a></div><div role="listitem" class="w-dyn-item"><a href="/category/cyber-threats" class="navbar-menu_dropdown-link w-dropdown-link">Cyber Threats</a></div><div role="listitem" class="w-dyn-item"><a href="/category/cybersec-essentials" class="navbar-menu_dropdown-link w-dropdown-link">Cybersec Essentials</a></div></div></div></nav></div><div data-delay="0" data-hover="true" class="navbar-menu_dropdown w-dropdown"><div class="navbar-menu_dropdown-toggle w-dropdown-toggle"><div class="w-dyn-list"><div role="list" class="w-dyn-items"><div role="listitem" class="w-dyn-item"><div class="navbar-menu_link-title">Asset Management</div></div></div></div><div class="navbar-menu_dropdown-icon"><div class="icon-1x1-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 16 16"><title>Down icon</title><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg></div></div></div><nav class="navbar-menu_dropdown-list w-dropdown-list"><div class="w-dyn-list"><div role="list" class="w-dyn-items"><div role="listitem" class="w-dyn-item"><a href="/category/asset-inventory" class="navbar-menu_dropdown-link w-dropdown-link">Asset Inventory</a></div><div role="listitem" class="w-dyn-item"><a href="/category/device-tracking" class="navbar-menu_dropdown-link w-dropdown-link">Device Tracking</a></div><div role="listitem" class="w-dyn-item"><a href="/category/endpoint-management" class="navbar-menu_dropdown-link w-dropdown-link">Endpoint Management</a></div></div></div></nav></div><div data-delay="0" data-hover="true" class="navbar-menu_dropdown is-collections w-dropdown"><div class="navbar-menu_dropdown-toggle is-collections w-dropdown-toggle"><div class="navbar-menu_link-title">Collections</div><div class="navbar-menu_dropdown-icon"><div class="icon-1x1-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 16 16"><title>Down icon</title><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg></div></div></div><nav class="navbar-menu_dropdown-list w-dropdown-list"><div class="w-dyn-list"><div role="list" class="w-dyn-items"><div role="listitem" class="w-dyn-item"><a href="/collections/it-leadership" class="navbar-menu_dropdown-link w-dropdown-link">IT Leadership</a></div><div role="listitem" class="w-dyn-item"><a href="/collections/hacking" class="navbar-menu_dropdown-link w-condition-invisible w-dropdown-link">Hacking</a></div><div role="listitem" class="w-dyn-item"><a href="/collections/recovery-cases" class="navbar-menu_dropdown-link w-condition-invisible w-dropdown-link">Recovery Cases</a></div><div role="listitem" class="w-dyn-item"><a href="/collections/podcast" class="navbar-menu_dropdown-link w-condition-invisible w-dropdown-link">Podcast</a></div><div role="listitem" class="w-dyn-item"><a href="/collections/product" class="navbar-menu_dropdown-link w-condition-invisible w-dropdown-link">Product</a></div><div role="listitem" class="w-dyn-item"><a href="/collections/ed-tech" class="navbar-menu_dropdown-link w-dropdown-link">EdTech</a></div><div role="listitem" class="w-dyn-item"><a href="/collections/none" class="navbar-menu_dropdown-link w-condition-invisible w-dropdown-link">None</a></div><div role="listitem" class="w-dyn-item"><a href="/collections/msp" class="navbar-menu_dropdown-link w-dropdown-link">MSP</a></div><div role="listitem" class="w-dyn-item"><a href="/collections/anti-theft" class="navbar-menu_dropdown-link w-condition-invisible w-dropdown-link">Anti-Theft</a></div><div role="listitem" class="w-dyn-item"><a href="/collections/data-privacy" class="navbar-menu_dropdown-link w-condition-invisible w-dropdown-link">Data Privacy</a></div><div role="listitem" class="w-dyn-item"><a href="/collections/breaches" class="navbar-menu_dropdown-link w-dropdown-link">Breaches</a></div><div role="listitem" class="w-dyn-item"><a href="/collections/dark-web" class="navbar-menu_dropdown-link w-dropdown-link">Dark Web</a></div><div role="listitem" class="w-dyn-item"><a href="/collections/ebook-mtlr" class="navbar-menu_dropdown-link w-condition-invisible w-dropdown-link">Ebook_mtlr</a></div><div role="listitem" class="w-dyn-item"><a href="/collections/ebook-shift" class="navbar-menu_dropdown-link w-condition-invisible w-dropdown-link">Ebook_shift</a></div><div role="listitem" class="w-dyn-item"><a href="/collections/case-studies" class="navbar-menu_dropdown-link w-dropdown-link">Case Studies</a></div><div role="listitem" class="w-dyn-item"><a href="/collections/best-practices" class="navbar-menu_dropdown-link w-condition-invisible w-dropdown-link">Best Practices</a></div><div role="listitem" class="w-dyn-item"><a href="/collections/security-frameworks" class="navbar-menu_dropdown-link w-condition-invisible w-dropdown-link">Security Frameworks</a></div><div role="listitem" class="w-dyn-item"><a href="/collections/releases" class="navbar-menu_dropdown-link w-dropdown-link">Product  Releases</a></div><div role="listitem" class="w-dyn-item"><a href="/collections/security-strategy" class="navbar-menu_dropdown-link w-condition-invisible w-dropdown-link">Security Strategy</a></div><div role="listitem" class="w-dyn-item"><a href="/collections/healthcare" class="navbar-menu_dropdown-link w-dropdown-link">Healthcare</a></div></div></div></nav></div></nav></nav><div id="w-node-ee58b28b-f5a8-3022-3508-b46e2573a859-6453589e" class="navbar-menu_button button is-icon w-nav-button"><div id="w-node-_3d97ba3a-878a-edcb-3e4d-26657e311b8f-7e311b8f" class="icon-1x1-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 16 16"><title>Menu icon</title><path d="M0,12.3c0-.2,0-.4.2-.5.1-.1.3-.2.5-.2h14.5c.2,0,.4,0,.5.2.1.1.2.3.2.5s0,.4-.2.5c-.1.1-.3.2-.5.2H.7c-.2,0-.4,0-.5-.2-.1-.1-.2-.3-.2-.5ZM0,6.5c0-.2,0-.4.2-.5.1-.1.3-.2.5-.2h14.5c.2,0,.4,0,.5.2.1.1.2.3.2.5s0,.4-.2.5c-.1.1-.3.2-.5.2H.7c-.2,0-.4,0-.5-.2-.1-.1-.2-.3-.2-.5ZM0,.7c0-.2,0-.4.2-.5.1-.1.3-.2.5-.2h14.5c.2,0,.4,0,.5.2.1.1.2.3.2.5s0,.4-.2.5c-.1.1-.3.2-.5.2H.7c-.2,0-.4,0-.5-.2-.1-.1-.2-.3-.2-.5Z"></path></svg></div></div><div id="w-node-ee58b28b-f5a8-3022-3508-b46e2573a85b-6453589e" class="button-group navbar_button-group"><div class="blog-nav_search-component"><div class="topbar1_search-desktop"><form action="/search" class="form_field-search-wrapper w-form"><div id="w-node-_13b0e567-66c8-87a0-b66d-401a9ee3a510-6453589e" class="form_inline-button-wrapper"><input class="form_input is-inline-button w-input" maxlength="256" name="query" placeholder="Search…" type="search" id="search" required=""><input type="submit" class="button is-inline-button w-button" value="Search"></div></form></div></div><a data-wf-native-id-path="e5ab90d4-436f-2dca-f1aa-ad8f7c5576ca:ee58b28b-f5a8-3022-3508-b46e2573a85c" href="/get-started#trial" class="button is-icon-text w-inline-block"><div class="icon-1x1-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 16 16"><title>Rocket icon</title><path d="M12.17 9.53c2.307-2.592 3.278-4.684 3.641-6.218.21-.887.214-1.58.16-2.065a3.578 3.578 0 0 0-.108-.563 2.22 2.22 0 0 0-.078-.23V.453c-.073-.164-.168-.234-.352-.295a2.35 2.35 0 0 0-.16-.045 3.797 3.797 0 0 0-.57-.093c-.49-.044-1.19-.03-2.08.188-1.536.374-3.618 1.343-6.161 3.604l-2.4.238h-.006a2.552 2.552 0 0 0-1.524.734L.15 7.17a.512.512 0 0 0 .433.868l1.896-.271c.28-.04.592.013.955.132.232.076.437.16.655.248l.203.083c.196.816.66 1.58 1.275 2.195.613.614 1.376 1.08 2.191 1.277l.082.202c.089.218.173.424.249.657.118.363.172.676.132.956l-.271 1.9a.512.512 0 0 0 .867.433l2.382-2.386c.41-.41.668-.949.732-1.526l.24-2.408Zm.11-3.699c-.797.8-1.93.961-2.528.362-.598-.6-.436-1.733.361-2.532.798-.799 1.93-.96 2.528-.361.599.599.437 1.732-.36 2.531Z"></path>
+  <path d="M5.205 10.787a7.632 7.632 0 0 0 1.804 1.352c-1.118 1.007-4.929 2.028-5.054 1.903-.126-.127.737-4.189 1.839-5.18.346.69.837 1.35 1.411 1.925Z"></path></svg></div><div>Get started</div></a></div></div></div><div class="ninja w-embed w-script"><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" type="f3e3023867fbb66addfe96cc-text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js" type="f3e3023867fbb66addfe96cc-text/javascript"></script>
+<script type="f3e3023867fbb66addfe96cc-text/javascript">
+  document.addEventListener("DOMContentLoaded", function() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const navbar = document.querySelector('.navbar');
+    const navButton = document.querySelector('.navbar-menu_button');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', () => {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop) {
+      	if (navButton.classList.contains("w--open")){        	
+            gsap.to(navbar, { duration: 0, y: '0' });
+          } else {        
+            gsap.to(navbar, { duration: 0.1, y: '-100%' });
+        }
+      } else {
+        gsap.to(navbar, { duration: 0.1, y: 0 });
+        navbar.classList.add('scrolled');
+      }
+
+      if (scrollTop === 0) {
+        gsap.to(navbar, { duration: 0.3, backgroundColor: 'transparent' });
+        navbar.classList.remove('scrolled');
+      } else {
+        gsap.to(navbar, { duration: 0.3, backgroundColor: 'white' });
+      }
+
+      lastScrollTop = scrollTop;
+    });
+  });
+</script></div></div><header class="section_blog-post_header"><div class="blog-post_hero-bg"><div class="bg-noise"></div></div><div class="padding-global"><div class="container-large"><div class="padding-section-large"><div class="max-width-large align-center"><div class="blog-post_header_title-wrapper"><div class="blog-post_header_breadcrumb"><div class="breadcrumb-link">Cybersecurity</div><div class="breadcrumb-divider"><div class="icon-1x1-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 16 16"><title>Right icon</title><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path></svg></div></div><a data-wf-native-id-path="c9c50b46-b7d8-823d-3d23-7eabf8159fb8" href="/category/cyber-threats">Cyber Threats</a></div><div class="margin-bottom margin-large"><h1>Alert: rise of cerberus and alien android malware</h1></div><div class="blog-post_header_content-top"><div class="blog-post_header_author-wrapper"><div class="blog-post_header_author-image-wrapper"><img src="https://cdn.prod.website-files.com/664e6b29f3ed49c2317db2f2/6657963b347627eddc81e61e_62e177d3ca44550b012f9d22_normanicon.avif" loading="lazy" alt="norman@preyhq.com" class="blog-post_header_author-image is-small"></div><div class="blog-post_header_author-text"><a data-wf-native-id-path="dfcc658f-2afe-dd6c-61ff-9b6dbae4e77f" href="/author/thenorm" class="heading-style-h6">Norman G.</a><div class="blog-post_header_date-wrapper"><div class="text-size-small date">Sep 29, 2020</div><div class="blog-post_header_text-divider">•</div><div class="text-size-small"><span id="readTime">0</span> minute read</div></div></div></div><div class="w-layout-grid blog-post_share"><div id="w-node-_3a43cd7c-c753-899c-16fa-48cda6ef0c4e-894a9890" class="w-embed"><a class="button is-icon" href="/cdn-cgi/l/email-protection#b08fc3c5d2dad5d3c48d96d2dfd4c98d8a958280" target="_blank" title="Email" onclick="if (!window.__cfRLUnblockHandlers) return false; window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&amp;body=' + encodeURIComponent(document.URL)); return false;" data-cf-modified-f3e3023867fbb66addfe96cc-=""><div class="icon-1x1-small"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 16 16"><title>Email icon</title><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"></path></svg></div></a></div><div class="w-embed"><a class="button is-icon" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;title=&amp;summary=&amp;source=" target="_blank" title="Share on LinkedIn" onclick="if (!window.__cfRLUnblockHandlers) return false; window.open('http://www.linkedin.com/shareArticle?mini=true&amp;url=' + encodeURIComponent(document.URL) + '&amp;title=' + encodeURIComponent(document.title)); return false;" data-cf-modified-f3e3023867fbb66addfe96cc-=""><div class="icon-1x1-small"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 16 16"><title>Share in LinkedIn</title><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path></svg></div></a></div><div class="w-embed"><a class="button is-icon" href="https://twitter.com/intent/tweet?" target="_blank" title="Tweet" onclick="if (!window.__cfRLUnblockHandlers) return false; window.open('https://twitter.com/intent/tweet?text=%20Check%20up%20this%20awesome%20content' + encodeURIComponent(document.title) + ':%20 ' + encodeURIComponent(document.URL)); return false;" data-cf-modified-f3e3023867fbb66addfe96cc-=""><div class="icon-1x1-small"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 16 16"><title>Prey Project's Twitter Profile</title><path d="M9.5,6.7L15.3,0H14L8.9,5.9L4.9,0H0.2l6,8.9l-6,7.1h1.4l5.4-6.2l4.3,6.1h4.6L9.5,6.7L9.5,6.7z M7.6,9L7,8.1l-4.9-7h2.1
+	l4,5.7l0.6,0.9L14,15h-2.1L7.6,9L7.6,9z"></path></svg></div></a></div><div class="w-embed"><a class="button is-icon" href="https://www.facebook.com/sharer/sharer.php?u=&amp;t=" title="Share on Facebook" target="_blank" onclick="if (!window.__cfRLUnblockHandlers) return false; window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&amp;t=' + encodeURIComponent(document.URL)); return false;" data-cf-modified-f3e3023867fbb66addfe96cc-=""><div class="icon-1x1-small"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 16 16"><title>Facebook icon</title><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path></svg></div></a></div></div></div></div><div class="blog-post_header_image-wrapper"><img src="https://cdn.prod.website-files.com/664e6b29f3ed49c2317db2f2/666118a2b6dc307db6a7a044_62df01d943d617546b26bf5e_1402cerberus-1.jpeg" loading="lazy" alt="Alert: rise of cerberus and alien android malware" class="blog-post_header_image"></div></div></div></div></div></header><header class="section_blog-post_body"><div class="padding-global"><div class="container-medium"><div class="blog-post_body_component"><div class="w-layout-vflex"><div class="blog-post_sidebar-wrapper"><div id="w-node-_965b5602-f08e-6c27-b14e-0817d74276cf-894a9890" class="blog-post_body_content-left"><div class="w-layout-vflex blog-post_toc"><div class="margin-bottom margin-small"><div class="heading-style-h4">Table of Contents</div></div><div class="blog-post_toc_link-wrapper"><a href="#" fs-toc-element="link" data-wf-native-id-path="aaec1deb-0a1c-cef7-e7f8-0414463452c5" class="blog-post_toc_link">Heading H2</a></div></div><div class="ninja w-dyn-list"><div role="list" class="w-dyn-items"><div role="listitem" class="blog-post_cta-sidebar w-dyn-item"><div class="card"><div class="card_article-hero-image"><img alt="CTA_MDM" loading="lazy" src="https://cdn.prod.website-files.com/664e6b29f3ed49c2317db2f2/665df0fa14b71d236e972707_6347305681eb713a48c50611_FULLSUITE_CTAS_BLOG02_ENG.webp" class="blog_sidebar-card-image"></div><div class="card_wrapper is-small"><div class="card_header-section"><div class="heading-style-h6">Remote management can be simpler than you think. Almost magical.</div></div><div class="button-group is-card"><a data-wf-native-id-path="33189201-6998-b3c1-afb7-5516a1239a98_instance-0" href="/cta-blog/cta-mdm" class="button is-small w-button">Show me some tricks</a></div></div></div></div></div></div><div class="blog-post_body_divider"></div><div class="blog-post_body_share-wrapper"><div class="margin-bottom margin-small"><div class="heading-style-h5">Share</div></div><div class="w-layout-grid blog-post_share"><div id="w-node-_89d4bb86-2327-8023-5d9e-ff4cb0c66c3e-894a9890" class="w-embed"><a class="button is-icon" href="/cdn-cgi/l/email-protection#d9e6aaacbbb3bcbaade4ffbbb6bda0e4e3fcebe9" target="_blank" title="Email" onclick="if (!window.__cfRLUnblockHandlers) return false; window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&amp;body=' + encodeURIComponent(document.URL)); return false;" data-cf-modified-f3e3023867fbb66addfe96cc-=""><div class="icon-1x1-small"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 16 16"><title>Email icon</title><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"></path></svg></div></a></div><div class="w-embed"><a class="button is-icon" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;title=&amp;summary=&amp;source=" target="_blank" title="Share on LinkedIn" onclick="if (!window.__cfRLUnblockHandlers) return false; window.open('http://www.linkedin.com/shareArticle?mini=true&amp;url=' + encodeURIComponent(document.URL) + '&amp;title=' + encodeURIComponent(document.title)); return false;" data-cf-modified-f3e3023867fbb66addfe96cc-=""><div class="icon-1x1-small"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 16 16"><title>Share in LinkedIn</title><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path></svg></div></a></div><div class="w-embed"><a class="button is-icon" href="https://twitter.com/intent/tweet?" target="_blank" title="Tweet" onclick="if (!window.__cfRLUnblockHandlers) return false; window.open('https://twitter.com/intent/tweet?text=%20Check%20up%20this%20awesome%20content' + encodeURIComponent(document.title) + ':%20 ' + encodeURIComponent(document.URL)); return false;" data-cf-modified-f3e3023867fbb66addfe96cc-=""><div class="icon-1x1-small"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 16 16"><title>Prey Project's Twitter Profile</title><path d="M9.5,6.7L15.3,0H14L8.9,5.9L4.9,0H0.2l6,8.9l-6,7.1h1.4l5.4-6.2l4.3,6.1h4.6L9.5,6.7L9.5,6.7z M7.6,9L7,8.1l-4.9-7h2.1
+	l4,5.7l0.6,0.9L14,15h-2.1L7.6,9L7.6,9z"></path></svg></div></a></div><div class="w-embed"><a class="button is-icon" href="https://www.facebook.com/sharer/sharer.php?u=&amp;t=" title="Share on Facebook" target="_blank" onclick="if (!window.__cfRLUnblockHandlers) return false; window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&amp;t=' + encodeURIComponent(document.URL)); return false;" data-cf-modified-f3e3023867fbb66addfe96cc-=""><div class="icon-1x1-small"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 16 16"><title>Facebook icon</title><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path></svg></div></a></div></div></div></div></div><div class="blog-post_body_divider"></div><div id="w-node-ea4adcb2-3416-4b33-1fb8-a0643e5c9d9e-894a9890" class="blog-post_sidebar_author"><div class="margin-bottom margin-small"><div class="heading-style-h5">About the Author</div></div><div class="w-layout-hflex blog-post_sidebar_author-wrapper"><div class="blog-post_header_author-image-wrapper"><img src="https://cdn.prod.website-files.com/664e6b29f3ed49c2317db2f2/6657963b347627eddc81e61e_62e177d3ca44550b012f9d22_normanicon.avif" loading="lazy" alt="norman@preyhq.com" class="blog-post_header_author-image"></div><div class="blog-post_header_author-text"><a data-wf-native-id-path="96a8975e-a4b7-c4be-f1f1-865470419d1a" href="/author/thenorm" class="heading-style-h6">Norman G.</a></div><div class="blog-post_sidebar_author-description"><div class="text-size-small w-richtext"><p>Norman Gutiérrez was our Security Researcher at Prey. In addition to this, Norm served as Prey's Content and Communication Specialist, and our Infosec ambassador. Norm has worked for several tech media outlets such as FayerWayer and Publimetro, among others. In his free time, Norman enjoys videogames, cool gadgets, music, and fun board games.</p></div></div></div></div></div><div id="w-node-_965b5602-f08e-6c27-b14e-0817d742770c-894a9890" class="blog-post_body_content"><div id="article" fs-toc-element="contents" fs-toc-offsettop="3rem" fs-toc-hideurlhash="true" class="text-rich-text w-richtext"><p id="">2020 is the year of the rat, and we actually aren’t talking about the Chinese horoscope. <a href="https://www.threatfabric.com/blogs/2020_year_of_the_rat.html" target="_blank" id="">According to several cybersecurity researchers</a>, 2020 has seen an explosive increase in Remote access Trojans, or “RATs”.</p><p id="">This threat is not minor: a RAT can take control of your computer in the same way that a remote administrator would normally do, using tools such as TeamViewer or VNC. In this case, it’s a malicious control: a RAT steals your personal information trying to carry out bank or identity fraud.</p><p id="">However, and with the migration of PC users to the mobile world, hackers changed their strategy. Now there is a whole series of malware focused on bank credentials and identity theft, especially designed for Android mobile devices. These RATs have reached a high level of sophistication, and most are offered in the form of "malware as a service", or MaaS.</p><p id="">Between 2019 and 2020 these attacks have become increasingly common. Names like Anubis, Hydra, Ginp, or Gustuff appear on all mobile malware lists on a recurring basis. However, the one that has dominated the arena this year –for several reasons– is Cerberus: a nightmare-inducing rodent.</p><h2 id=""><strong id="">Cerberus, the king of all RATs</strong></h2><p id="">Cerberus is a highly sophisticated Android malware, in circulation since 2019. It has been actively distributed on dark web forums, in a “malware-as-a-service” (MaaS) format. For a sum between $4,000 and $12,000, cybercriminal groups capable of paying it have had all the malware tools at their disposal. And by tools, we mean an arsenal of destruction.</p><p id="">Cerberus was conceived as a run-of-the-mill banking and phishing malware, and seeing Anubis's success with cybercriminals, the team decided to integrate RAT capabilities into their toolset. Its victim is the banking apps inside your smartphone, but its functionality is much more complex. Like any Remote Access Trojan worth its salt, Cerberus is capable of deep surveillance within your device, interfering with the encrypted communications the phone has with its apps, and outside.</p><p id="">Basically, Cerberus can intercept and steal your phone's unlock pattern or PIN, as well as Google Authenticator numbers, and any SMS necessary to perform a two-step verification. Likewise, this malware can interpose itself between you and your bank's app through an overlay, the most common method for carrying out a phishing attack. In short, Cerberus can enter your computer, extract all the necessary data to perform a bank fraud, and wait for the best moment to take the money from your account. All without you doing anything.</p><figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:914px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="914px"><a href="https://preyproject.com/trial?utm_source=Blog&amp;utm_medium=Blog&amp;utm_campaign=Blog_CTA&amp;utm_content=General" target="_blank"><div id=""><img src="https://cdn.prod.website-files.com/664e6b29f3ed49c2317db2f2/665e2e0c9b3a6dbddb0ffaa0_62df01cea2374e9e2fde9e71_10_ctas-3.png" alt="" id="" width="auto" height="auto" loading="auto"></div></a></figure><h2 id=""><strong id="">Cerberus and its complex functionality</strong></h2><p id="">Regarding what Cerberus can do, it is necessary to point out two possibilities within its functionality. We already mentioned that Cerberus is a RAT, but to achieve such control of the phone, it is necessary to have control of a vulnerability. In this case, it is the<a href="https://developer.android.com/reference/kotlin/android/accessibilityservice/AccessibilityService" id=""> Android Accessibility Service</a>.</p><p id="">This service, which normally assists users with disabilities in certain applications, is abused by Cerberus to give itself more permissions without user interaction. Having control of the Accessibility Services, the malware proceeds to ensure its persistence in different ways, either by disabling Play Protect or by removing itself from the applications in use.</p><p id="">On the other hand, Cerberus is capable of generating an instance of TeamViewer on mobile, and through the aforementioned Accessibility permissions, authorizing said session while the equipment is in use, all without user interaction.</p><p id="">From that point, and as soon as the C2 server has the computer's data, the rest of the functionalities are available to the attackers remotely. Abusing both the Accessibility Service and the TeamViewer session, Cerberus is capable of a lot. Its possibilities include:</p><ul id=""><li id="">A keylogger</li><li id="">Listing, retrieval, sending and forwarding of SMS</li><li id="">Forwarding or transferring calls</li><li id="">Installation and deletion of apps</li><li id="">Locking and unlocking the screen (without user interaction)</li><li id="">Collection of device data</li><li id="">List of device applications</li><li id="">Device file collection and extraction</li><li id="">Phishing attacks via preloaded overlays</li><li id="">Various protection capabilities, such as emulation detection</li></ul><h2 id=""><strong id="">The rocky history of Cerberus</strong></h2><p id="">As we mentioned, Cerberus has been on the market for a long time, to the detriment of users and banks alike. However, there are two reasons why it is now a growing concern: on one hand, the rapid evolution of its functionalities and on the other, the release of its source code.</p><p id="">Cerberus was born in 2019 as an espionage suite. While its design made it capable of bank fraud, at the time the malware lacked the level of sophistication required to steal two-step authentication (2FA) data from apps like Google Authenticator. However,<a href="https://www.threatfabric.com/blogs/cerberus-a-new-banking-trojan-from-the-underworld.html" id=""> a ThreatFabric report</a> analyzed the second version of the malware in early 2020. Cerberus v2 was still in development by the same Eurasian team that brought it to life, with increasingly powerful functionality.</p><p id="">Months later,<a href="https://blog.avast.com/avast-finds-banking-trojan-cerberus-on-google-play-avast" id=""> An Avast team</a> made a disturbing finding. An app for the Spanish market, called “Calculadora de Moneda” ("Currency Calculator"), contained malicious code related to Cerberus in its APK. The app was hosted on the Google Play Store, which supposedly contains software from legitimate and safe sources.</p><p id="">However, after weeks in hibernation, a connection to the attackers' C2 servers activated code on the app that downloaded another APK containing Cerberus, and the smartphones were infected with the malware.</p><p id="">As the days passed, the Cerberus team became fragmented. In July, the developers decided to leave the project in the hands of anyone who could pay for it. The operators decided to auction everything: the servers, the malicious APK's source code, and the admin panel codes in addition to the modules. With a profit of aproximately $10,000 per customer, the creators of Cerberus promised potential buyers to recover the expense in no time.</p><p id="">However, the lack of interest –or buyers willing to pay that sum– put the sale at risk. The worst happened a couple of weeks later. Cybersecurity researcher Dmitry Galov revealed that the auction had failed and that Cerberus operators released the source code of the malware. This opened the door to the worst-case scenario: developers taking Cerberus and transforming it into something nasty.</p><h2 id=""><strong id="">Alien, the new player</strong></h2><figure id="" class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center"><div id=""><img src="https://cdn.prod.website-files.com/664e6b29f3ed49c2317db2f2/665e2e84cc1073d84be32de2_62df01d943d6174a5c26bf5f_5417-1.jpeg" alt="" id="" width="auto" height="auto" loading="auto"></div></figure><p id="">It took less than two weeks for another MaaS to take the crown. Alien, considered by experts as a full-blown 'fork' of Cerberus, entered the market aggressively after the fall of its predecessor.</p><p id="">The <a href="https://www.threatfabric.com/blogs/alien_the_story_of_cerberus_demise.html" id="">ThreatFabric report</a> on Alien is concerning. Although Alien comes from a different version than the one released, it retains many of the functions that make this type of malware dangerous. First of all, it's a very streamlined RAT with tons of features. It is also capable of running its own TeamViewer instance, and of displaying fake logins for more than 226 applications. These include not only banking apps, but social media, email, and even popular cryptocurrency wallets.</p><p id="">Alien is distributed in the same way as Cerberus in its early days: through malware forums on the dark web. Its price has not yet been published, but it is believed that it would be similar to Cerberus given the similarity in functionality.</p><h2 id=""><strong id="">Conclusions</strong></h2><p id="">The smartphone malware landscape is becoming more complex as 2020 progresses. Malicious actors are taking advantage of user-authorized vulnerabilities to access our phones, <a href="https://preyproject.com/blog/verizon-dbir-2020-4-findings-that-must-shape-security-on-your-organization" id="">and then exploit all avenues for financial gain.</a> This practice has generated a very profitable market, one that all Android users can fall victim to.</p><p id="">Recommendations for a threat this organized are straightforward. First and foremost, review any application installed on our Android devices, especially the requested permissions. Also, and even if it is used by many applications in a completely legitimate way, it’s necessary to pay attention if a suspicious application needs access to Google's Accessibility Services.</p><p id="">Along the same lines, there is a need to educate users about the risks of this type of malware, whether personal or work-related. It should not be forgotten: although there are strong economic motivations, malware such as Cerberus is still a powerful spying tool. The coexistence of private data on our mobiles may well be an attack vector for our organizations.</p><p id=""><strong id="">Back to the Basics - </strong><a href="https://preyproject.com/blog/what-is-cyber-security" id=""><strong id="">What is Cybersecurity?</strong></a></p><figure id="" class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:914px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="914px"><a href="https://preyproject.com/trial?utm_source=Blog&amp;utm_medium=Blog&amp;utm_campaign=Blog_CTA&amp;utm_content=General" target="_blank"><div id=""><img src="https://cdn.prod.website-files.com/664e6b29f3ed49c2317db2f2/665e2e84cc1073d84be32de8_62df01d943d617758e26bf60_04_eng.png" alt="track laptops" id="" width="auto" height="auto" loading="auto"></div></a></figure></div><div class="ninja w-embed w-script"><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="f3e3023867fbb66addfe96cc-text/javascript">
+//Reading time
+function get_text(el) {
+    ret = "";
+    var length = el.childNodes.length;
+    for(var i = 0; i < length; i++) {
+        var node = el.childNodes[i];
+        if(node.nodeType != 8) {
+            ret += node.nodeType != 1 ? node.nodeValue : get_text(node);
+        }
+    }
+    return ret;
+}
+    
+var words = get_text(document.querySelector('#article'));
+var count = words.split(' ').length;
+
+document.getElementById('readTime').innerHTML = Math.round(count / 200).toFixed();     
+</script></div></div></div></div></div></header><section class="section_related-resources"><div class="padding-global"><div class="container-large"><div class="padding-section-large padding-top"><div class="margin-bottom margin-xxlarge"><div class="text-align-center"><div blocks-name="max-width-large" blocks-slot-children="ST232" class="max-width-large align-center"><div class="margin-bottom margin-small"><h2 blocks-name="heading">On the same issue</h2></div></div></div></div><div class="related-resources_list-wrapper w-dyn-list"><div role="list" class="related-resources_list w-dyn-items"><div role="listitem" class="related-resources_list-item w-dyn-item"><div id="w-node-dfb577c2-14fb-ba87-5f14-04f800005e7b-894a9890" class="card"><div class="card_article-hero-image"><img alt="School phishing and ransomware: how to win the battle" loading="lazy" src="https://cdn.prod.website-files.com/664e6b29f3ed49c2317db2f2/66611895cf515dfbb565b36c_64c419c8ad540eaf3ec687f7_41_ransomware_and_pishing.webp" class="card-hero-image"></div><div class="card_wrapper"><div class="card_header-section"><a data-wf-native-id-path="dfb577c2-14fb-ba87-5f14-04f800005e80_instance-0" href="/blog/school-phishing-and-ransomware" class="heading-style-h6">School phishing and ransomware: how to win the battle</a></div><div class="card_content-text"><p class="text-style-3lines">Learn how to combat the rising of phishing and ransomware in schools, and ensure a safe environment for students.</p></div><div class="card_footer-section-article"><div id="w-node-dfb577c2-14fb-ba87-5f14-04f800005e86-894a9890" class="card_footer-article-info"><div class="label"><div class="label_text date">Apr 17, 2024</div></div></div><div class="button-group align-right"><a data-wf-native-id-path="dfb577c2-14fb-ba87-5f14-04f800005e8b_instance-0" href="/blog/school-phishing-and-ransomware" class="button is-small is-tertiary w-button">Continue reading</a></div></div></div></div></div><div role="listitem" class="related-resources_list-item w-dyn-item"><div id="w-node-dfb577c2-14fb-ba87-5f14-04f800005e7b-894a9890" class="card"><div class="card_article-hero-image"><img alt="Cybersecurity threats in educational institutions" loading="lazy" src="https://cdn.prod.website-files.com/664e6b29f3ed49c2317db2f2/6661187c0c49970718a0ddd8_64c185e46dee363be9b237ce_Cyber-security-threats-in-education-institutions%2520-%2520prey.avif" class="card-hero-image"></div><div class="card_wrapper"><div class="card_header-section"><a data-wf-native-id-path="dfb577c2-14fb-ba87-5f14-04f800005e80_instance-1" href="/blog/cyber-security-threats-it-professionals-in-education-face" class="heading-style-h6">Cybersecurity threats in educational institutions</a></div><div class="card_content-text"><p class="text-style-3lines">Learn about the top cybersecurity threats faced by schools, and what are some ways to reduce their impact on students and staff.</p></div><div class="card_footer-section-article"><div id="w-node-dfb577c2-14fb-ba87-5f14-04f800005e86-894a9890" class="card_footer-article-info"><div class="label"><div class="label_text date">Apr 15, 2024</div></div></div><div class="button-group align-right"><a data-wf-native-id-path="dfb577c2-14fb-ba87-5f14-04f800005e8b_instance-1" href="/blog/cyber-security-threats-it-professionals-in-education-face" class="button is-small is-tertiary w-button">Continue reading</a></div></div></div></div></div><div role="listitem" class="related-resources_list-item w-dyn-item"><div id="w-node-dfb577c2-14fb-ba87-5f14-04f800005e7b-894a9890" class="card"><div class="card_article-hero-image"><img alt="Dark Web Cyber Threats: Explore the Dark secrets" loading="lazy" src="https://cdn.prod.website-files.com/664e6b29f3ed49c2317db2f2/666118111b1061a8209334ff_65f9d95936391b19b4c3fdc9_Darke_web_cyberthreats_navigating_the_shadows.avif" class="card-hero-image"></div><div class="card_wrapper"><div class="card_header-section"><a data-wf-native-id-path="dfb577c2-14fb-ba87-5f14-04f800005e80_instance-2" href="/blog/dark-web-cyber-threats" class="heading-style-h6">Dark Web Cyber Threats: Explore the Dark secrets</a></div><div class="card_content-text"><p class="text-style-3lines">Explore the Dark Web secrets. Essential for IT managers to boost security to fight online dangers. Learn how!</p></div><div class="card_footer-section-article"><div id="w-node-dfb577c2-14fb-ba87-5f14-04f800005e86-894a9890" class="card_footer-article-info"><div class="label"><div class="label_text date">Mar 19, 2024</div></div></div><div class="button-group align-right"><a data-wf-native-id-path="dfb577c2-14fb-ba87-5f14-04f800005e8b_instance-2" href="/blog/dark-web-cyber-threats" class="button is-small is-tertiary w-button">Continue reading</a></div></div></div></div></div></div></div></div></div></div></section><section class="section_cta-card"><div class="padding-global"><div class="container-large"><div class="padding-section-large"><div class="w-layout-grid cta-card_component"><div class="w-layout-grid cta-card_card-wrapper"><div class="cta-card_image-column"><img src="https://cdn.prod.website-files.com/639353f38b4804371dca1f6f/66c7c86c2e3997c815e337d7_05.avif" loading="eager" alt="" class="cta-card_image"></div><div blocks-name="header92_card-content" blocks-slot-children="ST232" class="cta-card_card-content"><div blocks-slot-children="ST232" blocks-name="header92_card-content-top" class="cta-card_card-content-header"><div class="margin-bottom margin-small"><div class="w-layout-vflex"><h3 blocks-name="heading">Discover</h3><h2 blocks-name="heading">Prey's Powerful Features</h2></div></div><p blocks-name="paragraph" class="text-size-xlarge">Protect your devices with Prey's comprehensive security suite.</p></div><div class="margin-top margin-medium"><div blocks-slot-children="ST232" blocks-name="button-group" class="button-group align-right"><a blocks-name="button" data-wf-native-id-path="ea9a8238-65b5-0bf3-839c-c8117d0e1a1e:f95bf96c-248e-d140-a5f6-5f72b513c304" href="/features" class="button is-secondary w-button">Learn more</a><a blocks-name="button" data-wf-native-id-path="ea9a8238-65b5-0bf3-839c-c8117d0e1a1e:f95bf96c-248e-d140-a5f6-5f72b513c306" href="/get-started" class="button w-button">Get started</a></div></div></div></div></div></div></div></div></section></main><footer class="footer_component"><div class="padding-global"><div class="container-large"><div class="main-footer_wrapper"><div class="w-layout-grid footer_top-wrapper"><div blocks-name="footer3_left-wrapper" blocks-slot-children="ST265" class="footer_left-wrapper"><div id="w-node-ca62f227-7d82-9a4f-774b-8b31cc6a0534-cc6a052d" class="margin-bottom margin-small"><div class="w-layout-hflex button-group"><a data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:c9a227f6-688b-bf35-42a4-2bf5dd710e49" href="/get-started#quote" class="button is-icon-text w-inline-block"><div class="icon-1x1-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 16 16"><title>Rocket icon</title><path d="M12.17 9.53c2.307-2.592 3.278-4.684 3.641-6.218.21-.887.214-1.58.16-2.065a3.578 3.578 0 0 0-.108-.563 2.22 2.22 0 0 0-.078-.23V.453c-.073-.164-.168-.234-.352-.295a2.35 2.35 0 0 0-.16-.045 3.797 3.797 0 0 0-.57-.093c-.49-.044-1.19-.03-2.08.188-1.536.374-3.618 1.343-6.161 3.604l-2.4.238h-.006a2.552 2.552 0 0 0-1.524.734L.15 7.17a.512.512 0 0 0 .433.868l1.896-.271c.28-.04.592.013.955.132.232.076.437.16.655.248l.203.083c.196.816.66 1.58 1.275 2.195.613.614 1.376 1.08 2.191 1.277l.082.202c.089.218.173.424.249.657.118.363.172.676.132.956l-.271 1.9a.512.512 0 0 0 .867.433l2.382-2.386c.41-.41.668-.949.732-1.526l.24-2.408Zm.11-3.699c-.797.8-1.93.961-2.528.362-.598-.6-.436-1.733.361-2.532.798-.799 1.93-.96 2.528-.361.599.599.437 1.732-.36 2.531Z"></path>
+  <path d="M5.205 10.787a7.632 7.632 0 0 0 1.804 1.352c-1.118 1.007-4.929 2.028-5.054 1.903-.126-.127.737-4.189 1.839-5.18.346.69.837 1.35 1.411 1.925Z"></path></svg></div><div>Get started</div></a><a data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:c95d0ce0-6da7-44af-5588-6414a86c1682" href="/download" class="button is-secondary w-button">Download Prey</a></div></div><div class="margin-bottom margin-large"><div blocks-name="footer3_details-wrapper" blocks-slot-children="ST232" class="footer_details-wrapper"><div class="w-layout-vflex margin-bottom margin-small"><div blocks-name="block" class="text-size-small text-weight-bold">Cambiar idioma a</div><div class="w-locales-list"><div role="list" class="w-locales-items"><div role="listitem" class="w-locales-item"><a hreflang="en" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:395ebf48-2f8e-da24-7094-7ccb3609c85c_instance-0" href="/blog/cerberus-and-alien-the-malware-that-has-put-android-in-a-tight-spot" aria-current="page" class="button is-icon-text is-secondary w-inline-block w--current"><div class="icon-1x1-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 18 18"><title>Globe with speech bubble icon</title><path fill-rule="evenodd" clip-rule="evenodd" d="M0.5625 8.71875C0.5625 6.40639 1.48108 4.18875 3.11616 2.55366C4.75125 0.91858 6.96889 0 9.28125 0C11.5936 0 13.8113 0.91858 15.4463 2.55366C17.0814 4.18875 18 6.40639 18 8.71875C18 11.0311 17.0814 13.2488 15.4463 14.8838C13.8113 16.5189 11.5936 17.4375 9.28125 17.4375C8.6117 17.4375 7.9501 17.3605 7.30827 17.2114C7.78233 16.9349 8.19993 16.5904 8.5428 16.1939C8.60723 16.2207 8.67176 16.244 8.73633 16.2637V15.9539C9.25869 15.2585 9.5625 14.4267 9.5625 13.5329C9.5625 12.6391 9.25869 11.8073 8.73633 11.1119V9.26367H5.8174C5.39734 9.16508 4.9557 9.1125 4.5 9.1125C4.0443 9.1125 3.60266 9.16508 3.1826 9.26367H1.67196C1.6852 9.45382 1.70556 9.64295 1.73292 9.83068C1.37372 10.0358 1.0462 10.2797 0.758137 10.5555C0.629025 9.95646 0.5625 9.34103 0.5625 8.71875ZM8.73633 1.17376C8.00613 1.39609 7.28139 2.06743 6.67979 3.19542C6.52358 3.48823 6.38009 3.80501 6.2493 4.14577C7.01764 4.31687 7.85355 4.42586 8.73633 4.45855V1.17376ZM5.19325 3.85696C5.34873 3.43773 5.52347 3.04611 5.71746 2.68211C5.90714 2.32651 6.1247 1.9865 6.3681 1.66528C5.44014 2.04952 4.59719 2.61322 3.88761 3.32402C4.28286 3.52528 4.71807 3.7022 5.19325 3.85696ZM4.38676 8.17383C4.426 7.0077 4.59165 5.89932 4.86193 4.89558C4.27172 4.70767 3.70064 4.46427 3.15633 4.16865C2.2881 5.33396 1.77288 6.72414 1.67196 8.17383H4.38676ZM5.91254 5.18657C5.65521 6.16273 5.50897 7.16484 5.47661 8.17383H8.73633V5.54839C7.74457 5.5157 6.79314 5.39037 5.91254 5.18657ZM9.82617 5.5473V8.17383H13.0848C13.0528 7.16488 12.9069 6.16277 12.65 5.18657C11.7694 5.39037 10.8179 5.51352 9.82617 5.5473ZM9.82617 9.26367V11.8891C10.8179 11.9218 11.7694 12.0471 12.65 12.2509C12.893 11.3496 13.0467 10.3393 13.0859 9.26367H9.82617ZM12.1944 15.7722C13.1219 15.3882 13.9644 14.8249 14.6738 14.1146C14.2533 13.9033 13.8172 13.7248 13.3693 13.5805C13.2204 13.9832 13.0453 14.3757 12.845 14.7554C12.6554 15.111 12.4378 15.451 12.1944 15.7722ZM9.82617 12.9789V16.2637C10.5564 16.0414 11.2811 15.3701 11.8827 14.2421C12.0396 13.9493 12.1831 13.6325 12.3132 13.2917C11.4954 13.1122 10.6629 13.0068 9.82617 12.9789ZM13.7006 12.5419C14.3218 12.7435 14.8939 12.9877 15.4062 13.2688C16.2744 12.1035 16.7896 10.7134 16.8905 9.26367H14.1768C14.1429 10.3709 13.9831 11.4708 13.7006 12.5419ZM16.8905 8.17383C16.7896 6.72414 16.2744 5.33396 15.4062 4.16865C14.8939 4.44983 14.3218 4.69396 13.7006 4.89558C13.9708 5.89823 14.1365 7.0077 14.1768 8.17383H16.8905ZM12.845 2.68211C13.0383 3.04684 13.2134 3.43846 13.3703 3.85696C13.8179 3.71269 14.2537 3.53415 14.6738 3.32293C13.9643 2.61303 13.1218 2.05009 12.1944 1.66637C12.432 1.9748 12.65 2.31701 12.845 2.68211ZM12.3132 4.14577C12.1888 3.82068 12.045 3.50333 11.8827 3.19542C11.2811 2.06743 10.5564 1.39718 9.82617 1.17376V4.45746C10.7089 4.42477 11.5449 4.31687 12.3132 4.14577Z"></path>
+<path d="M9 13.548C9 15.7181 6.98513 17.4772 4.5 17.4772C4.05409 17.4783 3.61 17.4205 3.17925 17.3055C2.85131 17.4716 2.097 17.7905 0.828 17.9982C0.716062 18.0161 0.63 17.8994 0.674438 17.795C0.873563 17.3257 1.05356 16.7004 1.10812 16.1301C0.417938 15.4396 0 14.5359 0 13.548C0 11.3779 2.01487 9.61874 4.5 9.61874C6.98513 9.61874 9 11.3779 9 13.548Z"></path></svg></div><div>Español</div></a></div><div role="listitem" class="w-locales-item"><a hreflang="es" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:395ebf48-2f8e-da24-7094-7ccb3609c85c_instance-1" href="/es" class="button is-icon-text is-secondary w-inline-block"><div class="icon-1x1-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 18 18"><title>Globe with speech bubble icon</title><path fill-rule="evenodd" clip-rule="evenodd" d="M0.5625 8.71875C0.5625 6.40639 1.48108 4.18875 3.11616 2.55366C4.75125 0.91858 6.96889 0 9.28125 0C11.5936 0 13.8113 0.91858 15.4463 2.55366C17.0814 4.18875 18 6.40639 18 8.71875C18 11.0311 17.0814 13.2488 15.4463 14.8838C13.8113 16.5189 11.5936 17.4375 9.28125 17.4375C8.6117 17.4375 7.9501 17.3605 7.30827 17.2114C7.78233 16.9349 8.19993 16.5904 8.5428 16.1939C8.60723 16.2207 8.67176 16.244 8.73633 16.2637V15.9539C9.25869 15.2585 9.5625 14.4267 9.5625 13.5329C9.5625 12.6391 9.25869 11.8073 8.73633 11.1119V9.26367H5.8174C5.39734 9.16508 4.9557 9.1125 4.5 9.1125C4.0443 9.1125 3.60266 9.16508 3.1826 9.26367H1.67196C1.6852 9.45382 1.70556 9.64295 1.73292 9.83068C1.37372 10.0358 1.0462 10.2797 0.758137 10.5555C0.629025 9.95646 0.5625 9.34103 0.5625 8.71875ZM8.73633 1.17376C8.00613 1.39609 7.28139 2.06743 6.67979 3.19542C6.52358 3.48823 6.38009 3.80501 6.2493 4.14577C7.01764 4.31687 7.85355 4.42586 8.73633 4.45855V1.17376ZM5.19325 3.85696C5.34873 3.43773 5.52347 3.04611 5.71746 2.68211C5.90714 2.32651 6.1247 1.9865 6.3681 1.66528C5.44014 2.04952 4.59719 2.61322 3.88761 3.32402C4.28286 3.52528 4.71807 3.7022 5.19325 3.85696ZM4.38676 8.17383C4.426 7.0077 4.59165 5.89932 4.86193 4.89558C4.27172 4.70767 3.70064 4.46427 3.15633 4.16865C2.2881 5.33396 1.77288 6.72414 1.67196 8.17383H4.38676ZM5.91254 5.18657C5.65521 6.16273 5.50897 7.16484 5.47661 8.17383H8.73633V5.54839C7.74457 5.5157 6.79314 5.39037 5.91254 5.18657ZM9.82617 5.5473V8.17383H13.0848C13.0528 7.16488 12.9069 6.16277 12.65 5.18657C11.7694 5.39037 10.8179 5.51352 9.82617 5.5473ZM9.82617 9.26367V11.8891C10.8179 11.9218 11.7694 12.0471 12.65 12.2509C12.893 11.3496 13.0467 10.3393 13.0859 9.26367H9.82617ZM12.1944 15.7722C13.1219 15.3882 13.9644 14.8249 14.6738 14.1146C14.2533 13.9033 13.8172 13.7248 13.3693 13.5805C13.2204 13.9832 13.0453 14.3757 12.845 14.7554C12.6554 15.111 12.4378 15.451 12.1944 15.7722ZM9.82617 12.9789V16.2637C10.5564 16.0414 11.2811 15.3701 11.8827 14.2421C12.0396 13.9493 12.1831 13.6325 12.3132 13.2917C11.4954 13.1122 10.6629 13.0068 9.82617 12.9789ZM13.7006 12.5419C14.3218 12.7435 14.8939 12.9877 15.4062 13.2688C16.2744 12.1035 16.7896 10.7134 16.8905 9.26367H14.1768C14.1429 10.3709 13.9831 11.4708 13.7006 12.5419ZM16.8905 8.17383C16.7896 6.72414 16.2744 5.33396 15.4062 4.16865C14.8939 4.44983 14.3218 4.69396 13.7006 4.89558C13.9708 5.89823 14.1365 7.0077 14.1768 8.17383H16.8905ZM12.845 2.68211C13.0383 3.04684 13.2134 3.43846 13.3703 3.85696C13.8179 3.71269 14.2537 3.53415 14.6738 3.32293C13.9643 2.61303 13.1218 2.05009 12.1944 1.66637C12.432 1.9748 12.65 2.31701 12.845 2.68211ZM12.3132 4.14577C12.1888 3.82068 12.045 3.50333 11.8827 3.19542C11.2811 2.06743 10.5564 1.39718 9.82617 1.17376V4.45746C10.7089 4.42477 11.5449 4.31687 12.3132 4.14577Z"></path>
+<path d="M9 13.548C9 15.7181 6.98513 17.4772 4.5 17.4772C4.05409 17.4783 3.61 17.4205 3.17925 17.3055C2.85131 17.4716 2.097 17.7905 0.828 17.9982C0.716062 18.0161 0.63 17.8994 0.674438 17.795C0.873563 17.3257 1.05356 16.7004 1.10812 16.1301C0.417938 15.4396 0 14.5359 0 13.548C0 11.3779 2.01487 9.61874 4.5 9.61874C6.98513 9.61874 9 11.3779 9 13.548Z"></path></svg></div><div>Español</div></a></div></div></div></div><div blocks-name="footer3_social-list" blocks-slot-children="ST232" class="w-layout-grid button-group"><a data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:2ff25d96-8b51-4fb7-360d-657856f945c3" href="https://instagram.com/preyproject" target="_blank" class="button is-icon is-small w-inline-block"><div class="icon-1x1-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 16 16"><title>Prey Project's Instagram Profile</title><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path></svg></div></a><a id="w-node-_5966b03f-ed39-703c-9b0e-ce61f13bd5bb-cc6a052d" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:5966b03f-ed39-703c-9b0e-ce61f13bd5bb" href="https://x.com/preyproject/" target="_blank" class="button is-icon is-small w-inline-block"><div class="icon-1x1-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 16 16"><title>Prey Project's Twitter Profile</title><path d="M9.5,6.7L15.3,0H14L8.9,5.9L4.9,0H0.2l6,8.9l-6,7.1h1.4l5.4-6.2l4.3,6.1h4.6L9.5,6.7L9.5,6.7z M7.6,9L7,8.1l-4.9-7h2.1
+	l4,5.7l0.6,0.9L14,15h-2.1L7.6,9L7.6,9z"></path></svg></div></a><a id="w-node-_96771a52-010a-b602-b6d0-5d233edcc321-cc6a052d" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:96771a52-010a-b602-b6d0-5d233edcc321" href="https://www.linkedin.com/company/931433?trk=tyah&amp;trkInfo=clickedVertical%3Acompany%2Cidx%3A1-1-1%2CtarId%3A1435102161956%2Ctas%3Aprey" target="_blank" class="button is-icon is-small w-inline-block"><div class="icon-1x1-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 16 16"><title>Prey Project's LinkedIn profile</title><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path></svg></div></a><a id="w-node-b9a34d7e-16b4-10b5-e4b2-c4f8901d348a-cc6a052d" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:b9a34d7e-16b4-10b5-e4b2-c4f8901d348a" href="https://www.youtube.com/user/PreyAntiTheft" target="_blank" class="button is-icon is-small w-inline-block"><div class="icon-1x1-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 16 16"><title>Prey Project's Youtube Channel</title><path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"></path></svg></div></a></div></div></div><div id="w-node-ffb4c038-6fc7-5a70-96cd-b22b81d4dc24-cc6a052d" class="margin-bottom margin-large"><div class="footer_soc2-badge"><div class="soc2-badge-large w-embed"><svg width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 160 160"><title>Prey's SOC2 Certification Badge</title>
+<g clip-path="url(#clip0_7266_2188)">
+<rect width="160" height="159.295" fill="url(#pattern0_7266_2188)"></rect>
+</g>
+<defs>
+<pattern id="pattern0_7266_2188" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_7266_2188" transform="matrix(0.00278878 0 0 0.00280112 -0.000586175 0)"></use>
+</pattern>
+<clipPath id="clip0_7266_2188">
+<rect width="160" height="159.295" fill="white"></rect>
+</clipPath>
+<image id="image0_7266_2188" width="359" height="357" xlink:href="data:image/png;base64,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"></image>
+</defs>
+</svg></div></div></div><div id="w-node-efc54ca9-c251-805d-bc66-5b96ff48b39d-cc6a052d" class="w-layout-vflex"><div blocks-name="block" class="text-size-small text-weight-bold">Prey Live Status</div><div class="live-status_embed w-embed w-iframe"><iframe src="https://prey.instatus.com/embed-status/light-sm" width="230" height="61" frameborder="0" scrolling="no" title="Prey Systems Status" style="border: none; margin: 0px; min-width: 100%; min-height: auto;"></iframe></div></div></div><div class="w-layout-grid footer_menu-wrapper"><div blocks-name="footer3_link-list" blocks-slot-children="ST232" class="footer_link-list"><div class="footer_link-list_title">About Prey</div><a href="/about-us" blocks-name="footer3_link" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:ca62f227-7d82-9a4f-774b-8b31cc6a0554" class="footer_link">About us</a><a href="/features" blocks-name="footer3_link-2" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:ca62f227-7d82-9a4f-774b-8b31cc6a0556" class="footer_link">Features</a><a href="/pricing" blocks-name="footer3_link-3" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:ca62f227-7d82-9a4f-774b-8b31cc6a0558" class="footer_link">Pricing</a><a href="https://updates.preyproject.com/en/#" blocks-name="footer3_link-5" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:ca62f227-7d82-9a4f-774b-8b31cc6a055c" class="footer_link">What's new</a></div><div blocks-name="footer3_link-list" blocks-slot-children="ST232" id="w-node-_1dc0b616-4199-758d-1315-2d54d8718559-cc6a052d" class="footer_link-list"><div class="footer_link-list_title">Products</div><a href="/products/prey-full-suite" blocks-name="footer3_link" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:1dc0b616-4199-758d-1315-2d54d871855c" class="footer_link">Prey Full Suite</a><a href="/products/prey-protection" blocks-name="footer3_link-2" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:1dc0b616-4199-758d-1315-2d54d871855e" class="footer_link">Prey Protection</a><a href="/products/prey-tracking" blocks-name="footer3_link-3" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:1dc0b616-4199-758d-1315-2d54d8718560" class="footer_link">Prey Tracking</a></div><div blocks-name="footer3_link-list-2" blocks-slot-children="ST232" class="footer_link-list"><div class="footer_link-list_title">Features</div><a href="/features/device-tracking-and-location" blocks-name="footer3_link-6" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:ca62f227-7d82-9a4f-774b-8b31cc6a055f" class="footer_link">Tracking &amp; monitoring</a><a href="/features/data-protection" blocks-name="footer3_link-7" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:ca62f227-7d82-9a4f-774b-8b31cc6a0561" class="footer_link">Data protection</a><a href="/features/device-security" blocks-name="footer3_link-8" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:ca62f227-7d82-9a4f-774b-8b31cc6a0563" class="footer_link">Device security</a><a href="/features/device-management" blocks-name="footer3_link-9" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:ca62f227-7d82-9a4f-774b-8b31cc6a0565" class="footer_link">Device management</a></div><div blocks-name="footer3_link-list-2" blocks-slot-children="ST232" id="w-node-c1725948-75ee-0a0f-dcad-ff3857df013c-cc6a052d" class="footer_link-list"><div class="footer_link-list_title">Solutions</div><div class="footer_link-list_title-small">By Use Case</div><a href="/use-cases/tracking-your-fleets" blocks-name="footer3_link-6" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:c1725948-75ee-0a0f-dcad-ff3857df013d" class="footer_link">Tracking your fleets</a><a href="/use-cases/device-lending-programs" blocks-name="footer3_link-7" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:c1725948-75ee-0a0f-dcad-ff3857df013f" class="footer_link">Device loan programs</a><a href="/use-cases/lost-or-stolen-devices" blocks-name="footer3_link-8" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:c1725948-75ee-0a0f-dcad-ff3857df0141" class="footer_link">Lost or stolen devices</a><a href="/use-cases/secure-data-devices" blocks-name="footer3_link-9" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:c1725948-75ee-0a0f-dcad-ff3857df0143" class="footer_link">Data &amp; device security</a><div class="footer_link-list_title-small">By Industries</div><a href="/industries/business" blocks-name="footer3_link-10" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:352cd218-ed06-c421-23c6-744d5756afc4" class="footer_link">Business</a><a href="/industries/education" blocks-name="footer3_link-10" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:3a1dc812-7c69-3e69-245d-8052ab3cd532" class="footer_link">Education</a><a href="/industries/health" blocks-name="footer3_link-10" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:841541e6-d7b9-a7e1-7539-456f92c3fc5a" class="footer_link">Health</a><a href="/partners/managed-service-providers" blocks-name="footer3_link-10" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:41401bd5-d128-90dd-b9d1-75a4c5a4ff30" class="footer_link">Managed Service Providers</a><a href="/partners/resellers" blocks-name="footer3_link-10" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:f49639bf-2821-cf9f-4e7e-0c86dc53eace" class="footer_link">Resellers</a></div><div blocks-name="footer3_link-list-2" blocks-slot-children="ST232" id="w-node-e5e17daa-83b5-6dde-8025-5bee9a47ff29-cc6a052d" class="footer_link-list"><div class="footer_link-list_title">Resources</div><a blocks-name="footer3_link-7" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:e5e17daa-83b5-6dde-8025-5bee9a47ff2c" href="/resources" class="footer_link">Resource hub</a><a blocks-name="footer3_link-6" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:e5e17daa-83b5-6dde-8025-5bee9a47ff2a" href="/blog" class="footer_link">Blog</a><a blocks-name="footer3_link-7" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:667393f0-7c5f-d8ba-a625-600417c0103d" href="https://support.preyproject.com/hc/en-us" target="_blank" class="footer_link">Help Center</a><a blocks-name="footer3_link-7" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:49110899-ef77-5fbe-05a6-8d43c38dae18" href="https://api.preyproject.com/?_gl=1*1bdk3jo*_gcl_au*MTk4NzkxNjAyLjE3MTcxNzg3Mzc.*_ga*MTAyNTU5MTgwLjE3MDk2NDk1NDY.*_ga_PQML3KDTRV*MTcyMzAzOTg3My42MC4xLjE3MjMwMzk4NzYuNTcuMC4w" target="_blank" class="footer_link">Developer API</a><div class="filler-block"></div><div class="footer_link-list_title-small">Prey Vs</div><a blocks-name="footer3_link-8" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:e5e17daa-83b5-6dde-8025-5bee9a47ff2e" href="/prey-alternatives/prey-vs-absolute" class="footer_link">Prey vs Absolute</a><a blocks-name="footer3_link-9" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:e5e17daa-83b5-6dde-8025-5bee9a47ff30" href="/prey-alternatives/prey-vs-intune" class="footer_link">Prey vs Intune</a><a blocks-name="footer3_link-9" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:983625f6-0e8b-afc6-52a2-9d6fab6483d7" href="/prey-alternatives/prey-vs-drivestrike" class="footer_link">Prey vs Drivestrike</a></div></div></div></div></div></div><div class="footer_secondary"><div class="padding-global"><div class="container-large"><div class="padding-section-tiny"><div class="footer_bottom-wrapper"><div blocks-name="footer3_legal-list" blocks-slot-children="ST232" class="w-layout-grid footer_legal-list"><div class="footer_copyright-year w-embed w-script">© <script type="f3e3023867fbb66addfe96cc-text/javascript">document.write(new Date().getFullYear());</script> — Prey</div><a blocks-name="footer3_legal-link-2" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:ca62f227-7d82-9a4f-774b-8b31cc6a0571" href="/terms" class="footer_legal-link">Terms of service</a><a blocks-name="footer3_legal-link" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:ca62f227-7d82-9a4f-774b-8b31cc6a056f" href="/gdpr" class="footer_legal-link">GDPR</a><a blocks-name="footer3_legal-link" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:90c278c6-c0e1-fb9e-2749-9bdbdc7c53da" href="/privacy" class="footer_legal-link">Privacy</a><a blocks-name="footer3_legal-link-3" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:ca62f227-7d82-9a4f-774b-8b31cc6a0573" href="/cookies" class="footer_legal-link">Cookies</a><a blocks-name="footer3_legal-link-3" data-wf-native-id-path="f5a73335-7c02-b592-c166-623ed0d05f9b:5ba28158-b243-4bf0-5cd0-69f9eef4b60c" href="/security-compliance" class="footer_legal-link">Security &amp; compliance</a></div><div class="text-size-xsmall no-break">548 Market St. #30152, SF, CA 94104, USA</div></div></div></div></div></div></footer></div><script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=639353f38b4804371dca1f6f" type="f3e3023867fbb66addfe96cc-text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/639353f38b4804371dca1f6f/js/gamera-prey.38e519edb27693977151677d62dc54a4.js" type="f3e3023867fbb66addfe96cc-text/javascript"></script><script type="f3e3023867fbb66addfe96cc-text/javascript">
+$(document).on('click', 'a', function (e) {
+  let raw = {
+    url: window.location.href,
+    referrer: document.referrer,
+    href: e.target.href
+  };
+
+  try {
+    raw['source'] = e.target.dataset.source;
+  } catch (e) {
+    console.log(e);
+  }
+  track("cta", raw);
+});
+
+$(document).ready(function () {
+  track('page', { url: window.location.href, referrer: document.referrer });
+});
+
+$.fn.serializeObject = function () {
+  var data = {};
+  $.each(this.serializeArray(), function (key, obj) {
+    var a = obj.name.match(/(.*?)\[(.*?)\]/);
+    if (a !== null) {
+      var subName = new String(a[1]);
+      var subKey = new String(a[2]);
+      if (!data[subName]) {
+        data[subName] = {};
+        data[subName].length = 0;
+      }
+      if (!subKey.length) {
+        subKey = data[subName].length;
+      }
+      if (data[subName][subKey]) {
+        if ($.isArray(data[subName][subKey])) {
+          data[subName][subKey].push(obj.value);
+        } else {
+          data[subName][subKey] = {};
+          data[subName][subKey].push(obj.value);
+        }
+      } else {
+        data[subName][subKey] = obj.value;
+      }
+      data[subName].length++;
+    } else {
+      var keyName = new String(obj.name);
+      if (data[keyName]) {
+        if ($.isArray(data[keyName])) {
+          data[keyName].push(obj.value);
+        } else {
+          data[keyName] = {};
+          data[keyName].push(obj.value);
+        }
+      } else {
+        data[keyName] = obj.value;
+      }
+    }
+  });
+  return data;
+};
+
+$.fn.serializeFormData = function () {
+  var formData = new FormData();
+  $.each($(':input', this), function (i, fields) {
+    if ($(fields).attr('type') !== 'file') {
+      formData.append($(fields).attr('name'), $(fields).val());
+    }
+  });
+
+  let file_index = 0;
+  $('input[type=file]').each(function (_i, file) {
+    if (file.files[0]) {
+      formData.append(
+        'files[' + file_index + ']',
+        file.files[0],
+        file.files[0].name
+      );
+      file_index++;
+    }
+  });
+
+  return formData;
+};
+
+function waitForElm(selector) {
+  return new Promise((resolve) => {
+    if (document.querySelector(selector)) {
+      return resolve(document.querySelector(selector));
+    }
+
+    const observer = new MutationObserver((mutations) => {
+      if (document.querySelector(selector)) {
+        observer.disconnect();
+        resolve(document.querySelector(selector));
+      }
+    });
+
+    // If you get "parameter 1 is not of type 'Node'" error, see https://stackoverflow.com/a/77855838/492336
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+  });
+}
+
+function getUserTimezone() {
+  try {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone;
+  } catch (e) {
+    return null;
+  }
+}
+
+function getUserUtcOffset() {
+  return new Date().getTimezoneOffset() / -60;
+}
+
+function getCookieValue(valueCookie, element) {
+  let valueArray = decodeURIComponent(valueCookie).split('&');
+  let valueFound = valueArray.find((e) => {
+    return e.startsWith(`${element}=`);
+  });
+  return valueFound ? valueFound.split('=')[1] : '';
+}
+
+function loadCookie(name) {
+  return (
+    document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
+  );
+}
+
+function retrieveCaptchaValue() {
+  let captchaValue;
+  if (['/get-started','/es/comenzar'].includes(window.location.pathname)) {
+    if (
+      Array.from(
+        document.getElementById('w-tabs-0-data-w-tab-0').classList
+      ).includes('w--current')
+    ) {
+      captchaValue =
+        document.getElementById('recaptcha-quote').children[0].children[1]
+          .value;
+    } else {
+      captchaValue =
+        document.getElementById('recaptcha-trial').children[0].children[1]
+          .value;
+    }
+  } else {
+    captchaValue = document.getElementById('g-recaptcha-response').value;
+  }
+
+  return captchaValue;
+}
+
+function getLanguageFromURL() {
+  const url = window.location.href;
+  return url.includes("/es/") ? 'es' : 'en';
+}
+  
+function sharedData() {
+  const firstSession = loadCookie('FirstSession');
+  const returningSession = loadCookie('ReturningSession');
+  const campaignName = returningSession
+    ? getCookieValue(returningSession, 'campaign')
+    : firstSession
+    ? getCookieValue(firstSession, 'campaign')
+    : '';
+
+  const skipCaptchaParam = window.location.search.split('=');
+  const cookieSources = {
+    first_source: loadCookie('FirstSession'),
+    returning_source: loadCookie('ReturningSession'),
+    ga: loadCookie('_ga'),
+    gid: loadCookie('_gid'),
+  };
+
+  let defaultData = {
+    first_source: firstSession ? getCookieValue(firstSession, 'source') : '',
+    returning_source: returningSession
+      ? getCookieValue(returningSession, 'source')
+      : '',
+    campaign: campaignName,
+    tz: getUserTimezone(),
+    utc_offset: getUserUtcOffset(),
+    captcha: retrieveCaptchaValue(),
+    cookie_sources: cookieSources,
+    lang: getLanguageFromURL()
+  };
+
+  if (
+    skipCaptchaParam[0] ===
+      '?816D696BEFB5BEF1F819E95290658C91DA7AA572C8CD7154A5BED163F77C6773' &&
+    skipCaptchaParam[1] === 'true'
+  ) {
+    defaultData = Object.assign(defaultData, {
+      '816D696BEFB5BEF1F819E95290658C91DA7AA572C8CD7154A5BED163F77C6773':
+        'true',
+      captcha: 'dummy-captcha',
+    });
+  }
+
+  return defaultData;
+}
+
+function getUuid() {
+  const name = '__anon';
+  let uuid = localStorage.getItem(name);
+  if (!uuid) {
+    uuid = ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+      (
+        c ^
+        (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+      ).toString(16)
+    );
+    localStorage.setItem(name, uuid);
+  }
+  return uuid;
+}
+
+function track(name, raw = {}) {
+  const data = {};
+  data.anon_id = getUuid();
+  data.name = name;
+  data.raw = raw;
+  data.raw.cookie_sources = {
+    first_source: loadCookie('FirstSession'),
+    returning_source: loadCookie('ReturningSession'),
+    ga: loadCookie('_ga'),
+    gid: loadCookie('_gid'),
+  };
+  const headers = {
+    type: 'application/json',
+  };
+  const blob = new Blob([JSON.stringify(data)], headers);
+  // navigator.sendBeacon('https://a-srv.preyhq.com/public/anon', blob);
+  navigator.sendBeacon('https://a-srv.preyproject.com/public/anon', blob);
+}
+
+function triggerForm(el, eventName, gtmEventName, callback = null, autoDisplayDiv = true) {
+  const parentForm = $(el);
+  const doneBlock = $('.w-form-done');
+  const failBlock = $('.w-form-fail');
+
+  parentForm.submit(function (e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    form = $(e.target);
+
+    const data = JSON.stringify(
+      Object.assign($(form).serializeObject(), sharedData())
+    );
+
+    $.ajax({
+      url: form.attr('action'),
+      method: 'POST',
+      data: data,
+      contentType: 'application/json',
+      success: (_data, _textStatus, xhr) => {
+        dataLayer.push({ event: gtmEventName });
+        track(eventName, JSON.parse(data));
+
+        if(autoDisplayDiv){
+          parentForm.hide();
+          doneBlock.show();
+          failBlock.hide();
+        }
+        
+        if (callback) {
+          callback(xhr);
+        }
+      },
+      error: (xhr) => {
+        if(autoDisplayDiv){
+          parentForm.show();
+          doneBlock.hide();
+          failBlock.show();
+        }
+        
+        if (callback) {
+          callback(xhr);
+        }
+      },
+    });
+  });
+}
+
+function triggerFormMultipart(el, eventName, gtmEventName) {
+  const parentForm = $(el);
+  const doneBlock = $('.w-form-done');
+  const failBlock = $('.w-form-fail');
+
+  parentForm.submit(function (e) {
+    e.preventDefault();
+    form = $(e.target);
+    let data = $(form).serializeFormData();
+    let json = {};
+
+    data.forEach(function (value, key) {
+      if (key !== 'files[]') {
+        json[key] = value;
+      }
+    });
+
+    $.ajax({
+      url: form.attr('action'),
+      timeout: 0,
+      processData: false,
+      method: 'POST',
+      mimeType: 'multipart/form-data',
+      contentType: false,
+      data: data,
+      success: () => {
+        dataLayer.push({ event: gtmEventName });
+        track(eventName, json);
+
+        parentForm.hide();
+        doneBlock.show();
+        failBlock.hide();
+      },
+      error: () => {
+        parentForm.show();
+        doneBlock.hide();
+        failBlock.show();
+      },
+    });
+  });
+}
+</script>
+<script type="f3e3023867fbb66addfe96cc-text/javascript">
+function crumbleCookie(a) {
+    for (var d = document.cookie.split(";"), c = {}, b = 0; b < d.length; b++) {
+        var e = d[b].substring(0, d[b].indexOf("=")).trim(),
+            i = d[b].substring(d[b].indexOf("=") + 1, d[b].length).trim();
+        c[e] = i
+    }
+    if (a) return c[a] ? c[a] : null;
+    return c
+}
+
+function bakeCookie(a, d, c, b, e, i) {
+    var j = new Date;
+    j.setTime(j.getTime());
+    c && (c *= 864E5);
+    j = new Date(j.getTime() + c);
+    document.cookie = a + "=" + escape(d) + (c ? ";expires=" + j.toGMTString() : "") + (b ? ";path=" + b : "") + (e ? ";domain=" + e : "") + (i ? ";secure" : "")
+}
+
+function writeLogic(n) {
+    var a = getTrafficSource(n, '.preyproject.com');  //Insert your domain here
+    
+    a = a.replace(/\|{2,}/g, "|");
+    a = a.replace(/^\|/, "");
+    a = unescape(a);
+    
+    bakeCookie(n, a, 30, "/", "", "")		//Cookie expiration sets to 30 days
+};
+
+function getParam(s, q) {
+  try{
+      var match = s.match('[?&]' + q + '=([^&]+)');
+      return match ? match[1] : '';
+//        return s.match(RegExp('(^|&)'+q+'=([^&]*)'))[2];
+  } catch(e){
+    return '';    
+  }
+}
+
+function calculateTrafficSource() {
+  var source='', medium='', campaign='', term='', content='';
+  var search_engines = [['bing', 'q'], ['google', 'q'], ['yahoo', 'q'], ['baidu', 'q'], ['yandex', 'q'], ['ask', 'q']];	//List of search engines
+  var ref = document.referrer;
+  ref = ref.substr(ref.indexOf('//')+2);
+  ref_domain = ref;
+  ref_path = '/';
+  ref_search = '';
+  
+  // Checks for campaign parameters
+  var url_search = document.location.search;
+  
+//      console.log(url_search.indexOf('utm_source'));
+//      console.log(getParam(url_search, 'gclid'));
+//      console.log(url_search);
+  
+  if(url_search.indexOf('utm_source') > -1) {
+    source   = getParam(url_search, 'utm_source');
+    medium   = getParam(url_search, 'utm_medium');
+    campaign = getParam(url_search, 'utm_campaign');
+    term     = getParam(url_search, 'utm_term');
+    content  = getParam(url_search, 'utm_content');
+  } 
+  else if (getParam(url_search, 'gclid')) {
+    source = 'google';
+    medium = 'cpc';
+    campaign = '(not set)';
+  } 
+  else if(ref) {
+ 
+    // separate domain, path and query parameters
+    if (ref.indexOf('/') > -1) {
+      ref_domain = ref.substr(0,ref.indexOf('/'));
+      ref_path = ref.substr(ref.indexOf('/'));
+      if (ref_path.indexOf('?') > -1) {
+        ref_search = ref_path.substr(ref_path.indexOf('?')+1);
+        ref_path = ref_path.substr(0, ref_path.indexOf('?'));
+      }
+    }
+    medium = 'referral';
+    source = ref_domain;                      
+    // Extract term for organic source
+    for (var i=0; i<search_engines.length; i++){
+      if(ref_domain.indexOf(search_engines[i][0]) > -1){
+        medium = 'organic';
+        source = search_engines[i][0];
+        term = getParam(ref_search, search_engines[i][1]) || '(not provided)';
+        break;
+      } 
+    }
+  }
+ 
+  return {
+    'source'  : source,
+    'medium'  : medium,
+    'campaign': campaign,
+    'term'    : term,
+    'content' : content
+  };
+}
+
+function getTrafficSource(cookieName, hostname) {
+  var trafficSources = calculateTrafficSource();
+  var source = trafficSources.source.length === 0 ? 'direct' : trafficSources.source;
+  var medium = trafficSources.medium.length === 0 ? 'none' : trafficSources.medium;
+  var campaign = trafficSources.campaign.length === 0 ? 'direct' : trafficSources.campaign;
+  // exception
+  if(medium === 'referral') {
+      campaign = '';
+  }
+  var rightNow = new Date();
+  var value = 'source='   + source +
+              '&medium='  + medium +
+              '&campaign='+ campaign +
+              '&term='    + trafficSources.term +
+              '&content=' + trafficSources.content +
+              '&date='    + rightNow.toISOString().slice(0,10).replace(/-/g,"");
+    return value;
+}
+  
+// Self-invoking function
+(function(){
+	var date = new Date();	
+	var fr_date = date.getUTCFullYear().toString() + ((date.getUTCMonth() < 9) ? '0' + (date.getUTCMonth()+1).toString() : (date.getUTCMonth()+1).toString()) + ((date.getUTCDate() < 10) ? '0' + date.getUTCDate().toString() : date.getUTCDate().toString());
+	var session = crumbleCookie()['FirstSession'];
+
+	if (typeof session == 'undefined')	// First time session
+	{
+		writeLogic('FirstSession');		
+	}
+    else {
+		writeLogic('ReturningSession');		
+    }
+})();
+<!-- Link to Specific Form Tab in Get Started -->
+<!-- You can link to tabs like this: [live-url]/get-started#trial -->
+ var Webflow = Webflow || [];
+ Webflow.push(() => {
+   function changeTab(shouldScroll = false) {
+     const hashSegments = window.location.hash.substring(1).split('/');
+     const offset = 90; // change this to match your fixed header height if you have one
+     let lastTabTarget;      for (const segment of hashSegments) {
+       const tabTarget = document.querySelector(`[data-w-tab="${segment}"]`);        if (tabTarget) {
+         tabTarget.click();
+         lastTabTarget = tabTarget;
+       }
+     }
+   }
+   
+   const tabs = document.querySelectorAll('[data-w-tab]');
+   
+   tabs.forEach(tab => {
+     const dataWTabValue = tab.dataset.wTab;
+     const parsedDataTab = dataWTabValue.replace(/\s+/g,"-").toLowerCase();
+     tab.dataset.wTab = parsedDataTab;
+     tab.addEventListener('click', () => {
+       history.pushState({}, '', `#${parsedDataTab}`);
+     });
+   });
+  if (window.location.hash) {
+     requestAnimationFrame(() => { changeTab(true); });
+   }    window.addEventListener('hashchange', () => { changeTab() });
+ });
+// Date translation function from EN to ES when website is ES
+function translateDateToES(observer) {
+    if (observer) observer.disconnect();
+		const userLang = document.documentElement.lang;
+    const dateElements = document.querySelectorAll('.date');
+    if (userLang.toLowerCase().includes('es')) {
+    dateElements.forEach(element => {
+        const englishDate = element.textContent.trim();
+        const translatedDate = englishDate
+            // Translate months
+            .replace('Jan', 'Ene')
+            //.replace('Feb', 'Feb')
+            //.replace('Mar', 'Mar')
+            .replace('Apr', 'Abr')
+            //.replace('May', 'May')
+            //.replace('Jun', 'Jun')
+            //.replace('Jul', 'Jul')
+            .replace('Aug', 'Ago')
+            //.replace('Sep', 'Sep')
+            //.replace('Oct', 'Oct')
+            //.replace('Nov', 'Nov')
+            .replace('Dec', 'Dic')        
+        element.textContent = translatedDate;
+    });
+		}
+    // Reconnect the observer after the DOM changes are made
+    if (observer) observer.observe(document.body, { childList: true, subtree: true });
+}
+// Function to observe DOM changes and re-run translation
+function observeDOMChanges() {
+    const targetNode = document.body;
+    const config = { childList: true, subtree: true }; // Watching for changes in the DOM subtree
+    const callback = function(mutationsList, observer) {
+        for (let mutation of mutationsList) {
+            if (mutation.type === 'childList') {
+                translateDateToES(observer); // Re-run the translation function
+            }
+        }
+    };
+    const observer = new MutationObserver(callback);
+    observer.observe(targetNode, config);
+    // Initial translation on page load
+    translateDateToES(observer);
+}
+// Start observing changes on the page
+observeDOMChanges();
+</script><script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="f3e3023867fbb66addfe96cc-|49" defer=""></script><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;8f4795428bf3dbd0&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2024.10.5&quot;,&quot;token&quot;:&quot;4d660574256945da91d3a7abe3d70f1b&quot;}" crossorigin="anonymous"></script>
+</body></html>
