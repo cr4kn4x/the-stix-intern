@@ -1,3 +1,4 @@
-Modules/__pycache__
-venv
 .env
+venv
+*/__pycache__
+ThreatReportScraper/firefox_profile

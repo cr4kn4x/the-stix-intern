@@ -4,3 +4,4 @@ sentence-transformers==3.4.0
 trafilatura==2.0.0
 stix2==3.0.1
 pydantic==2.10.5
+selenium==4.32.0
