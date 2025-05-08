@@ -2,7 +2,7 @@
 
 **the-stix-intern** is a framework developed as part of my Masters' thesis "From Threat-Report to STIX-Bundle". 
 
-The framework implements 4 modules to extract STIX Domain Objects (SDOs) and STIX Relationship Objects (SROs) from unstructured threat-reports. It leverages open-source LLMs in various sizes and the library [DSPy](https://dspy.ai/) for automated module optimization. The performance of the implemented modules is on par with comparable approaches from literature that are based on closed-source LLMs from "Open"-AI. The performance of the implemented modules is on par with comparable approaches from literature (e.g. [Time for aCTIon](https://arxiv.org/abs/2307.10214)) that are based on closed-source LLMs like GPT-3.5 from: 
+The framework implements 4 modules to extract STIX Domain Objects (SDOs) and STIX Relationship Objects (SROs) from unstructured threat-reports. It leverages open-source LLMs in various sizes and the library [DSPy](https://dspy.ai/) for automated module optimization. The performance of the implemented modules is on par with comparable approaches from literature that are based on closed-source LLMs from "Open"-AI. The performance of the implemented modules is on par with comparable approaches from literature (e.g. [Time for aCTIon](https://arxiv.org/abs/2307.10214)) that are based on closed-source LLMs like GPT-3.5: 
 
 ![alt text](res/performance_comparison.png)
 ---
