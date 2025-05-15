@@ -407,3 +407,41 @@ def load_json_files(base_path, categories, models):
                 data[model][category]["recall"] = json.load(fp)
     
     return data
+
+
+def calc_avg(list: typing.Iterable, ndigits: int = None): 
+    avg = sum(list) / len(list)
+    if ndigits:
+        return round(avg, ndigits)
+    return avg
+
+def load_json_files(base_path, categories, models):
+    data = {}
+
+    for model in models: 
+        data[model] = dict() 
+
+        data[model]["Baseline"] = dict()
+        data[model]["ZERO-O1"] = dict()
+        data[model]["ZERO-O2"] = dict() 
+        data[model]["FS-O1"] = dict()
+        data[model]["FS-O2"] = dict()
+
+    for category in categories: 
+        for model in models: 
+            # f1
+            file_path = os.path.join(base_path, category, f"{model}_f1.json")
+            with open(file_path, "r") as fp:
+                data[model][category]["f1"] = json.load(fp)
+
+            # precision
+            file_path = os.path.join(base_path, category, f"{model}_precision.json")
+            with open(file_path, "r") as fp:
+                data[model][category]["precision"] = json.load(fp)
+            
+            # precision
+            file_path = os.path.join(base_path, category, f"{model}_recall.json")
+            with open(file_path, "r") as fp:
+                data[model][category]["recall"] = json.load(fp)
+    
+    return data
